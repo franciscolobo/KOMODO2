@@ -42,3 +42,4 @@ vignettes/*.pdf
 data_folder/
 results/
 /zz_original_scripts/results
+.Rproj.user
