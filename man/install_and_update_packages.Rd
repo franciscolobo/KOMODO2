@@ -4,22 +4,18 @@
 \alias{install_and_update_packages}
 \title{Install and update dependencies from Suggests field}
 \usage{
-install_and_update_packages(cran.args = list(), bioc.args = list())
+install_and_update_packages(bioc.args = list())
 }
 \arguments{
-\item{cran.args}{list containing further arguments to be passed
-down to `install.packages()`.}
-
 \item{bioc.args}{list containing further arguments to be passed
 down to `BiocManager::install()`.}
 }
 \description{
-This function installs the latest versions of all packages
-listed in the `Suggests` fields of KOMODO2.
-It uses the standard `utils::install.packages()` for CRAN
-packages, and `BiocManager::install()` for Bioconductor
-dependencies. Further arguments to both functions are passed
-as lists.
+This function installs the latest versions of all Bioconductor packages
+listed in the `Suggests` fields of KOMODO2. It is **essential** for
+installing the Bioconductor dependencies.
+It uses `BiocManager::install()` for installing Bioconductor
+packages. Further arguments to this function are passed as a list.
 }
 \examples{
 \dontrun{

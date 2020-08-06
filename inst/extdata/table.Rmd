@@ -67,7 +67,7 @@ for (i in seq_along(df_cutoff$name)){#df_cutoff$name[1:length(df_cutoff[, 1])]) 
   names(Xdf)    <- "X_var"
   Xdf$feature   <- rank(defs$y[, fname] / defs$denominator)
   
-    p2 <- ggplot2::ggplot(data    = Xdf, 
+  p2 <- ggplot2::ggplot(data    = Xdf, 
                         mapping = ggplot2::aes(x     = X_var, 
                                                y     = feature,
                                                label = ID)) + 
@@ -125,65 +125,40 @@ for (i in seq_along(df_cutoff$name)){
   fname <- df_cutoff$name[i]
   
   #output dir
-  file <- paste0(cpd, fname, '_boxplot', ".html")
-
-  plot_title <- paste0(fname, " - ", defs$annotation.cor[fname])
-
-  file_name <- paste0(fname, "_boxplot_per_group", ".pdf")
-
+  file <- paste0(cpd, fname, '_boxplot.html')
+  
+  file_name <- paste0(fname, "_boxplot_per_group.pdf")
+  
   file_name <- gsub(":", "_", file_name)
-
+  
   tmp <- data.frame(defs$x, defs$short.name, defs$groups, defs$y[fname], (defs$y[fname]/defs$denominator))
-
+  
   colnames(tmp) <- c("cell_type", "short", "group", "count", "norm")
-
-#  tmp$group[tmp$group=="Metazoa(chordate)"] <- c("Metazoa\n(chordate)")
-#  tmp$group[tmp$group=="Metazoa(non-chordate)"] <- c("Metazoa\n(non-chordate)")
-
-  p1 = ggplot2::ggplot(tmp, ggplot2::aes(x=reorder(group, count, FUN = median), y=count)) + ggplot2::geom_boxplot(ggplot2::aes(fill = factor(group))) + ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1), axis.title.x = ggplot2::element_blank())
+  tmp$fill <- as.character(tmp$group)
   
+  tmp$group <- stats::reorder(tmp$group, tmp$count, FUN = median)
+  p1 <- ggplot2::ggplot(tmp, ggplot2::aes(x = group, y = count, fill = fill)) + 
+    ggplot2::geom_violin(scale = "width", alpha = 0.25, show.legend = FALSE) +  
+    ggplot2::geom_boxplot(alpha = 0, show.legend = FALSE) + 
+    ggplot2::geom_jitter(width = 0.05, size = .5, show.legend = FALSE) + 
+    ggplot2::theme(axis.text.x  = ggplot2::element_text(angle = 45, hjust = 1), 
+                   axis.title.x = ggplot2::element_blank()) + 
+    ggtitle(paste0(fname, " - ", defs$annotation.cor[fname])) + 
+    annotate("text", y= max(tmp$count), x = 1, label = "Count")
   
-  #code below forces y axis limit to zero, do y log scale transformation and adds a new color palette. Uncomment it if you wish to add these features, but:
-  #1) non-zero y axis are fine to stress differences (https://www.r-bloggers.com/the-y-axis-to-zero-or-not-to-zero/) (https://qz.com/418083/its-ok-not-to-start-your-y-axis-at-zero/)
-  #2) the palette from scale_fill_brewer works for three or more groups only
-  #+ ggplot2::expand_limits(y = 0) + ggplot2::scale_y_continuous(expand = c(0, 0))
-  #+ ggplot2::scale_y_log10()
-  #+ ggplot2::stat_summary(fun = "median", geom="errorbar", width=0.8, color="black") 
-  #+ ggplot2::geom_violin(ggplot2::aes(fill = factor(group))) 
-  #+ ggplot2::scale_fill_brewer(palette="Set1")
-
-  p2 = ggplot2::ggplot(tmp, ggplot2::aes(x=reorder(group, norm, FUN = median), y=norm)) + ggplot2::geom_boxplot(ggplot2::aes(fill = factor(group))) + ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1), axis.title.x = ggplot2::element_blank())
+  tmp$group <- stats::reorder(tmp$group, tmp$norm, FUN = median)
+  p2 <- ggplot2::ggplot(tmp, ggplot2::aes(x = group, y = norm)) + 
+    ggplot2::geom_violin(aes(fill = fill), scale = "width", alpha = 0.25,
+                         show.legend = FALSE) + 
+    ggplot2::geom_boxplot(alpha = 0, show.legend = FALSE) + 
+    ggplot2::geom_jitter(width = 0.05, size=.5, alpha = .75, show.legend = FALSE) + 
+    ggplot2::theme(axis.text.x  = ggplot2::element_text(angle = 45, hjust = 1), 
+                   axis.title = ggplot2::element_blank()) + 
+    annotate("text", y = max(tmp$norm), x = 1, label = "Norm")
   
-  #+ ggplot2::expand_limits(y = 0) + ggplot2::scale_y_continuous(expand = c(0, 0))
-  #+ ggplot2::scale_y_log10()
-  #+ ggplot2::stat_summary(fun = "median", geom="errorbar", width=0.8, color="black") 
-  #+ ggplot2::geom_violin(ggplot2::aes(fill = factor(group))) 
-  #+ ggplot2::scale_fill_brewer(palette="Set1")
-  
-#  p1 = ggplot2::ggplot(tmp, aes(x=reorder(group, count, FUN = median), y=count, fill = group)) + geom_violin(trim = FALSE) + geom_jitter(position=position_jitter(0.2)) + theme(axis.text.x = element_text(angle = 45), axis.title.x = element_blank()) + scale_y_log10() + scale_fill_brewer(palette="Set1")
-
-#  p2 = ggplot2::ggplot(tmp, aes(x=reorder(group, norm, FUN = median), y=norm, fill = group)) + geom_violin(trim = FALSE) + theme(axis.text.x = element_text(angle = 45), axis.title.x = element_blank()) + scale_y_log10() + scale_fill_brewer(palette="Set1")
-
-  #p1 = ggplot(tmp, aes(x=group, y=value, fill = group)) + geom_boxplot() + scale_y_continuous(trans='log10')
-
-  #p2 = ggplot(tmp, aes(x=group, y=norm, fill = group)) + geom_boxplot()  + scale_y_continuous(trans='log10')
-
-  legend_b <- cowplot::get_legend(p1 + ggplot2::theme(legend.position="top"))
-
-  prow <- plotly::subplot(p1, p2, shareX = TRUE, shareY = FALSE)
-
-  title <- cowplot::ggdraw() +
-    cowplot::draw_label(
-      plot_title,
-      fontface = 'bold',
-      x = 0,
-      hjust = 0
-    ) +
-    ggplot2::theme(
-      # add margin on the left of the drawing canvas,
-      # so title is aligned with left edge of first plot
-      plot.margin = ggplot2::margin(0, 0, 0, 7)
-    )
+  prow <- plotly::subplot(style(p1, showlegend = FALSE), 
+                          style(p2, showlegend = FALSE, traces = 10:11),
+                          shareY = FALSE, titleY = FALSE)
   
   p3 <- plotly::ggplotly(prow)
   

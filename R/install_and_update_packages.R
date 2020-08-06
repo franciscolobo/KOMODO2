@@ -1,14 +1,11 @@
 #' Install and update dependencies from Suggests field
 #'
-#' This function installs the latest versions of all packages
-#' listed in the `Suggests` fields of KOMODO2.
-#' It uses the standard `utils::install.packages()` for CRAN
-#' packages, and `BiocManager::install()` for Bioconductor
-#' dependencies. Further arguments to both functions are passed
-#' as lists.
+#' This function installs the latest versions of all Bioconductor packages
+#' listed in the `Suggests` fields of KOMODO2. It is **essential** for
+#' installing the Bioconductor dependencies.
+#' It uses `BiocManager::install()` for installing Bioconductor
+#' packages. Further arguments to this function are passed as a list.
 #'
-#' @param cran.args list containing further arguments to be passed
-#' down to `install.packages()`.
 #' @param bioc.args list containing further arguments to be passed
 #' down to `BiocManager::install()`.
 #'
@@ -19,23 +16,29 @@
 #'   install_and_update_packages()
 #' }
 
-install_and_update_packages <- function(cran.args = list(),
-                                        bioc.args = list()){
+install_and_update_packages <- function(bioc.args = list()){
   # ================== Sanity checks ==================
-  assertthat::assert_that(is.list(cran.args),
-                          is.list(bioc.args))
+  assertthat::assert_that(is.list(bioc.args))
 
-  cran.args$pkgs <- c("ggplot2",
-                      "plotly",
-                      "DT",
-                      "htmltools",
-                      "htmlwidgets",
-                      "pkgdown",
-                      "knitr")
+  # IMPORTANT: any new CRAN package dependency that's used only in the .Rmd
+  # files must be called once below, to prevent CRAN warnings (CRAN will
+  # check if all packages in `Depends` are used at least once within the
+  # functions in the `R` folder.)
+  if (FALSE){ # <---------------- code in here is never to be called, of course.
+    ggplot2::aes()         # for ggplot2
+    plotly::api()          # for plotly
+    DT::JS()               # for DT
+    htmltools::a()         # for htmltools
+    htmlwidgets::JS()      # for htmlwidgets
+    pkgdown::as_pkgdown()  # for pkgdown
+    knitr::all_labels()    # for knitr
+    #cowplot::align_plots() # for cowplot
+  }
+
+  # Now to install the required Bioconductor packages
   bioc.args$pkgs <- c("AnnotationDbi",
                       "KEGGREST",
                       "GO.db")
 
-  do.call(utils::install.packages, cran.args)
   do.call(BiocManager::install, bioc.args)
 }
