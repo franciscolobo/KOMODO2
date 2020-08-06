@@ -1,8 +1,8 @@
 Package: KOMODO2
 Type: Package
 Title: Kegg Orthology Enrichment Online Detection
-Version: 0.11.0
-Date: 2020-06-18
+Version: 0.12.2
+Date: 2020-08-06
 Authors@R: c(person("Francisco", "Lobo",
     email   = "franciscolobo@gmail.com",
     role    = c("aut")),
@@ -30,17 +30,17 @@ Imports: assertthat (>= 0.2.1),
          BiocManager (>= 1.30.10),
          taxize (>= 0.9.92),
          dendextend (>= 1.13.4),
-         heatmaply (>= 1.1.0)
+         heatmaply (>= 1.1.0),
+         ggplot2 (>= 2.3.2),
+         plotly (>= 4.9.2),
+         DT (>= 0.13),
+         htmltools (>= 0.5.0),
+         htmlwidgets (>= 1.5.1),
+         pkgdown (>= 1.5.1),
+         knitr (>= 1.28)
 Suggests: AnnotationDbi,
           KEGGREST,
-          GO.db,
-          ggplot2,
-          plotly,
-          DT,
-          htmltools,
-          htmlwidgets,
-          pkgdown, 
-          knitr
+          GO.db
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.0
