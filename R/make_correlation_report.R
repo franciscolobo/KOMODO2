@@ -1,14 +1,5 @@
 make_correlation_report <- function(defs){
 
-  # ================== Sanity checks ==================
-  #assertthat::assert_that("linear.model.cutoff" %in% names(defs),
-  #                        is.numeric(defs$linear.model.cutoff))
-
-  # "activate" packages that are used only in the .Rmd report generation.
-  # (needed only to stop a NOTE in R CMD check)
-  tmp <- dendextend::fac2num(factor(3:5))
-  tmp <- heatmaply::BrBG(5)
-
   # ================== Prepare report ==================
   sumY    <- sapply(defs$y, sum)  # faster than apply() or colSums()!
 
