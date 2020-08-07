@@ -5,7 +5,6 @@ make_correlation_report <- function(defs){
 
   # filter out those with no observations (sum equals zero)
   idx     <- (sumY != 0)
-
   Y       <- defs$y[, idx]
   sumY    <- sumY[idx]
   defs$sd <- defs$sd[idx]
@@ -177,7 +176,7 @@ make_correlation_report <- function(defs){
                                           quiet = TRUE))
   file.remove(fp)
 
-  # Invoke browser andopen results
+  # Invoke browser and open results
   myURL <- gsub("//", "/", paste0(defs$output.dir, "/index.html"), fixed = TRUE)
   myURL <- paste0("file:/",
                   normalizePath(gsub("./", "", myURL, fixed = TRUE)))

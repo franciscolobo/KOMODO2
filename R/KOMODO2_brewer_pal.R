@@ -25,8 +25,11 @@ KOMODO2_brewer_pal <- function (n, name)
     stop(paste(name, "is not a valid palette name for brewer.pal\n"))
   }
   if (n < 3) {
-    warning("minimal value for n is 3, returning requested palette with 3 different levels\n")
-    return(KOMODO2_brewer_pal(3, name))
+    # warning("
+    # Minimal value for n is 3.
+    # Returning requested palette with the ", n, " first components.
+    # Behaviour may be unexpected.\n")
+    return(KOMODO2_brewer_pal(3, name)[1:n])
   }
   if (n > maxcolors[which(name == namelist)]) {
     warning(paste("n too large, allowed maximum for palette",
