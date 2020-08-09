@@ -137,28 +137,47 @@ for (i in seq_along(df_cutoff$name)){
   tmp$fill <- as.character(tmp$group)
   
   tmp$group <- stats::reorder(tmp$group, tmp$count, FUN = median)
-  p1 <- ggplot2::ggplot(tmp, ggplot2::aes(x = group, y = count, fill = fill)) + 
-    ggplot2::geom_violin(scale = "width", alpha = 0.25, show.legend = FALSE) +  
-    ggplot2::geom_boxplot(alpha = 0, show.legend = FALSE) + 
-    ggplot2::geom_jitter(width = 0.05, height = 0, size = .5, show.legend = FALSE) + 
+  p1 <- ggplot2::ggplot(tmp, ggplot2::aes(x    = group, 
+                                          y    = count, 
+                                          fill = fill)) + 
+    ggplot2::geom_violin(scale = "width", 
+                         alpha = 0.25, 
+                         show.legend = FALSE) +  
+    ggplot2::geom_boxplot(alpha = 0, 
+                          show.legend = FALSE, 
+                          width = .15) + 
+    ggplot2::geom_jitter(width = 0.05, 
+                         height = 0, 
+                         size = .5, 
+                         show.legend = FALSE) + 
     ggplot2::theme(axis.text.x  = ggplot2::element_text(angle = 45, hjust = 1), 
                    axis.title.x = ggplot2::element_blank()) + 
     ggplot2::ggtitle(paste0(fname, " - ", defs$annotation.cor[fname])) + 
-    ggplot2::annotate("text", y= max(tmp$count), x = 1, label = "Count")
+    ggplot2::annotate("text", 
+                      y= max(tmp$count), x = .5, label = "Count")
   
   tmp$group <- stats::reorder(tmp$group, tmp$norm, FUN = median)
-  p2 <- ggplot2::ggplot(tmp, ggplot2::aes(x = group, y = norm)) + 
-    ggplot2::geom_violin(ggplot2::aes(fill = fill), scale = "width", alpha = 0.25,
+  p2 <- ggplot2::ggplot(tmp, ggplot2::aes(x = group, 
+                                          y = norm,
+                                          fill = fill)) + 
+    ggplot2::geom_violin(scale = "width", 
+                         alpha = 0.25, 
                          show.legend = FALSE) + 
-    ggplot2::geom_boxplot(alpha = 0, show.legend = FALSE) + 
-    ggplot2::geom_jitter(width = 0.05, height = 0, size=.5, alpha = .75, show.legend = FALSE) + 
+    ggplot2::geom_boxplot(alpha = .3, 
+                          show.legend = FALSE, 
+                          width = .15) + 
+    ggplot2::geom_jitter(width = 0.05, 
+                         height = 0, 
+                         size = .5, 
+                         alpha = .75,
+                         show.legend = FALSE) + 
     ggplot2::theme(axis.text.x  = ggplot2::element_text(angle = 45, hjust = 1), 
                    axis.title = ggplot2::element_blank()) + 
-    ggplot2::annotate("text", y = max(tmp$norm), x = 1, label = "Norm")
+    ggplot2::annotate("text", 
+                      y = max(tmp$norm), x = .5, label = "Norm")
   
   prow <- plotly::subplot(plotly::style(p1, showlegend = FALSE), 
-                          plotly::style(p2, showlegend = FALSE, 
-                                        traces = 10:11),
+                          plotly::style(p2, showlegend = FALSE),
                           shareY = FALSE, titleY = FALSE)
   
   p3 <- plotly::ggplotly(prow)
