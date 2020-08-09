@@ -66,6 +66,7 @@
 #' @param render.report logical: should a HTML5 report be generated?
 #'
 #' @importFrom assertthat assert_that is.count has_name
+#' @importFrom ggplot2 "%+%"
 #'
 #' @export
 #'
