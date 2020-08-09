@@ -5,7 +5,7 @@ make_correlation_report <- function(defs){
 
   # Ignore these, they're only here to initialize certain packages
   tmp <- dendextend::fac2num(factor(3:5))
-  tmp <- plotly::api()
+  tmp <- plotly::hobbs
   tmp <- heatmaply::BrBG(5)
 
   # filter out those with no observations (sum equals zero)
