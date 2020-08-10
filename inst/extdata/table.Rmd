@@ -75,7 +75,7 @@ for (i in seq_along(df_cutoff$name)){#df_cutoff$name[1:length(df_cutoff[, 1])]) 
     ggplot2::geom_smooth(method = "loess", formula = y ~ x, se = TRUE) + 
     ggplot2::theme_bw() +
     ggplot2::labs(x = "Phenotype rank", 
-                  y = "Annotation frequency rank")
+                  y = "Annotation frequency (rank)")
   
   # TODO: plots only consider "pic". If we implement "gls", maybe we'll need to 
   # change something here too.
@@ -107,10 +107,10 @@ for (i in seq_along(df_cutoff$name)){#df_cutoff$name[1:length(df_cutoff[, 1])]) 
   #             ggtitle(paste0("phylogeny-aware linear model data for "), i),
   #    ggtitle("Representation of raw data             Representation of rank data                Representation of phylogenetic-aware linear model data")
   
-  p4 <- plotly::subplot(p1, p2, p3, shareX = TRUE, shareY = FALSE)
+  p4 <- plotly::subplot(p1, p2, p3, shareX = TRUE, shareY = FALSE, titleY = TRUE)
   
   p1ly <- plotly::ggplotly(p4,
-                           tooltip = c('label','X_var','Normalized feature'))
+                            tooltip = c('label','X_var','Normalized feature'))
   
   htmlwidgets::saveWidget(p1ly, file = file,
                           libdir = 'lib',
@@ -134,34 +134,36 @@ for (i in seq_along(df_cutoff$name)){
   tmp <- data.frame(defs$x, defs$short.name, defs$groups, defs$y[fname], (defs$y[fname]/defs$denominator))
   
   colnames(tmp) <- c("cell_type", "short", "group", "count", "norm")
-  tmp$fill <- as.character(tmp$group)
+  
+  my_pallete <- data.frame(group  = unique(tmp$group),
+                           colour = I(KOMODO2_brewer_pal(length(unique(tmp$group)), 
+                                                       name = 'Set1')))
+  tmp$fill <- my_pallete$colour[match(tmp$group, my_pallete$group)]
   
   tmp$group <- stats::reorder(tmp$group, tmp$count, FUN = median)
-  p1 <- ggplot2::ggplot(tmp, ggplot2::aes(x = group, y = count, fill = fill)) + 
-    ggplot2::geom_violin(scale = "width", alpha = 0.25, show.legend = FALSE) +  
-    ggplot2::geom_boxplot(alpha = 0, show.legend = FALSE) + 
-    ggplot2::geom_jitter(width = 0.05, height = 0, size = .5, show.legend = FALSE) + 
+  p1 <- ggplot2::ggplot(tmp, ggplot2::aes(x = group,y = count)) + 
+    ggplot2::geom_violin(ggplot2::aes(fill = I(fill)), 
+                         scale = "width", alpha = 0.25) +  
+    ggplot2::geom_boxplot(ggplot2::aes(fill = I(fill)), 
+                          alpha = 0.3) + 
+    ggplot2::geom_jitter(width = 0.05, height = 0, size = .5) +
     ggplot2::theme(axis.text.x  = ggplot2::element_text(angle = 45, hjust = 1), 
-                   axis.title.x = ggplot2::element_blank()) + 
-    ggplot2::ggtitle(paste0(fname, " - ", defs$annotation.cor[fname])) + 
-    ggplot2::annotate("text", y= max(tmp$count), x = 1, label = "Count")
+                   axis.title.x = ggplot2::element_blank())
   
   tmp$group <- stats::reorder(tmp$group, tmp$norm, FUN = median)
-  p2 <- ggplot2::ggplot(tmp, ggplot2::aes(x = group, y = norm)) + 
-    ggplot2::geom_violin(ggplot2::aes(fill = fill), scale = "width", alpha = 0.25,
-                         show.legend = FALSE) + 
-    ggplot2::geom_boxplot(alpha = 0, show.legend = FALSE) + 
-    ggplot2::geom_jitter(width = 0.05, height = 0, size=.5, alpha = .75, show.legend = FALSE) + 
-    ggplot2::theme(axis.text.x  = ggplot2::element_text(angle = 45, hjust = 1), 
-                   axis.title = ggplot2::element_blank()) + 
-    ggplot2::annotate("text", y = max(tmp$norm), x = 1, label = "Norm")
+  p2 <- p1 %+% tmp +
+    ggplot2::aes(y = norm) + 
+    ggplot2::annotate("text", y = 1.02 * max(tmp$norm), x = 1, label = "Norm")
   
-  prow <- plotly::subplot(plotly::style(p1, showlegend = FALSE), 
-                          plotly::style(p2, showlegend = FALSE, 
-                                        traces = 10:11),
+  p1 <- p1 + 
+    ggplot2::annotate("text", y = 1.02 * max(tmp$count), x = 1, label = "Count") + 
+    ggplot2::ggtitle(paste0(fname, " - ", defs$annotation.cor[fname]))
+  
+  prow <- plotly::subplot(plotly::style(p1, showlegend = FALSE, width = .1), 
+                          plotly::style(p2, showlegend = FALSE, width = .1),
                           shareY = FALSE, titleY = FALSE)
   
-  p3 <- plotly::ggplotly(prow)
+  p3 <- plotly::ggplotly(prow, tooltip = c("x", "y"))
   
   htmlwidgets::saveWidget(p3,
                           file = file,

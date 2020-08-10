@@ -25,14 +25,15 @@ install_and_update_packages <- function(bioc.args = list()){
   # check if all packages in `Depends` are used at least once within the
   # functions in the `R` folder.)
   if (FALSE){ # <---------------- code in here is never to be called, of course.
-    ggplot2::aes()         # for ggplot2
-    plotly::api()          # for plotly
-    DT::JS()               # for DT
-    htmltools::a()         # for htmltools
-    htmlwidgets::JS()      # for htmlwidgets
-    pkgdown::as_pkgdown()  # for pkgdown
-    knitr::all_labels()    # for knitr
-    #cowplot::align_plots() # for cowplot
+    dendextend::fac2num(factor(3:5))
+    heatmaply::BrBG(5)                # for heatmaply
+    ggplot2::aes()                    # for ggplot2
+    plotly::api()                     # for plotly
+    DT::JS()                          # for DT
+    htmltools::a()                    # for htmltools
+    htmlwidgets::JS()                 # for htmlwidgets
+    pkgdown::as_pkgdown()             # for pkgdown
+    knitr::all_labels()               # for knitr
   }
 
   # Now to install the required Bioconductor packages

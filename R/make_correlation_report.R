@@ -1,20 +1,17 @@
 make_correlation_report <- function(defs){
 
-  # ================== Sanity checks ==================
-  #assertthat::assert_that("linear.model.cutoff" %in% names(defs),
-  #                        is.numeric(defs$linear.model.cutoff))
-
-  # "activate" packages that are used only in the .Rmd report generation.
-  # (needed only to stop a NOTE in R CMD check)
-  tmp <- dendextend::fac2num(factor(3:5))
-  tmp <- heatmaply::BrBG(5)
-
   # ================== Prepare report ==================
   sumY    <- sapply(defs$y, sum)  # faster than apply() or colSums()!
 
+  # Ignore these, they're only here to initialize certain packages
+  # NOTE: these are *important*, for some weird reason the report generation
+  # breaks if you don't initialise (at least) the dendextend package.
+  tmp <- dendextend::fac2num(factor(3:5))
+  tmp <- plotly::hobbs
+  tmp <- heatmaply::BrBG(5)
+
   # filter out those with no observations (sum equals zero)
   idx     <- (sumY != 0)
-
   Y       <- defs$y[, idx]
   sumY    <- sumY[idx]
   defs$sd <- defs$sd[idx]
@@ -186,7 +183,7 @@ make_correlation_report <- function(defs){
                                           quiet = TRUE))
   file.remove(fp)
 
-  # Invoke browser andopen results
+  # Invoke browser and open results
   myURL <- gsub("//", "/", paste0(defs$output.dir, "/index.html"), fixed = TRUE)
   myURL <- paste0("file:/",
                   normalizePath(gsub("./", "", myURL, fixed = TRUE)))
