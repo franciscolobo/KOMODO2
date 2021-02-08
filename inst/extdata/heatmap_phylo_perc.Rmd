@@ -116,7 +116,7 @@ cluster2  <- stats::hclust(distance2, method = "average")
 mp <- heatmaply::heatmaply(
   t(heatmaply::percentize(as.data.frame(ord.mat))),
   # file="heatmap_norm.pdf",
-  # Rowv = cluster2,
+  Rowv = cluster2,
   # row_dend_left = TRUE,
   # width = 1000,
   # height = 1800,
