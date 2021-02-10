@@ -41,5 +41,6 @@ vignettes/*.pdf
 # Local testing folders
 data_folder/
 results/
+validation/
 /zz_original_scripts/results
 .Rproj.user

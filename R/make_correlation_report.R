@@ -12,13 +12,28 @@ make_correlation_report <- function(defs){
 
   # filter out those with no observations (sum equals zero)
   idx     <- (sumY != 0)
+  idx2 <- names(defs$correlations.pearson)
+  tmp <- intersect(names(idx), idx2)
+  idx <- tmp
+  rm(tmp)
+  rm(idx2)
   Y       <- defs$y[, idx]
   sumY    <- sumY[idx]
+  defs$greaterthanzero <- defs$greaterthanzero[idx]
+  defs$heterogeneity <- defs$heterogeneity[idx]
+  defs$contrasts <- defs$contrasts[idx]
+  defs$contrasts.corrected <- defs$contrasts.corrected[idx]
+  defs$results.correlations.pvalue.pearson <- defs$results.correlations.pvalue.pearson[idx]
+  defs$results.correlations.pvalue.spearman <- defs$results.correlations.pvalue.spearman[idx]
+  defs$results.correlations.pvalue.kendall <- defs$results.correlations.pvalue.kendall[idx]
+  defs$correlations.pearson <- defs$correlations.pearson[idx]
+  defs$correlations.spearman <- defs$correlations.spearman[idx]
+  defs$correlations.kendall <- defs$correlations.kendall[idx]
+  sumY <- sumY[idx]
   defs$sd <- defs$sd[idx]
   defs$cv <- defs$cv[idx]
-
   defs$greaterthanzero <- defs$greaterthanzero[idx]
-  defs$heterogeneity   <- defs$heterogeneity[idx]
+  defs$heterogeneity <- defs$heterogeneity[idx]
 
   # Prepare plotframe
   plotframe <- rbind(defs$contrasts.corrected[order(names(defs$contrasts.corrected))],

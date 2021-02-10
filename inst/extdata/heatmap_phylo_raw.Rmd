@@ -115,7 +115,7 @@ cluster2  <- stats::hclust(distance2, method = "average")
 mp <- heatmaply::heatmaply(
   t(as.data.frame(ord.mat)),
   # file="heatmap_p.html",
-  # Colv = cluster2,
+  Rowv = cluster2,
   # row_dend_left = TRUE,
   # subplot_heights=c(0.05, 0.01, 0.94),
   # col_side_colors = NULL,

@@ -50,11 +50,12 @@ for (i in seq_along(df_cutoff$name)){#df_cutoff$name[1:length(df_cutoff[, 1])]) 
   names(Xdf)  <- "X_var"
   Xdf$feature <- defs$y[, fname] / defs$denominator
   ID          <- row.names(Xdf)
-  
+  group <-defs$groups
   p1 <- ggplot2::ggplot(data    = Xdf, 
                         mapping = ggplot2::aes(x     = X_var, 
                                                y     = feature,
-                                               label = ID)) + 
+                                               label = ID
+                                               )) + 
     ggplot2::geom_point() +
     #    expand_limits(x = 0, y = 0) +
     ggplot2::geom_smooth(method = "lm", formula = y ~ x, se = TRUE) + 

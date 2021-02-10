@@ -61,7 +61,7 @@ FindContrasts <- function(x, y, tree, method = "gls", denominator = 1,
                                       function(tmpy, tree, cx, nx){
                                         names(tmpy) <- nx
                                         cy  <- ape::pic(tmpy, phy = tree)
-                                        mod <- stats::lm(cy ~ cx + 0)
+                                        mod <- stats::lm(cy ~ cx - 1)
                                         return(summary(mod)$coefficients[1, 4])},
                                       tree           = tree,
                                       cx             = contrast_x,

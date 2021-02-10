@@ -88,6 +88,7 @@ do_analysis_correlation <- function(defs){
                                                h = sum(tmp[-1]) / length(v)))
                                  },
                                  mc.cores = defs$cores)
+  cat(" done!")
   }
 
   defs$heterogeneity <- sapply(tmp, function(x) x$h)
