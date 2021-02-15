@@ -2,7 +2,7 @@
 [![Build Status](https://api.travis-ci.org/fcampelo/CAISEr.png)](https://travis-ci.org/fcampelo/CAISEr)
 
 <p align="center">
-<img src="inst/images/KOMODO2_logo.png" alt="How cool is this? My dad drew it!" height="200"/>
+<img src="inst/images/KOMODO2_logo.png" alt="How cool is this? Francisco's dad drew it!" height="200"/>
 </p>
 
 ## MAIN DEVELOPERS
@@ -46,8 +46,10 @@ to install / update all dependencies (packages listed as KOMODO2's `imports` and
 ---
 ## HOW TO USE - OVERVIEW
 
-To run KOMODO2 you need two things: (i) a set of data and (ii) an input list 
-defining the path to that data and what is to be done. 
+To run KOMODO2 you need two things: 
+
+1.  a set of data  
+2. an input list defining the path to that data and what is to be done. 
 
 ### Retrieving data
 A set of example data folders and files can be downloaded directly from the project repository by using function `retrieve_data_files()`. For instance, a call:
@@ -60,12 +62,12 @@ retrieve_data_files("./data_folder")
 
 will create a folder called `data_folder` in the current working directory path, and download the sample files into subfolders within it. These subfolders will contain:
 
-- genome annotation data files (in "./data_folder/Pfam/" or "./data_folder/gene2GO/")
-- metadata files (in "./data_folder/metadata/" or "./data_folder/metadata/")
-- phylogenetic tree files (in "./data_folder/trees/")
-- dictionary files (in "./data_folder/dics/")
+- genome annotation data files (under `./data_folder/Pfam/` or `./data_folder/gene2GO/`)
+- metadata files (under `./data_folder/metadata/`)
+- phylogenetic tree files (under `./data_folder/trees/`)
+- dictionary files (under `./data_folder/dics/`)
 
-The downloaded data will also contain files that describe the input list mentioned above. A commented template will available at `./data_folder/parameters.txt`, and several full examples under `./data_folder/parameters_validation/`. These full examples represent all input files required to locally reproduce the results reported in a soon-to-be-published article. 
+The downloaded data will also contain files that describe the input list mentioned above. A commented template will available at `./data_folder/parameters.txt`, and several full examples under `./data_folder/parameters_validation/`. These full examples represent all input files required to locally reproduce several example analyses. 
 
 *****
 

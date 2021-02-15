@@ -133,5 +133,10 @@ run_KOMODO2 <- function(defs, type = "correlation",
     ## Stop the cluster
     parallel::stopCluster(defs$cl)
   }
+
+  if(is.null(defs$output.dir)) saveRDS(defs,
+                                       file = paste0(defs$output.dir,
+                                                     "/results.rds"))
+
   invisible(defs)
 }
