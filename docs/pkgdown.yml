@@ -3,5 +3,6 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   KOMODO2_Parameters: KOMODO2_Parameters.html
-last_built: 2021-02-15T22:43Z
+  examples-page: examples-page.html
+last_built: 2021-02-15T23:49Z
 

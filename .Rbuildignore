@@ -12,3 +12,4 @@ data_folder$
 zz_original_scripts$
 tests$
 ^LICENSE$
+vignettes/examples-page.Rmd
