@@ -2,16 +2,15 @@
 [![Build Status](https://api.travis-ci.org/fcampelo/CAISEr.png)](https://travis-ci.org/fcampelo/CAISEr)
 
 <p align="center">
-<img src="inst/images/KOMODO2_logo.png" alt="How cool is this? Francisco's dad drew it!" height="200"/>
+<img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/KOMODO2_logo.png" alt="A two-headed Komodo dragon. Drawn by Francisco's father." height="200"/>
 </p>
 
 ## MAIN DEVELOPERS
-
- - Jorge Augusto Hongo (jorgeahongo@gmail.com)
- - Giovanni Marques de Castro (giomcastro@gmail.com)
- - Felipe Campelo (f.campelo@aston.ac.uk, fcampelo@gmail.com)
- - Francisco Pereira Lobo (franciscolobo@gmail.com, francisco.lobo@ufmg.br)
-
+- Francisco Pereira Lobo (franciscolobo@gmail.com, francisco.lobo@ufmg.br)  
+- Felipe Campelo (f.campelo@aston.ac.uk, fcampelo@gmail.com)  
+- Giovanni Marques de Castro (giomcastro@gmail.com)  
+- Jorge Augusto Hongo (jorgeahongo@gmail.com)  
+ 
 ## DESCRIPTION
 
 KOMODO2 is a first-principle, phylogeny-aware comparative genomics software to search for annotation terms (e.g Pfam IDs, GO terms or superfamilies), formally described in a dictionary-like structure and used to annotate genomic components, associated with a quantitave/rank variable (e.g. number of cell types, genome size or density of specific genomic elements).
@@ -267,7 +266,7 @@ components:
 - Interactive scatterplots where each point corresponds to an annotation term
    and the following proterties are available:
 
-<p align="center"><img src="inst/images/scatterplot_q_values.png" alt="screenshot of KOMODO2 output" height="400")></center>
+<p align="center"><img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/scatterplot_q_values.png" alt="screenshot of KOMODO2 output" height="400")></center>
 
    - x-axes are `-log10(q-value(linear model test))`
    - y-axes are `-log10(q-value(association test))`
@@ -278,7 +277,7 @@ components:
 
 - Interactive table for annotation terms, where users can:
 
-<p align="center"><img src="inst/images/KOMODO2_interactive_table.png" alt="screenshot of KOMODO2 output" height="400"/>
+<p align="center"><img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/KOMODO2_interactive_table.png" alt="screenshot of KOMODO2 output" height="400"/>
 </center>
    
    - Insert or remove data columns
@@ -296,7 +295,7 @@ components:
  - shows actual data values to inspect raw data distribution pattern:
 </p>
 
-<p align="center"><img src="inst/images/scatterplot_data.png" alt="screenshot of KOMODO2 output" height="400"/>
+<p align="center"><img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/scatterplot_data.png" alt="screenshot of KOMODO2 output" height="400"/>
 </center>
 
    - x-axis holds the variable used to rank/sort data
@@ -309,7 +308,7 @@ components:
  - contains ranks of data values to inspect monotonic non-linear associations:
 </p>
 
-<p align="center"><img src="inst/images/scatterplot_rank.png" alt="This is an actual printscreen of KOMODO2 output" height="400"/>
+<p align="center"><img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/scatterplot_rank.png" alt="This is an actual printscreen of KOMODO2 output" height="400"/>
 </center>
 
 
@@ -327,14 +326,14 @@ components:
  - contains phylogeny-aware linear models of contrasts to inspect linear association after taking phylogenetic relatedness into account:
 </p>
 
-<p align="center"><img src="inst/images/scatterplot_phylogeny_aware_linear_model.png" alt="This is an actual printscreen of KOMODO2 output" height="400"></center>
+<p align="center"><img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/scatterplot_phylogeny_aware_linear_model.png" alt="This is an actual printscreen of KOMODO2 output" height="400"></center>
 
   - x-axis values are phylogenetically independent contrasts for variables
       used to rank/sort data
   - y-axis values are phylogenetically independent contrasts for frequencies
       of annotation terms
   - blue line shows the linear regression line for phylogenetically independent
-      contrasts with intercept forced through the origin (model: x ~ y + 0) as
+      contrasts with intercept forced through the origin (model: x ~ y - 1) as
       recomended by [Felsenstein, 1985].
 
 
