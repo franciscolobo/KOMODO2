@@ -17,7 +17,7 @@ accepts relative and absolute paths)}
 
 \item{method}{Method to be used for downloading files. Current download
 methods are "internal", "wininet" (Windows only) "libcurl", "wget" and
-"curl", and there is a value "auto": see ‘Details’ and ‘Note’ in the
+"curl", and there is a value "auto": see _Details_ and _Note_ in the
 documentation of \code{utils::download.file()}.}
 
 \item{unzip}{The unzip method to be used. See the documentation of

@@ -1,13 +1,14 @@
 # KOMODO2
-[![Build Status](https://api.travis-ci.org/fcampelo/KOMODO2.png)](https://travis-ci.org/fcampelo/KOMODO2)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/KOMODO2)](https://CRAN.R-project.org/package=KOMODO2)
+[![CRAN Downloads](https://cranlogs.r-pkg.org/badges/KOMODO2)](https://CRAN.R-project.org/package=KOMODO2)
 
 <img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/KOMODO2_logo.png" alt="A two-headed Komodo dragon. Drawn by Francisco's father." height="200"/>
 
 ## MAIN DEVELOPERS
 - Francisco Pereira Lobo (franciscolobo@gmail.com, francisco.lobo@ufmg.br)
-    - Main developer: initial idea, scientific coordination, first implementation, main visualisation concepts.   
+    - Main developer: initial idea, scientific coordination, first implementation, main visualization concepts.   
 - Felipe Campelo (f.campelo@aston.ac.uk, fcampelo@gmail.com)
-    - Code auditing and refactoring to R package, CRAN deployment, visualisation support.  
+    - Code auditing and refactoring to R package, CRAN deployment, visualization support.  
 - Giovanni Marques de Castro (giomcastro@gmail.com)
     - Initial development and implementation support.  
 - Jorge Augusto Hongo (jorgeahongo@gmail.com)
@@ -15,9 +16,9 @@
  
 ## DESCRIPTION
 
-KOMODO2 is a first-principle, phylogeny-aware comparative genomics software to search for annotation terms (e.g Pfam IDs, GO terms or superfamilies), formally described in a dictionary-like structure and used to annotate genomic components, associated with a quantitave/rank variable (e.g. number of cell types, genome size or density of specific genomic elements).
+KOMODO2 is a first-principle, phylogeny-aware comparative genomics software to search for annotation terms (e.g Pfam IDs, GO terms or superfamilies), formally described in a dictionary-like structure and used to annotate genomic components, associated with a quantitative/rank variable (e.g. number of cell types, genome size or density of specific genomic elements).
 
-Our software has been freely inspired by (and explicitly modelled to take into account information from) ideas and tools as diverse as comparative phylogenetics methods, genome annotation, gene enrichment analysis, and data visualization and interactivity.
+Our software has been freely inspired by (and explicitly modeled to take into account information from) ideas and tools as diverse as comparative phylogenetics, genome annotation, gene enrichment analysis, and data visualization and interactivity.
 
 ## HOW TO INSTALL
 The latest version of KOMODO2 can be installed directly from the repository using `devtools::install_github()`:
@@ -131,7 +132,7 @@ And is specified as:
 - A column can have no terms in any given row.
 
 
-In a more abstract representation, files represenging genome annotations for
+In a more abstract representation, files representing genome annotations for
 a single annotation schema would have two columns and the following general
 structure:
 
@@ -142,7 +143,7 @@ genomic_element_name/ID_2     annotation_ID_12
 
 ---
 ### **phylogenetic tree file**
-newick or phylip format, containing at least:
+_newick_ or _PHYLIP_ format, containing at least:
 
 - all species to be analyzed (species IDs in the tree must be the same name of text files from the previous step)
 
@@ -151,7 +152,7 @@ newick or phylip format, containing at least:
 - no polytomies (if there are such cases, KOMODO2 will resolve star branches using [multi2di] method as implemented in [ape] package.
 
 
-A tree in newick format (however, with no branch lengths), would be: 
+A tree in _newick_ format (however, with no branch lengths), would be: 
 
 ```sh
 (genome_ID_1,(genome_ID_2,genome_ID_3))
@@ -164,7 +165,7 @@ containing species-specific information:
 - genome ID column (same name of text files and of species in phylogenetic
      trees, must be the first column);
 
-- The quantitave/rank variable used to sort/rank genomes;
+- The quantitative/rank variable used to sort/rank genomes;
 
 - A normalizing factor (e.g. proteome size or length; number of annotation
      terms) to correct for potential biases in datasets (e.g. organisms with
@@ -182,7 +183,7 @@ The tabular format for the correlation analysis where column 1 contains the geno
 ../projects/my_project/genome_ID_3  0.9  1534
 ```
 
-Metatada files are specified as follows:
+Metadada files are specified as follows:
 
 - Fixed number of columns (minimum 2) separated by tabs.
 
@@ -233,7 +234,7 @@ in the template file provided (`./data_files/parameters.txt`). They are, for the
 - dataset.info  (required, string) - genome metadata file, it should contain at least:
     1. path for annotation data (if "annotation.files.dir" not provided OR file names (if "annotation.files.dir) is provided. Please notice this information should be the first column in metadata file;
     2. phenotype data (numeric, this is the value KOMODO2 uses to rank species when searching for associations)
-    3. normalization data (numeric, this is the value KOMODO2 uses as a denominator to compute annotation term frequencies to remove potential biases caused by, for instance, overannotation of model organisms or large differences in the counts of genomic elements). Please notice KOMODO2 does not require normalization data for GO, as it computes the total number of GO terms per species and uses it as a normalizing factor.
+    3. normalization data (numeric, this is the value KOMODO2 uses as a denominator to compute annotation term frequencies to remove potential biases caused by, for instance, over annotation of model organisms or large differences in the counts of genomic elements). Please notice KOMODO2 does not require normalization data for GO, as it computes the total number of GO terms per species and uses it as a normalizing factor.
 
 - x.column (required, numeric) - which column in "dataset.info" contains the phenotype data?
 
@@ -245,7 +246,7 @@ in the template file provided (`./data_files/parameters.txt`). They are, for the
 
 - denominator.column (optional, numeric) - which column contains normalization data?
 
-- tree.path (required, string)  - path for tree file in either newick or nexus format
+- tree.path (required, string)  - path for tree file in either _newick_ or _nexus_ format
 
 - tree.type (required, string)  - tree file type (either "nexus" or "newick", case-sensitive)
 
@@ -268,7 +269,7 @@ KOMODO2 produces as its main output a dynamic HMTL5 website containing:
 - Interactive heatmaps and scatterplots
 - A dynamic table of results.
 
-Please check our <a href="https://fcampelo.github.io/KOMODO2/articles/examples-page.html" target="_blank">examples page</a> to explore the full output of KOMODO2 for a variety of examples. The required data to fully reproduce these examples is available in our Github repo, under <a href="https://github.com/fcampelo/KOMODO2/tree/master/data_files">data_files</a>.
+Please check our <a href="https://fcampelo.github.io/KOMODO2/articles/examples-page.html" target="_blank">examples page</a> to explore the full output of KOMODO2 for a variety of examples. The required data to fully reproduce these examples is available in our Github repository, under <a href="https://github.com/fcampelo/KOMODO2/tree/master/data_files">data_files</a>.
 
 *****
 

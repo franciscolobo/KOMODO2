@@ -1,4 +1,4 @@
-#' Prepare and render the HML5 report
+#' Prepare and render the HTML5 report
 #'
 #' This script generates the HTML5 report based on an enriched
 #' `KOMODO2`-type list output by `run_KOMODO2()`.

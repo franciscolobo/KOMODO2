@@ -44,7 +44,7 @@ Blank likes and lines starting with `#` are ignored. The function expects the
      species when searching for associations)
      \item Normalization data (numeric, this is the value KOMODO2 uses as a
      denominator to compute annotation term frequencies to remove potential
-     biases caused by, for instance, overannotation of model organisms or
+     biases caused by, for instance, over annotation of model organisms or
      large differences in the counts of genomic elements). Please notice that
      KOMODO2 does not require normalization data for GO, as it computes the
      total number of GO terms per species and uses it as a normalizing factor.

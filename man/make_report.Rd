@@ -2,7 +2,7 @@
 % Please edit documentation in R/make_report.R
 \name{make_report}
 \alias{make_report}
-\title{Prepare and render the HML5 report}
+\title{Prepare and render the HTML5 report}
 \usage{
 make_report(defs, render.report = TRUE)
 }

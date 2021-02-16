@@ -21,7 +21,7 @@ Authors@R: c(person("Francisco", "Lobo",
 Maintainer: Felipe Campelo <fcampelo@gmail.com>
 Description: A first-principle, phylogeny-aware comparative genomics tool for 
              investigating associations between terms used to annotate genomic
-             components (e.g., Pfam IDs, Gene Ontology terms,) with quantitave 
+             components (e.g., Pfam IDs, Gene Ontology terms,) with quantitative 
              or rank variables such as number of cell types, genome size, or 
              density of specific genomic elements. 
 License: GPL-2

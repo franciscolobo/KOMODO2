@@ -5,8 +5,6 @@
 * macOS (local):
     * `devtools::check()`: R version 4.0.3 (2020-10-10), Platform: x86_64-apple-darwin17.0 (64-bit), macOS Big Sur 10.16
 * Linux:
-    * `travis-ci`: Ubuntu 16.04, 18.04 and 20.04; R-release, R-devel,
-                   Bioc-release and Bioc-devel.
     * `devtools::check_rhub()`: Ubuntu Linux 16.04 LTS, R-release, GCC
     * `devtools::check_rhub()`: Fedora Linux, R-devel, clang, gfortran
 * Windows:

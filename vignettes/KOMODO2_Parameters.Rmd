@@ -74,7 +74,7 @@ find annotation terms associated to that phenotype.
 ### group.column 
 **Type**: integer/numeric
 
-**Description**: index of the column from the file specified in `dataset.info` containing the group to be used for colouring the heatmaps
+**Description**: index of the column from the file specified in `dataset.info` containing the group to be used for coloring the heatmaps
 
 **Required**: YES
 
