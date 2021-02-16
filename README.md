@@ -4,10 +4,14 @@
 <img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/KOMODO2_logo.png" alt="A two-headed Komodo dragon. Drawn by Francisco's father." height="200"/>
 
 ## MAIN DEVELOPERS
-- Francisco Pereira Lobo (franciscolobo@gmail.com, francisco.lobo@ufmg.br)  
-- Felipe Campelo (f.campelo@aston.ac.uk, fcampelo@gmail.com)  
-- Giovanni Marques de Castro (giomcastro@gmail.com)  
-- Jorge Augusto Hongo (jorgeahongo@gmail.com)  
+- Francisco Pereira Lobo (franciscolobo@gmail.com, francisco.lobo@ufmg.br)
+    - Main developer: initial idea, scientific direction, first implementation, main visualisation concepts.   
+- Felipe Campelo (f.campelo@aston.ac.uk, fcampelo@gmail.com)
+    - Code auditing and refactoring to R package, visualisation support.  
+- Giovanni Marques de Castro (giomcastro@gmail.com)
+    - Initial development and implementation support.  
+- Jorge Augusto Hongo (jorgeahongo@gmail.com)
+    - Initial development and implementation support.  
  
 ## DESCRIPTION
 
