@@ -1,7 +1,7 @@
 ---
 title: "KOMODO2 report"
 ---
-
+<img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/KOMODO2_logo.png" alt="A two-headed komodo dragon. Drawn by Francisco's father." height="100"/>
 ***
 
 KOMODO2 is an annotation-based comparative genomics tool that searches for annotation terms, as defined in controlled dictionaries, associated with a quantitative phenotype across phenotypes.

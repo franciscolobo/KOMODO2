@@ -11,10 +11,10 @@ Some examples of KOMODO2 output are available in the `results` directory of the 
 example pages:
 
 ```{r, results="asis", echo=FALSE}
-dirs <- dir("../results")
+dirs <- dir("../docs/articles/results/")
 cat("\n<br/><ul><br/>")
 for (i in seq_along(dirs)){
-  url <- paste0("../results/", dirs[i], "/index.html")
+  url <- paste0("results/", dirs[i], "/index.html")
   txt <- gsub("_", "-", dirs[i], fixed = TRUE)
   cat(paste0('\n<li> <a href ="', url, '">', txt, "</a></li><br/>"))
 }
