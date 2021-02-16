@@ -1,7 +1,7 @@
 Package: KOMODO2
 Type: Package
 Title: Kegg Orthology Enrichment Online Detection
-Version: 0.13.1
+Version: 0.13.2
 Date: 2021-02-16
 Authors@R: c(person("Francisco", "Lobo",
     email   = "franciscolobo@gmail.com",
@@ -17,7 +17,7 @@ Authors@R: c(person("Francisco", "Lobo",
     role    = "aut"),
     person("Gabriel", "Almeida",
     email   = "gabriel.magno@gmail.com",
-    role    = c("sad", "cst")))
+    role    = c("sad", "cst", "dnc")))
 Maintainer: Felipe Campelo <fcampelo@gmail.com>
 Description: A first-principle, phylogeny-aware comparative 
              genomics package to search for annotation terms (e.g Pfam IDs, 

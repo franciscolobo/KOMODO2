@@ -5,9 +5,9 @@
 
 ## MAIN DEVELOPERS
 - Francisco Pereira Lobo (franciscolobo@gmail.com, francisco.lobo@ufmg.br)
-    - Main developer: initial idea, scientific direction, first implementation, main visualisation concepts.   
+    - Main developer: initial idea, scientific coordination, first implementation, main visualisation concepts.   
 - Felipe Campelo (f.campelo@aston.ac.uk, fcampelo@gmail.com)
-    - Code auditing and refactoring to R package, visualisation support.  
+    - Code auditing and refactoring to R package, CRAN deployment, visualisation support.  
 - Giovanni Marques de Castro (giomcastro@gmail.com)
     - Initial development and implementation support.  
 - Jorge Augusto Hongo (jorgeahongo@gmail.com)
