@@ -7,6 +7,8 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+<img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/KOMODO2_logo.png" alt="A two-headed Komodo dragon. Drawn by Francisco's father." height="100"/>
+
 This document lists the input parameters expected / accepted in the KOMODO2 
 definition files (or, alternatively, in the `defs` list).
 

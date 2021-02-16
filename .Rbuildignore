@@ -13,3 +13,5 @@ zz_original_scripts$
 tests$
 ^LICENSE$
 vignettes/examples-page.Rmd
+logo.png
+pkgdown/

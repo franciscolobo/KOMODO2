@@ -1,9 +1,7 @@
 # KOMODO2
 [![Build Status](https://api.travis-ci.org/fcampelo/CAISEr.png)](https://travis-ci.org/fcampelo/CAISEr)
 
-<p align="center">
 <img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/KOMODO2_logo.png" alt="A two-headed Komodo dragon. Drawn by Francisco's father." height="200"/>
-</p>
 
 ## MAIN DEVELOPERS
 - Francisco Pereira Lobo (franciscolobo@gmail.com, francisco.lobo@ufmg.br)  
@@ -56,38 +54,38 @@ A set of example data folders and files can be downloaded directly from the proj
 ```
 library(KOMODO2)
 
-retrieve_data_files("./data_folder")
+retrieve_data_files("./data_files")
 ```
 
-will create a folder called `data_folder` in the current working directory path, and download the sample files into subfolders within it. These subfolders will contain:
+will create a folder called `data_files` in the current working directory path, and download the sample files into subfolders within it. These subfolders will contain:
 
-- genome annotation data files (under `./data_folder/Pfam/` or `./data_folder/gene2GO/`)
-- metadata files (under `./data_folder/metadata/`)
-- phylogenetic tree files (under `./data_folder/trees/`)
-- dictionary files (under `./data_folder/dics/`)
+- genome annotation data files (under `./data_files/Pfam/` or `./data_files/gene2GO/`)
+- metadata files (under `./data_files/metadata/`)
+- phylogenetic tree files (under `./data_files/trees/`)
+- dictionary files (under `./data_files/dics/`)
 
-The downloaded data will also contain files that describe the input list mentioned above. A commented template will available at `./data_folder/parameters.txt`, and several full examples under `./data_folder/parameters_validation/`. These full examples represent all input files required to locally reproduce several example analyses. 
+The downloaded data will also contain files that describe the input list mentioned above. A commented template will available at `./data_files/parameters.txt`, and several full examples under `./data_files/parameters_validation/`. These full examples represent all input files required to locally reproduce several example analyses. 
 
 *****
 
 Once these two pieces are in place, the KOMODO2 pipeline can be run by invoking the main function of the package. For instance:
 
 ```
-output <- run_KOMODO2(defs = "./data_folder/parameters_validation/parameters_gene2GO_Pan_proxy.txt")
+output <- run_KOMODO2(defs = "./data_files/parameters_validation/parameters_gene2GO_Pan_proxy.txt")
 ```
 
 Or, alternatively:
 
 ```
- defs <- list(annotation.files.dir = "./data_folder/gene2GO",
+ defs <- list(annotation.files.dir = "./data_files/gene2GO",
               output.dir           = "./results/GO_Pan_proxy/",
-              dataset.info         = "./data_folder/metadata/GO_metadata_Pan_proxy.txt",
+              dataset.info         = "./data_files/metadata/GO_metadata_Pan_proxy.txt",
               x.column             = 2,
               ontology             = "GO",
               dict.path            = "",
               column               = "GO",
               denominator.column   = "",
-              tree.path            = "./data_folder/trees/tree_genome_IDs.nwk",
+              tree.path            = "./data_files/trees/tree_genome_IDs.nwk",
               tree.type            = "newick",
               linear.model.cutoff  = 0.5,
               type                 = "correlation",
@@ -102,7 +100,7 @@ This call will generate an enriched `KOMODO2` list as the output, and generate a
 ## PREPARING YOUR INPUT FILES 
 
 KOMODO2 requires the following files (please check the template in 
-`./data_folder/parameters.txt` or the examples in `./data_folder/parameters_validation/` if in doubt about file specifications):
+`./data_files/parameters.txt` or the examples in `./data_files/parameters_validation/` if in doubt about file specifications):
 
 ---
 ### **genome annotation file** 
@@ -222,7 +220,7 @@ ontology file and set the ontology parameter as "other" ("ontology = other").
 ## SETTING UP KOMODO2 PARAMETERS 
 
 KOMODO2's parameters are listed in the documentation of `run_KOMODO2()`, as well as
-in the template file provided (`./data_folder/parameters.txt`). They are, for the current version:
+in the template file provided (`./data_files/parameters.txt`). They are, for the current version:
 
 - annotation.files.dir (required, string) - Folder where annotation files are located.
 
@@ -258,83 +256,17 @@ in the template file provided (`./data_folder/parameters.txt`). They are, for th
 
 ## KOMODO2 OUTPUT 
 
-Live examples of KOMODO2 output HTML5 pages can be found <a href="http://www.labbioinfo.icb.ufmg.br/complexity/" target="new">here</a>.
+Live examples of KOMODO2 output HTML5 pages can be found <a href="https://fcampelo.github.io/KOMODO2/articles/examples-page.html" target="_blank">here</a>.
 
-KOMODO2 produces as main output a dynamical HMTL5 page containing two major
-components:
+KOMODO2 produces as its main output a dynamic HMTL5 website containing:
 
-- Interactive scatterplots where each point corresponds to an annotation term
-   and the following proterties are available:
+- A description of the input values and a button to download the input and results list. 
+- Interactive heatmaps and scatterplots
+- A dynamic table of results.
 
-<p align="center"><img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/scatterplot_q_values.png" alt="screenshot of KOMODO2 output" height="400")></center>
+Please check our <a href="https://fcampelo.github.io/KOMODO2/articles/examples-page.html" target="_blank">examples page</a> to explore the full output of KOMODO2 for a variety of examples. The required data to fully reproduce these examples is available in our Github repo, under <a href="https://github.com/fcampelo/KOMODO2/tree/master/data_files">data_files</a>.
 
-   - x-axes are `-log10(q-value(linear model test))`
-   - y-axes are `-log10(q-value(association test))`
-   - point sizes are proportional to `log10(sum of annotation term count))`
-   - point transparencies are proportional to coefficient of variation
-   - Mouseover operations provide additional information about each data point.
-   - Functions such as zooming in and out and saving images to file are available
-
-- Interactive table for annotation terms, where users can:
-
-<p align="center"><img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/KOMODO2_interactive_table.png" alt="screenshot of KOMODO2 output" height="400"/>
-</center>
-   
-   - Insert or remove data columns
-   - Filter results using column values and defining data ranges
-   - Rank results using data columns
-   - Search results by annotation ID and keywords present in annotation
-     descriptions
-
-  Each register in interactive tables also contain links to further inspect
-   the distribution pattern of individual annotation terms associated with the
-   quantitative variable under analysis. Three plots are provided:
-
-### Leftmost scatter plots
-<p>
- - shows actual data values to inspect raw data distribution pattern:
-</p>
-
-<p align="center"><img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/scatterplot_data.png" alt="screenshot of KOMODO2 output" height="400"/>
-</center>
-
-   - x-axis holds the variable used to rank/sort data
-   - y-axis holds the frequencies of annotation terms
-   - blue line is a linear regression line
-   - shaded areas represent confidence bands
-
-### Center scatter plot
-<p>
- - contains ranks of data values to inspect monotonic non-linear associations:
-</p>
-
-<p align="center"><img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/scatterplot_rank.png" alt="This is an actual printscreen of KOMODO2 output" height="400"/>
-</center>
-
-
-  - x-axis contains ranks of variable used to rank/sort data (ties are treated as
-               average in R "rank()" function)
-  - y-axis contains ranks of frequencies of annotation terms (ties are treated as
-               average in R "rank()" function)
-  - blue line represents LOESS regression for rank data distribution
-  - shaded areas are confidence bands
-
-
-### Rightmost scatter plot
-
-<p>
- - contains phylogeny-aware linear models of contrasts to inspect linear association after taking phylogenetic relatedness into account:
-</p>
-
-<p align="center"><img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/scatterplot_phylogeny_aware_linear_model.png" alt="This is an actual printscreen of KOMODO2 output" height="400"></center>
-
-  - x-axis values are phylogenetically independent contrasts for variables
-      used to rank/sort data
-  - y-axis values are phylogenetically independent contrasts for frequencies
-      of annotation terms
-  - blue line shows the linear regression line for phylogenetically independent
-      contrasts with intercept forced through the origin (model: x ~ y - 1) as
-      recomended by [Felsenstein, 1985].
+*****
 
 
 [multi2di]: <https://rdrr.io/cran/ape/man/multi2di.html>

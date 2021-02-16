@@ -39,7 +39,7 @@ vignettes/*.pdf
 .DS_Store
 
 # Local testing folders
-data_folder/
+# data_folder/
 # results/
 validation/
 /zz_original_scripts/results
