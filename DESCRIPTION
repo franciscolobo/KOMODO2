@@ -14,7 +14,10 @@ Authors@R: c(person("Francisco", "Lobo",
     role    = "aut"),
     person("Giovanni", "Marques de Castro",
     email   = "giomcastro@gmail.com",
-    role    = "aut"))
+    role    = "aut"),
+    person("Gabriel", "Almeida",
+    email   = "gabriel.magno@gmail.com",
+    role    = c("sad", "dnc")))
 Maintainer: Felipe Campelo <fcampelo@gmail.com>
 Description: A first-principle, phylogeny-aware comparative 
              genomics package to search for annotation terms (e.g Pfam IDs, 

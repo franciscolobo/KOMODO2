@@ -16,7 +16,7 @@ cat("\n<br/><ul><br/>")
 for (i in seq_along(dirs)){
   url <- paste0("results/", dirs[i], "/index.html")
   txt <- gsub("_", "-", dirs[i], fixed = TRUE)
-  cat(paste0('\n<li> <a href ="', url, '">', txt, "</a></li><br/>"))
+  cat(paste0('\n<li> <a href="', url, '" target="_blank">', txt, "</a></li><br/>"))
 }
 cat("</ul><br/>")
 ```
