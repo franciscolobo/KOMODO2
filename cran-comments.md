@@ -2,14 +2,16 @@
 * Initial release
 
 ## Test environments
-* macOS Catalina 10.15.4, R version 4.0.1, x86_64-apple-darwin17.0 (64-bit), 
-using `devtools::check()`
-* Ubuntu Xenial 16.04 LTS (on **travis-ci v6.2.17**), R version 4.0.0
-* win-builder, using `devtools::check_win_devel()` and  `devtools::check_win_release()`
-
-* Windows Server 2008 R2 SP1, R-devel, 32/64 bit, using `devtools::check_rhub()`
-* Ubuntu Linux 16.04 LTS, R-release, GCC, using `devtools::check_rhub()`
-* Fedora Linux, R-devel, clang, gfortran, using `devtools::check_rhub()`
+* macOS (local):
+    * `devtools::check()`: R version 4.0.3 (2020-10-10), Platform: x86_64-apple-darwin17.0 (64-bit), macOS Big Sur 10.16
+* Linux:
+    * `travis-ci`: Ubuntu Xenial 16.04 LTS (on **travis-ci v6.2.17**), R version 4.0.0
+    * `devtools::check_rhub()`: Ubuntu Linux 16.04 LTS, R-release, GCC
+    * `devtools::check_rhub()`: Fedora Linux, R-devel, clang, gfortran
+* Windows:
+    * `devtools::check_win_release()`: R version 4.0.4 (2021-02-15); Platform: x86_64-w64-mingw32 (64-bit)
+    * `devtools::check_win_devel()`: R Under development (unstable) (2021-02-13 r80000); Platform: x86_64-w64-mingw32 (64-bit)
+    * `devtools::check_rhub()`: Windows Server 2008 R2 SP1, R-devel, 32/64 bit
 
 ## R CMD check results  
 * 0 errors | 0 warnings | 0 notes ; R CMD check succeeded

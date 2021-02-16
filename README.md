@@ -1,5 +1,5 @@
 # KOMODO2
-[![Build Status](https://api.travis-ci.org/fcampelo/CAISEr.png)](https://travis-ci.org/fcampelo/CAISEr)
+[![Build Status](https://api.travis-ci.org/fcampelo/KOMODO2.png)](https://travis-ci.org/fcampelo/KOMODO2)
 
 <img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/KOMODO2_logo.png" alt="A two-headed Komodo dragon. Drawn by Francisco's father." height="200"/>
 
