@@ -20,9 +20,10 @@
 <script src="pkgdown.js"></script><meta property="og:title" content="Kegg Orthology Enrichment Online Detection">
 <meta property="og:description" content="A first-principle, phylogeny-aware comparative genomics tool for 
              investigating associations between terms used to annotate genomic
-             components (e.g., Pfam IDs, Gene Ontology terms,) with quantitave 
+             components (e.g., Pfam IDs, Gene Ontology terms,) with quantitative 
              or rank variables such as number of cell types, genome size, or 
-             density of specific genomic elements. ">
+             density of specific genomic elements. See the KOMODO2 website for 
+             more information, documentation and examples.">
 <meta property="og:image" content="/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -78,7 +79,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/franciscolobo/KOMODO2/">
+  <a href="https://github.com/fcampelo/KOMODO2/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -106,13 +107,13 @@
 <ul>
 <li>Francisco Pereira Lobo (<a href="mailto:franciscolobo@gmail.com" class="email">franciscolobo@gmail.com</a>, <a href="mailto:francisco.lobo@ufmg.br" class="email">francisco.lobo@ufmg.br</a>)
 <ul>
-<li>Main developer: initial idea, scientific coordination, first implementation, main visualisation concepts.<br>
+<li>Main developer: initial idea, scientific coordination, first implementation, main visualization concepts.<br>
 </li>
 </ul>
 </li>
 <li>Felipe Campelo (<a href="mailto:f.campelo@aston.ac.uk" class="email">f.campelo@aston.ac.uk</a>, <a href="mailto:fcampelo@gmail.com" class="email">fcampelo@gmail.com</a>)
 <ul>
-<li>Code auditing and refactoring to R package, CRAN deployment, visualisation support.<br>
+<li>Code auditing and refactoring to R package, CRAN deployment, visualization support.<br>
 </li>
 </ul>
 </li>
@@ -132,8 +133,8 @@
 <div id="description" class="section level2">
 <h2 class="hasAnchor">
 <a href="#description" class="anchor"></a>DESCRIPTION</h2>
-<p>KOMODO2 is a first-principle, phylogeny-aware comparative genomics software to search for annotation terms (e.g Pfam IDs, GO terms or superfamilies), formally described in a dictionary-like structure and used to annotate genomic components, associated with a quantitave/rank variable (e.g. number of cell types, genome size or density of specific genomic elements).</p>
-<p>Our software has been freely inspired by (and explicitly modelled to take into account information from) ideas and tools as diverse as comparative phylogenetics methods, genome annotation, gene enrichment analysis, and data visualization and interactivity.</p>
+<p>KOMODO2 is a first-principle, phylogeny-aware comparative genomics software to search for annotation terms (e.g Pfam IDs, GO terms or superfamilies), formally described in a dictionary-like structure and used to annotate genomic components, associated with a quantitative/rank variable (e.g. number of cell types, genome size or density of specific genomic elements).</p>
+<p>Our software has been freely inspired by (and explicitly modeled to take into account information from) ideas and tools as diverse as comparative phylogenetics, genome annotation, gene enrichment analysis, and data visualization and interactivity.</p>
 </div>
 <div id="how-to-install" class="section level2">
 <h2 class="hasAnchor">
@@ -148,7 +149,7 @@
 <h2 class="hasAnchor">
 <a href="#installing-and-updating-dependencies" class="anchor"></a>INSTALLING AND UPDATING DEPENDENCIES</h2>
 <p>KOMODO2 depends on packages from both <strong>CRAN</strong> and <strong>Bioconductor</strong>. This requires an extra installation step before KOMODO2 can be used. simply run:</p>
-<pre><code><a href="https://github.com/franciscolobo/KOMODO2">library(KOMODO2)
+<pre><code><a href="https://fcampelo.github.io/KOMODO2">library(KOMODO2)
 install_and_update_packages(which = "all")</a></code></pre>
 <p>to install / update all dependencies (packages listed as KOMODO2’s <code>imports</code> and <code>suggests</code>) to their latest versions.</p>
 <hr>
@@ -166,7 +167,7 @@ install_and_update_packages(which = "all")</a></code></pre>
 <h3 class="hasAnchor">
 <a href="#retrieving-data" class="anchor"></a>Retrieving data</h3>
 <p>A set of example data folders and files can be downloaded directly from the project repository by using function <code><a href="reference/retrieve_data_files.html">retrieve_data_files()</a></code>. For instance, a call:</p>
-<pre><code><a href="https://github.com/franciscolobo/KOMODO2">library(KOMODO2)
+<pre><code><a href="https://fcampelo.github.io/KOMODO2">library(KOMODO2)
 
 retrieve_data_files("./data_files")</a></code></pre>
 <p>will create a folder called <code>data_files</code> in the current working directory path, and download the sample files into subfolders within it. These subfolders will contain:</p>
@@ -221,7 +222,7 @@ output &lt;- run_KOMODO2(defs, cores = 4)</code></pre>
 <li><p>Multiple terms of the same entry (e.g. a gene annotated to multiple GO terms) should be in the same column and separated by “;”, with any number of spaces before and after it. It’s use after the last term is optional.</p></li>
 <li><p>A column can have no terms in any given row.</p></li>
 </ul>
-<p>In a more abstract representation, files represenging genome annotations for a single annotation schema would have two columns and the following general structure:</p>
+<p>In a more abstract representation, files representing genome annotations for a single annotation schema would have two columns and the following general structure:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">genomic_element_name/ID_1</span>     annotation_ID_1<span class="kw">;(</span><span class="ex">...</span><span class="kw">)</span>;<span class="ex">annotation_ID_N</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">genomic_element_name/ID_2</span>     annotation_ID_12</span></code></pre></div>
 <hr>
@@ -230,13 +231,13 @@ output &lt;- run_KOMODO2(defs, cores = 4)</code></pre>
 <h3 class="hasAnchor">
 <a href="#phylogenetic-tree-file" class="anchor"></a><strong>phylogenetic tree file</strong>
 </h3>
-<p>newick or phylip format, containing at least:</p>
+<p><em>newick</em> or <em>PHYLIP</em> format, containing at least:</p>
 <ul>
 <li><p>all species to be analyzed (species IDs in the tree must be the same name of text files from the previous step)</p></li>
 <li><p>branch lengths proportional to divergence times (a chronogram)</p></li>
 <li><p>no polytomies (if there are such cases, KOMODO2 will resolve star branches using <a href="https://rdrr.io/cran/ape/man/multi2di.html">multi2di</a> method as implemented in <a href="http://ape-package.ird.fr/">ape</a> package.</p></li>
 </ul>
-<p>A tree in newick format (however, with no branch lengths), would be:</p>
+<p>A tree in <em>newick</em> format (however, with no branch lengths), would be:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">genome_ID_1</span>,(genome_ID_2,genome_ID_3<span class="kw">)</span>)</span></code></pre></div>
 <hr>
 </div>
@@ -247,14 +248,14 @@ output &lt;- run_KOMODO2(defs, cores = 4)</code></pre>
 <p>containing species-specific information:</p>
 <ul>
 <li><p>genome ID column (same name of text files and of species in phylogenetic trees, must be the first column);</p></li>
-<li><p>The quantitave/rank variable used to sort/rank genomes;</p></li>
+<li><p>The quantitative/rank variable used to sort/rank genomes;</p></li>
 <li><p>A normalizing factor (e.g. proteome size or length; number of annotation terms) to correct for potential biases in datasets (e.g. organisms with different annotation levels or with highly discrepant proteome sizes) If users are using GO as annotation schema, KOMODO2 can compute a normalizing factor that takes into account all GO counts, including internal nodes, and therefore may not provide any normalizing factor for this case.</p></li>
 </ul>
 <p>The tabular format for the correlation analysis where column 1 contains the genome IDs, column 2 contains the variable to rank genomes and column 3 contains the normalizing factor could be as follows:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">../projects/my_project/genome_ID_1</span>  1.7  2537</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">../projects/my_project/genome_ID_2</span>  1.2  10212</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">../projects/my_project/genome_ID_3</span>  0.9  1534</span></code></pre></div>
-<p>Metatada files are specified as follows:</p>
+<p>Metadada files are specified as follows:</p>
 <ul>
 <li><p>Fixed number of columns (minimum 2) separated by tabs.</p></li>
 <li><p>No header.</p></li>
@@ -294,7 +295,7 @@ output &lt;- run_KOMODO2(defs, cores = 4)</code></pre>
 <ol>
 <li>path for annotation data (if “annotation.files.dir” not provided OR file names (if "annotation.files.dir) is provided. Please notice this information should be the first column in metadata file;</li>
 <li>phenotype data (numeric, this is the value KOMODO2 uses to rank species when searching for associations)</li>
-<li>normalization data (numeric, this is the value KOMODO2 uses as a denominator to compute annotation term frequencies to remove potential biases caused by, for instance, overannotation of model organisms or large differences in the counts of genomic elements). Please notice KOMODO2 does not require normalization data for GO, as it computes the total number of GO terms per species and uses it as a normalizing factor.</li>
+<li>normalization data (numeric, this is the value KOMODO2 uses as a denominator to compute annotation term frequencies to remove potential biases caused by, for instance, over annotation of model organisms or large differences in the counts of genomic elements). Please notice KOMODO2 does not require normalization data for GO, as it computes the total number of GO terms per species and uses it as a normalizing factor.</li>
 </ol>
 </li>
 <li><p>x.column (required, numeric) - which column in “dataset.info” contains the phenotype data?</p></li>
@@ -302,7 +303,7 @@ output &lt;- run_KOMODO2(defs, cores = 4)</code></pre>
 <li><p>dict.path (required, string) - file for dictionary file (two-column file containing annotation IDs and their descriptions, not needed for GO</p></li>
 <li><p>column (required, string) - which column in annotation files should be used (column name)</p></li>
 <li><p>denominator.column (optional, numeric) - which column contains normalization data?</p></li>
-<li><p>tree.path (required, string) - path for tree file in either newick or nexus format</p></li>
+<li><p>tree.path (required, string) - path for tree file in either <em>newick</em> or <em>nexus</em> format</p></li>
 <li><p>tree.type (required, string) - tree file type (either “nexus” or “newick”, case-sensitive)</p></li>
 <li><p>cores (optional, numeric) - how many cores to use? If not provided the function defaults to 1.</p></li>
 <li><p>linear.model.cutoff = 0.5 (required, numeric) - Parameter that regulates how much graphical output is produced. We configure it to generate plots only for annotation terms with corrected q-values for phylogenetically independent contrasts smaller than 0.5.</p></li>
@@ -320,7 +321,7 @@ output &lt;- run_KOMODO2(defs, cores = 4)</code></pre>
 <li>Interactive heatmaps and scatterplots</li>
 <li>A dynamic table of results.</li>
 </ul>
-<p>Please check our <a href="https://fcampelo.github.io/KOMODO2/articles/examples-page.html" target="_blank">examples page</a> to explore the full output of KOMODO2 for a variety of examples. The required data to fully reproduce these examples is available in our Github repo, under <a href="https://github.com/fcampelo/KOMODO2/tree/master/data_files">data_files</a>.</p>
+<p>Please check our <a href="https://fcampelo.github.io/KOMODO2/articles/examples-page.html" target="_blank">examples page</a> to explore the full output of KOMODO2 for a variety of examples. The required data to fully reproduce these examples is available in our Github repository, under <a href="https://github.com/fcampelo/KOMODO2/tree/master/data_files">data_files</a>.</p>
 <hr>
 </div>
 </div>
@@ -330,7 +331,9 @@ output &lt;- run_KOMODO2(defs, cores = 4)</code></pre>
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/franciscolobo/KOMODO2/">https://​github.com/​franciscolobo/​KOMODO2/​</a>
+<li>Browse source code at <br><a href="https://github.com/fcampelo/KOMODO2/">https://​github.com/​fcampelo/​KOMODO2/​</a>
+</li>
+<li>Report a bug at <br><a href="https://github.com/fcampelo/KOMODO2/issues">https://​github.com/​fcampelo/​KOMODO2/​issues</a>
 </li>
 </ul>
 </div>
@@ -354,7 +357,8 @@ output &lt;- run_KOMODO2(defs, cores = 4)</code></pre>
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/fcampelo/KOMODO2"><img src="https://api.travis-ci.org/fcampelo/KOMODO2.png" alt="Build Status"></a></li>
+<li><a href="https://CRAN.R-project.org/package=KOMODO2"><img src="https://www.r-pkg.org/badges/version/KOMODO2" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://CRAN.R-project.org/package=KOMODO2"><img src="https://cranlogs.r-pkg.org/badges/KOMODO2" alt="CRAN Downloads"></a></li>
 </ul>
 </div>
 </div>
