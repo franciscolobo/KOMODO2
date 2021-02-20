@@ -1,6 +1,6 @@
 Package: CALANGO
 Type: Package
-Title: Comparative AnaLysis with ANnotation terms for General Omics
+Title: Comparative Analysis with Annotation Terms for General Omics
 Version: 0.99.0
 Date: 2021-02-20
 Authors@R: c(person("Francisco", "Lobo",
