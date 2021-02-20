@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comparative AnaLysis with ANnotation terms for General Omics • CALANGO</title>
+<title>Comparative Analysis with Annotation Terms for General Omics • CALANGO</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -17,7 +17,7 @@
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Comparative AnaLysis with ANnotation terms for General Omics">
+<script src="pkgdown.js"></script><meta property="og:title" content="Comparative Analysis with Annotation Terms for General Omics">
 <meta property="og:description" content="A first-principle, phylogeny-aware comparative genomics tool for 
              investigating associations between terms used to annotate genomic
              components (e.g., Pfam IDs, Gene Ontology terms,) with quantitative 
@@ -43,7 +43,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">CALANGO</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.9</span>
       </span>
     </div>
 
@@ -96,15 +96,15 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="calango" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#calango" class="anchor"></a>CALANGO</h1></div>
+<div id="calango-comparative-analysis-with-annotation-terms-for-general-omics" class="section level2">
+<h2 class="hasAnchor">
+<a href="#calango-comparative-analysis-with-annotation-terms-for-general-omics" class="anchor"></a>CALANGO: Comparative AnaLysis with ANnotation terms for General Omics</h2>
 <!-- badges: start -->
 
 <p><img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo.png" alt="A two-headed lizard dragon. Drawn by Francisco's dad." height="200"></p>
-<div id="main-developers" class="section level2">
-<h2 class="hasAnchor">
-<a href="#main-developers" class="anchor"></a>MAIN DEVELOPERS</h2>
+<div id="main-developers" class="section level3">
+<h3 class="hasAnchor">
+<a href="#main-developers" class="anchor"></a>MAIN DEVELOPERS</h3>
 <ul>
 <li>Francisco Pereira Lobo (<a href="mailto:franciscolobo@gmail.com" class="email">franciscolobo@gmail.com</a>, <a href="mailto:francisco.lobo@ufmg.br" class="email">francisco.lobo@ufmg.br</a>)
 <ul>
@@ -131,42 +131,40 @@
 </li>
 </ul>
 </div>
-<div id="description" class="section level2">
-<h2 class="hasAnchor">
-<a href="#description" class="anchor"></a>DESCRIPTION</h2>
-<p>CALANGO is a first-principle, phylogeny-aware comparative genomics software to search for annotation terms (e.g Pfam IDs, GO terms or superfamilies), formally described in a dictionary-like structure and used to annotate genomic components, associated with a quantitative/rank variable (e.g. number of cell types, genome size or density of specific genomic elements).</p>
+<div id="description" class="section level3">
+<h3 class="hasAnchor">
+<a href="#description" class="anchor"></a>DESCRIPTION</h3>
+<p>CALANGO is a first-principles, phylogeny-aware comparative genomics package to search for annotation terms (e.g Pfam IDs, GO terms or superfamilies), formally described in a dictionary-like structure and used to annotate genomic components, associated with a quantitative/rank variable (e.g. number of cell types, genome size or density of specific genomic elements).</p>
 <p>Our software has been freely inspired by (and explicitly modeled to take into account information from) ideas and tools as diverse as comparative phylogenetics, genome annotation, gene enrichment analysis, and data visualization and interactivity.</p>
 </div>
-<div id="how-to-install" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-to-install" class="anchor"></a>HOW TO INSTALL</h2>
+<div id="how-to-install" class="section level3">
+<h3 class="hasAnchor">
+<a href="#how-to-install" class="anchor"></a>HOW TO INSTALL</h3>
 <p>The latest version of CALANGO can be installed directly from the repository using <code><a href="https://devtools.r-lib.org//reference/remote-reexports.html">devtools::install_github()</a></code>:</p>
 <pre><code><a href="https://devtools.r-lib.org//reference/remote-reexports.html">devtools::install_github("fcampelo/CALANGO")</a></code></pre>
 <p>Alternatively, you should soon be able to install the last release version from CRAN by simply doing:</p>
 <pre><code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("CALANGO")</a></code></pre>
 <p>In either case, please make sure that you have the latest R version (at least 3.6.1) as well as updated versions of all installed packages.</p>
 </div>
-<div id="installing-and-updating-dependencies" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installing-and-updating-dependencies" class="anchor"></a>INSTALLING AND UPDATING DEPENDENCIES</h2>
+<div id="installing-and-updating-dependencies" class="section level3">
+<h3 class="hasAnchor">
+<a href="#installing-and-updating-dependencies" class="anchor"></a>INSTALLING AND UPDATING DEPENDENCIES</h3>
 <p>CALANGO depends on packages from both <strong>CRAN</strong> and <strong>Bioconductor</strong>. This requires an extra installation step before CALANGO can be used. simply run:</p>
 <pre><code><a href="https://fcampelo.github.io/CALANGO">library(CALANGO)
 install_and_update_packages(which = "all")</a></code></pre>
 <p>to install / update all dependencies (packages listed as CALANGO’s <code>imports</code> and <code>suggests</code>) to their latest versions.</p>
 <hr>
 </div>
-<div id="how-to-use---overview" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-to-use---overview" class="anchor"></a>HOW TO USE - OVERVIEW</h2>
+<div id="how-to-use---overview" class="section level3">
+<h3 class="hasAnchor">
+<a href="#how-to-use---overview" class="anchor"></a>HOW TO USE - OVERVIEW</h3>
 <p>To run CALANGO you need two things:</p>
 <ol>
 <li>a set of data<br>
 </li>
 <li>an input list defining the path to that data and what is to be done.</li>
 </ol>
-<div id="retrieving-data" class="section level3">
-<h3 class="hasAnchor">
-<a href="#retrieving-data" class="anchor"></a>Retrieving data</h3>
+<p><strong>Retrieving data</strong></p>
 <p>A set of example data folders and files can be downloaded directly from the project repository by using function <code><a href="reference/retrieve_data_files.html">retrieve_data_files()</a></code>. For instance, a call:</p>
 <pre><code><a href="https://fcampelo.github.io/CALANGO">library(CALANGO)
 
@@ -200,16 +198,12 @@ retrieve_data_files("./data_files")</a></code></pre>
 output &lt;- run_CALANGO(defs, cores = 4)</code></pre>
 <p>This call will generate an enriched <code>CALANGO</code> list as the output, and generate a dynamic HTML5 output (plus several tab-separated value (tsv) files in the directory provided as <code>output.dir</code>.</p>
 </div>
-</div>
-<div id="preparing-your-input-files" class="section level2">
-<h2 class="hasAnchor">
-<a href="#preparing-your-input-files" class="anchor"></a>PREPARING YOUR INPUT FILES</h2>
+<div id="preparing-your-input-files" class="section level3">
+<h3 class="hasAnchor">
+<a href="#preparing-your-input-files" class="anchor"></a>PREPARING YOUR INPUT FILES</h3>
 <p>CALANGO requires the following files (please check the template in <code>./data_files/parameters.txt</code> or the examples in <code>./data_files/parameters_validation/</code> if in doubt about file specifications):</p>
 <hr>
-<div id="genome-annotation-file" class="section level3">
-<h3 class="hasAnchor">
-<a href="#genome-annotation-file" class="anchor"></a><strong>genome annotation file</strong>
-</h3>
+<p><strong>genome annotation file</strong></p>
 <p>A text file for each species describing their set of biologically meaningful genomic elements and their respective annotation IDs (e.g. non redundant proteomes annotated to GO terms, or non-redundant protein domains annotated to protein domain IDs). An example of such file, where gene products are annotated using Gene Ontology (GO) terms and Kegg Orthology (KO) identifiers would be as follows:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Entry</span>   GO_IDs   KEGG_Orthology_ID</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Q7L8J4</span>  GO:0017124<span class="kw">;</span><span class="ex">GO</span>:0005737<span class="kw">;</span><span class="ex">GO</span>:0035556<span class="kw">;</span><span class="ex">GO</span>:1904030<span class="kw">;</span><span class="ex">GO</span>:0061099<span class="kw">;</span><span class="ex">GO</span>:0004860</span>
@@ -227,11 +221,7 @@ output &lt;- run_CALANGO(defs, cores = 4)</code></pre>
 <div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">genomic_element_name/ID_1</span>     annotation_ID_1<span class="kw">;(</span><span class="ex">...</span><span class="kw">)</span>;<span class="ex">annotation_ID_N</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">genomic_element_name/ID_2</span>     annotation_ID_12</span></code></pre></div>
 <hr>
-</div>
-<div id="phylogenetic-tree-file" class="section level3">
-<h3 class="hasAnchor">
-<a href="#phylogenetic-tree-file" class="anchor"></a><strong>phylogenetic tree file</strong>
-</h3>
+<p><strong>phylogenetic tree file</strong></p>
 <p><em>newick</em> or <em>PHYLIP</em> format, containing at least:</p>
 <ul>
 <li><p>all species to be analyzed (species IDs in the tree must be the same name of text files from the previous step)</p></li>
@@ -241,12 +231,8 @@ output &lt;- run_CALANGO(defs, cores = 4)</code></pre>
 <p>A tree in <em>newick</em> format (however, with no branch lengths), would be:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">genome_ID_1</span>,(genome_ID_2,genome_ID_3<span class="kw">)</span>)</span></code></pre></div>
 <hr>
-</div>
-<div id="a-metadata-file" class="section level3">
-<h3 class="hasAnchor">
-<a href="#a-metadata-file" class="anchor"></a><strong>A metadata file</strong>
-</h3>
-<p>containing species-specific information:</p>
+<p><strong>A metadata file</strong></p>
+<p>Containing species-specific information:</p>
 <ul>
 <li><p>genome ID column (same name of text files and of species in phylogenetic trees, must be the first column);</p></li>
 <li><p>The quantitative/rank variable used to sort/rank genomes;</p></li>
@@ -264,12 +250,8 @@ output &lt;- run_CALANGO(defs, cores = 4)</code></pre>
 <li><p>One mandatory numeric value in every other column, referred as “variable columns”.</p></li>
 </ul>
 <hr>
-</div>
-<div id="a-dictionary" class="section level3">
-<h3 class="hasAnchor">
-<a href="#a-dictionary" class="anchor"></a><strong>A dictionary</strong>
-</h3>
-<p>tab delimited, linking annotation IDs to their biologically meaningful descriptions. Our software currently supports two dictionary types:</p>
+<p><strong>A dictionary</strong></p>
+<p>Tab delimited, linking annotation IDs to their biologically meaningful descriptions. Our software currently supports two dictionary types:</p>
 <ul>
 <li><p>Gene Ontology (GO) - in this case, CALANGO will automatically recover annotation description and compute values for internal GOs not explicitly used to describe data annotation.</p></li>
 <li><p>other - in this case, users need to describe a new dictionary linking annotation term IDs (e.g. “46456”) to their descriptions (e.g. “All alpha proteins”), separated by tabs. An example of such file would be:</p></li>
@@ -283,10 +265,9 @@ output &lt;- run_CALANGO(defs, cores = 4)</code></pre>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="ex">annotation_ID_N</span>   annotation_ID_description</span></code></pre></div>
 <p>CALANGO can treat each identifier as its own description, saving the work from preparing an ontology that isn’t natively supported. For that, specify no ontology file and set the ontology parameter as “other” (“ontology = other”).</p>
 </div>
-</div>
-<div id="setting-up-calango-parameters" class="section level2">
-<h2 class="hasAnchor">
-<a href="#setting-up-calango-parameters" class="anchor"></a>SETTING UP CALANGO PARAMETERS</h2>
+<div id="setting-up-calango-parameters" class="section level3">
+<h3 class="hasAnchor">
+<a href="#setting-up-calango-parameters" class="anchor"></a>SETTING UP CALANGO PARAMETERS</h3>
 <p>CALANGO’s parameters are listed in the documentation of <code><a href="reference/run_CALANGO.html">run_CALANGO()</a></code>, as well as in the template file provided (<code>./data_files/parameters.txt</code>). They are, for the current version:</p>
 <ul>
 <li><p>annotation.files.dir (required, string) - Folder where annotation files are located.</p></li>
@@ -312,9 +293,9 @@ output &lt;- run_CALANGO(defs, cores = 4)</code></pre>
 <li><p>type = “correlation” (optional, string) type of analysis to perform. Currently only “correlation” is supported.</p></li>
 </ul>
 </div>
-<div id="calango-output" class="section level2">
-<h2 class="hasAnchor">
-<a href="#calango-output" class="anchor"></a>CALANGO OUTPUT</h2>
+<div id="calango-output" class="section level3">
+<h3 class="hasAnchor">
+<a href="#calango-output" class="anchor"></a>CALANGO OUTPUT</h3>
 <p>Live examples of CALANGO output HTML5 pages can be found <a href="https://fcampelo.github.io/CALANGO/articles/examples-page.html" target="_blank">here</a>.</p>
 <p>CALANGO produces as its main output a dynamic HMTL5 website containing:</p>
 <ul>
@@ -322,7 +303,7 @@ output &lt;- run_CALANGO(defs, cores = 4)</code></pre>
 <li>Interactive heatmaps and scatterplots</li>
 <li>A dynamic table of results.</li>
 </ul>
-<p>Please check our <a href="https://fcampelo.github.io/CALANGO/articles/examples-page.html" target="_blank">examples page</a> to explore the full output of CALANGO for a variety of examples. The required data to fully reproduce these examples is available in our Github repository, under <a href="https://github.com/fcampelo/CALANGO/tree/master/data_files">data_files</a>.</p>
+<p>Please check our <a href="https://fcampelo.github.io/CALANGO/articles/examples-page.html" target="_blank">examples page</a> to explore the full output of CALANGO for a variety of examples. The required data to fully reproduce these examples is available in our Github repository, under <a href="https://github.com/fcampelo/CALANGO/tree/master/data_files">data_files</a>, and can be easily downloaded using <code><a href="reference/retrieve_data_files.html">CALANGO::retrieve_data_files()</a></code>.</p>
 <hr>
 </div>
 </div>

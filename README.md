@@ -1,4 +1,4 @@
-# CALANGO
+## CALANGO: Comparative AnaLysis with ANnotation terms for General Omics
 <!-- badges: start -->
   [![R-CMD-check](https://github.com/fcampelo/CALANGO/workflows/R-CMD-check/badge.svg)](https://github.com/fcampelo/CALANGO/actions)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/CALANGO)](https://CRAN.R-project.org/package=CALANGO)
@@ -7,7 +7,7 @@
 
 <img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo.png" alt="A two-headed lizard dragon. Drawn by Francisco's dad." height="200"/>
 
-## MAIN DEVELOPERS
+### MAIN DEVELOPERS
 - Francisco Pereira Lobo (franciscolobo@gmail.com, francisco.lobo@ufmg.br)
     - Main developer: initial idea, scientific coordination, first implementation, main visualization concepts.   
 - Felipe Campelo (f.campelo@aston.ac.uk, fcampelo@gmail.com)
@@ -17,13 +17,13 @@
 - Jorge Augusto Hongo (jorgeahongo@gmail.com)
     - Initial development and implementation support.  
  
-## DESCRIPTION
+### DESCRIPTION
 
-CALANGO is a first-principle, phylogeny-aware comparative genomics software to search for annotation terms (e.g Pfam IDs, GO terms or superfamilies), formally described in a dictionary-like structure and used to annotate genomic components, associated with a quantitative/rank variable (e.g. number of cell types, genome size or density of specific genomic elements).
+CALANGO is a first-principles, phylogeny-aware comparative genomics package to search for annotation terms (e.g Pfam IDs, GO terms or superfamilies), formally described in a dictionary-like structure and used to annotate genomic components, associated with a quantitative/rank variable (e.g. number of cell types, genome size or density of specific genomic elements).
 
 Our software has been freely inspired by (and explicitly modeled to take into account information from) ideas and tools as diverse as comparative phylogenetics, genome annotation, gene enrichment analysis, and data visualization and interactivity.
 
-## HOW TO INSTALL
+### HOW TO INSTALL
 The latest version of CALANGO can be installed directly from the repository using `devtools::install_github()`:
 
 ```
@@ -38,7 +38,7 @@ install.packages("CALANGO")
 
 In either case, please make sure that you have the latest R version (at least 3.6.1) as well as updated versions of all installed packages.
 
-## INSTALLING AND UPDATING DEPENDENCIES
+### INSTALLING AND UPDATING DEPENDENCIES
 CALANGO depends on packages from both **CRAN** and **Bioconductor**. This requires an extra installation step before CALANGO can be used. simply run:
 
 ```
@@ -49,14 +49,15 @@ install_and_update_packages(which = "all")
 to install / update all dependencies (packages listed as CALANGO's `imports` and `suggests`) to their latest versions.
 
 ---
-## HOW TO USE - OVERVIEW
+### HOW TO USE - OVERVIEW
 
 To run CALANGO you need two things: 
 
 1.  a set of data  
 2. an input list defining the path to that data and what is to be done. 
 
-### Retrieving data
+**Retrieving data**  
+
 A set of example data folders and files can be downloaded directly from the project repository by using function `retrieve_data_files()`. For instance, a call:
 
 ```
@@ -105,13 +106,14 @@ output <- run_CALANGO(defs, cores = 4)
 This call will generate an enriched `CALANGO` list as the output, and generate a dynamic HTML5 output (plus several tab-separated value (tsv) files in the directory provided as `output.dir`.
 
 
-## PREPARING YOUR INPUT FILES 
+### PREPARING YOUR INPUT FILES 
 
 CALANGO requires the following files (please check the template in 
 `./data_files/parameters.txt` or the examples in `./data_files/parameters_validation/` if in doubt about file specifications):
 
 ---
-### **genome annotation file** 
+**genome annotation file**  
+
 A text file for each species describing their set of biologically meaningful genomic elements and their respective annotation IDs (e.g. non redundant proteomes annotated to GO terms, or non-redundant protein domains annotated to protein domain IDs). An example of such file, where gene products are annotated using Gene Ontology (GO) terms and Kegg Orthology (KO) identifiers would be as follows:
 
 
@@ -145,7 +147,8 @@ genomic_element_name/ID_2     annotation_ID_12
 ```
 
 ---
-### **phylogenetic tree file**
+**phylogenetic tree file**  
+
 _newick_ or _PHYLIP_ format, containing at least:
 
 - all species to be analyzed (species IDs in the tree must be the same name of text files from the previous step)
@@ -162,8 +165,9 @@ A tree in _newick_ format (however, with no branch lengths), would be:
 ```
 
 ---
-### **A metadata file** 
-containing species-specific information:
+**A metadata file**  
+
+Containing species-specific information:
 
 - genome ID column (same name of text files and of species in phylogenetic
      trees, must be the first column);
@@ -198,8 +202,9 @@ Metadada files are specified as follows:
     columns".
 
 ---
-### **A dictionary**
-tab delimited, linking annotation IDs to their biologically
+**A dictionary**  
+
+Tab delimited, linking annotation IDs to their biologically
 meaningful descriptions. Our software currently supports two dictionary types:
 
 * Gene Ontology (GO) - in this case, CALANGO will automatically recover 
@@ -225,7 +230,7 @@ preparing an ontology that isn't natively supported. For that, specify no
 ontology file and set the ontology parameter as "other" ("ontology = other").
 
 
-## SETTING UP CALANGO PARAMETERS 
+### SETTING UP CALANGO PARAMETERS 
 
 CALANGO's parameters are listed in the documentation of `run_CALANGO()`, as well as
 in the template file provided (`./data_files/parameters.txt`). They are, for the current version:
@@ -262,7 +267,7 @@ in the template file provided (`./data_files/parameters.txt`). They are, for the
 - type = "correlation" (optional, string) type of analysis to perform. Currently only "correlation" is supported.
 
 
-## CALANGO OUTPUT 
+### CALANGO OUTPUT 
 
 Live examples of CALANGO output HTML5 pages can be found <a href="https://fcampelo.github.io/CALANGO/articles/examples-page.html" target="_blank">here</a>.
 
@@ -272,7 +277,7 @@ CALANGO produces as its main output a dynamic HMTL5 website containing:
 - Interactive heatmaps and scatterplots
 - A dynamic table of results.
 
-Please check our <a href="https://fcampelo.github.io/CALANGO/articles/examples-page.html" target="_blank">examples page</a> to explore the full output of CALANGO for a variety of examples. The required data to fully reproduce these examples is available in our Github repository, under <a href="https://github.com/fcampelo/CALANGO/tree/master/data_files">data_files</a>.
+Please check our <a href="https://fcampelo.github.io/CALANGO/articles/examples-page.html" target="_blank">examples page</a> to explore the full output of CALANGO for a variety of examples. The required data to fully reproduce these examples is available in our Github repository, under <a href="https://github.com/fcampelo/CALANGO/tree/master/data_files">data_files</a>, and can be easily downloaded using `CALANGO::retrieve_data_files()`.
 
 *****
 
