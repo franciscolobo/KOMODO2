@@ -5,7 +5,7 @@
 
 annotation.files.dir = "./data_folder/gene2GO/" #Directory where annotation files are located. If not provided file described in variable "dataset.info" should contain absolute paths to annotation files
 
-output.dir = "./docs/results/gene2GO_Pan_proxy/" #output directory for results
+output.dir = "./docs/articles/results/gene2GO_Pan_proxy/" #output directory for results
 
 dataset.info = "./data_folder/metadata/GO_metadata_Pan_proxy.txt" #genome metadata file it should contain at least for each genome: 1) path for annotation data; 2) phenotype data (numeric); 3) normalization data (numeric)
 

@@ -1,4 +1,4 @@
-inputfiles <- dir("./data_folder/parameters_validation", full.names = TRUE)
+inputfiles <- dir("./data_files/parameters_validation", full.names = TRUE)
 
 # run for all specs files
 for (i in seq_along(inputfiles)){
