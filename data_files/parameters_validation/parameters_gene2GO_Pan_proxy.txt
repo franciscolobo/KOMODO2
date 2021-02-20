@@ -1,13 +1,13 @@
 # This is a sample parameter file for CALANGO.
 # NOTICE: It assumes that the relevant data files (including this one) were
-# retrieved using CALANGO::retrieve_data_files("./data_folder").
+# retrieved using CALANGO::retrieve_data_files("./data_files").
 # Change the target folder/file paths if needed
 
-annotation.files.dir = "./data_folder/gene2GO/" #Directory where annotation files are located. If not provided file described in variable "dataset.info" should contain absolute paths to annotation files
+annotation.files.dir = "./data_files/gene2GO/" #Directory where annotation files are located. If not provided file described in variable "dataset.info" should contain absolute paths to annotation files
 
 output.dir = "./docs/articles/results/gene2GO_Pan_proxy/" #output directory for results
 
-dataset.info = "./data_folder/metadata/GO_metadata_Pan_proxy.txt" #genome metadata file it should contain at least for each genome: 1) path for annotation data; 2) phenotype data (numeric); 3) normalization data (numeric)
+dataset.info = "./data_files/metadata/GO_metadata_Pan_proxy.txt" #genome metadata file it should contain at least for each genome: 1) path for annotation data; 2) phenotype data (numeric); 3) normalization data (numeric)
 
 x.column = 2 #which column contains phenotype data?
 
@@ -23,7 +23,7 @@ column = "GO" #which column in annotation file should be used (column name)
 
 denominator.column = "" #which column contains normalization data (numeric)
 
-tree.path = "./data_folder/trees/tree_genome_IDs.nwk" #path for tree file
+tree.path = "./data_files/trees/tree_genome_IDs.nwk" #path for tree file
 
 tree.type = "newick" #tree file type (either "nexus" or "newick" case-sensitive)
 
