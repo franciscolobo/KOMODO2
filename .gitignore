@@ -44,3 +44,5 @@ vignettes/*.pdf
 validation/
 /zz_original_scripts/results
 .Rproj.user
+doc
+Meta

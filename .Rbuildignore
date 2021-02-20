@@ -15,3 +15,5 @@ tests$
 vignettes/examples-page.Rmd
 logo.png
 pkgdown/
+inst/zz_original_scripts.zip
+^\.github$
