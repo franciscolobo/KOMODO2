@@ -4,7 +4,7 @@
 # Generates phyletic vectors of each genome in a group, which stores the
 # count of occurrences of a GO term in that genome.
 #
-# @param defs an enriched KOMODO2-type list object containing at least the
+# @param defs an enriched CALANGO-type list object containing at least the
 #             fields named in parameters `anno` and `genome.names`, as well as
 #             a field named `ontology` (containing the name of the ontology to
 #             use). Depending on the ontology other fields may be needed.
@@ -22,12 +22,12 @@ AddGenomeVectors <- function(defs, anno, genome.names,
                              someGV = NULL) {
 
   # ================== Sanity checks ==================
-  assertthat::assert_that(all(c("list", "KOMODO2") %in% class(defs)),
+  assertthat::assert_that(all(c("list", "CALANGO") %in% class(defs)),
                           is.character(anno), length(anno) == 1,
                           is.character(genome.names), length(genome.names) == 1,
                           all(c(anno, genome.names, "ontology") %in% names(defs)),
                           is.null(someGV) || is.data.frame(someGV),
-                          msg = "input error in KOMODO2::AddGenomeVectors()")
+                          msg = "input error in CALANGO::AddGenomeVectors()")
 
 
   # To generate genome vectors, we need some information about the ontology.

@@ -1,4 +1,4 @@
-# Specific function to load data if type == "significance" in the KOMODO2
+# Specific function to load data if type == "significance" in the CALANGO
 # definition list. (Not exported to to the namespace)
 
 load_data_significance <- function(defs){

@@ -1,4 +1,4 @@
-# KOMODO2 1.0.0
+# CALANGO 1.0.0
 
 - Initial CRAN release
 

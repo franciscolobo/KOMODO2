@@ -1,4 +1,4 @@
-# Specific function to clean data if type == "correlation" in the KOMODO2
+# Specific function to clean data if type == "correlation" in the CALANGO
 # definition list. (Not exported to to the namespace)
 
 clean_data_correlation <- function(defs){

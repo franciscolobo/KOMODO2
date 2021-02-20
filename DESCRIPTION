@@ -1,8 +1,8 @@
-Package: KOMODO2
+Package: CALANGO
 Type: Package
-Title: Kegg Orthology Enrichment Online Detection
-Version: 1.0.0
-Date: 2021-02-16
+Title: Comparative AnaLysis with ANnotation terms for General Omics
+Version: 0.99.0
+Date: 2021-02-20
 Authors@R: c(person("Francisco", "Lobo",
     email   = "franciscolobo@gmail.com",
     role    = c("aut")),
@@ -23,7 +23,7 @@ Description: A first-principle, phylogeny-aware comparative genomics tool for
              investigating associations between terms used to annotate genomic
              components (e.g., Pfam IDs, Gene Ontology terms,) with quantitative 
              or rank variables such as number of cell types, genome size, or 
-             density of specific genomic elements. See the KOMODO2 website for 
+             density of specific genomic elements. See the CALANGO website for 
              more information, documentation and examples.
 License: GPL-2
 Depends: R (>= 3.6.0)
@@ -49,6 +49,6 @@ Suggests: AnnotationDbi,
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
-URL: https://fcampelo.github.io/KOMODO2
-BugReports: https://github.com/fcampelo/KOMODO2/issues
+URL: https://fcampelo.github.io/CALANGO
+BugReports: https://github.com/fcampelo/CALANGO/issues
 VignetteBuilder: knitr

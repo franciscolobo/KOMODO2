@@ -1,7 +1,7 @@
-name: "KOMODO2-results"
+name: "CALANGO-results"
 output_dir: "."
 navbar:
-  title: "KOMODO2 report"
+  title: "CALANGO report"
   type: inverse
   left:
     - text: "Home"

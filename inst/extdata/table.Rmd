@@ -137,7 +137,7 @@ for (i in seq_along(df_cutoff$name)){
   colnames(tmp) <- c("cell_type", "short", "group", "count", "norm")
   
   my_pallete <- data.frame(group  = unique(tmp$group),
-                           colour = I(KOMODO2_brewer_pal(length(unique(tmp$group)), 
+                           colour = I(CALANGO_brewer_pal(length(unique(tmp$group)), 
                                                        name = 'Set1')))
   tmp$fill <- my_pallete$colour[match(tmp$group, my_pallete$group)]
   

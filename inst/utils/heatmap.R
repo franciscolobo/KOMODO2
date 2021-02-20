@@ -26,8 +26,6 @@ tmp <- read.table("../../docs/manuscript/biorx/datasets/domain_IDs.txt")
 ids <- as.vector(tmp$V1)
 rm(tmp)
 
-#tmp <- KOMODO2$y
-#tmp <- KOMODO2$y[KOMODO2$sum > 0]
 tmp <- output$y[as.vector(ids)]
 
 norm <- tmp/output$denominator

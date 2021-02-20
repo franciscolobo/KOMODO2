@@ -1,4 +1,4 @@
-# Specific function to perform analysis if type == "correlation" in the KOMODO2
+# Specific function to perform analysis if type == "correlation" in the CALANGO
 # definition list. (Not exported to to the namespace)
 
 do_analysis_correlation <- function(defs){

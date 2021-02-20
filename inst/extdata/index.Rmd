@@ -1,12 +1,12 @@
 ---
-title: "KOMODO2 report"
+title: "CALANGO report"
 ---
-<img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/KOMODO2_logo.png" alt="A two-headed komodo dragon. Drawn by Francisco's father." height="100"/>
+<img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo.png" alt="A two-headed lizard. Drawn by Francisco's dad." height="100"/>
 ***
 
-KOMODO2 is an annotation-based comparative genomics tool that searches for annotation terms, as defined in controlled dictionaries, associated with a quantitative phenotype across phenotypes.
+CALANGO is an annotation-based comparative genomics tool that searches for annotation terms, as defined in controlled dictionaries, associated with a quantitative phenotype across phenotypes.
 
-KOMODO2 provides three main outputs as interactive HTML5 files:
+CALANGO provides three main outputs as interactive HTML5 files:
 
 - Heatmaps
 

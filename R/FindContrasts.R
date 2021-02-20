@@ -114,7 +114,7 @@ FindContrasts <- function(x, y, tree, method = "gls", denominator = 1,
                                       mc.cores = cores)
     }
   } else{
-    stop("'", method,"' is not a recognized method in KOMODO2::FindContrasts()")
+    stop("'", method,"' is not a recognized method in CALANGO::FindContrasts()")
   }
 
   models        <- unlist(models)

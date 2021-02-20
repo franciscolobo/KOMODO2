@@ -1,7 +1,7 @@
 #' Install and update dependencies from Suggests field
 #'
 #' This function installs the latest versions of all Bioconductor packages
-#' listed in the `Suggests` fields of KOMODO2. It is **essential** for
+#' listed in the `Suggests` fields of CALANGO. It is **essential** for
 #' installing the Bioconductor dependencies.
 #' It uses `BiocManager::install()` for installing Bioconductor
 #' packages. Further arguments to this function are passed as a list.

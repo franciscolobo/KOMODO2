@@ -1,10 +1,10 @@
-# Load and verify all required data for the KOMODO2 workflow
+# Load and verify all required data for the CALANGO workflow
 #
-# This script represents the first step of the LCFD workflow of KOMODO2.
+# This script represents the first step of the LCFD workflow of CALANGO.
 # It separates the data loading, which can be the longest step of a workflow,
 # from the analysis itself, which is faster and can be redone multiple times.
 #
-# The script expects a `KOMODO2`-type list, which is a list object containing
+# The script expects a `CALANGO`-type list, which is a list object containing
 # at least the following fields:
 # \itemize{
 #    \item \code{test.path} (char string): path to the folder containing
@@ -28,9 +28,9 @@
 # The input definitions can also be passed as a file path. If that is the
 # case the file must be in a `field = value` format. Blank likes and lines
 # starting with `#` are ignored. Required fields are the same described for the
-# `KOMODO2` list described above.
+# `CALANGO` list described above.
 #
-# @param defs either a KOMODO2-type list object (see Details) or
+# @param defs either a CALANGO-type list object (see Details) or
 # a path to a text file containing the required definitions.
 # @param cores positive integer, how many CPU cores to use (multicore
 # acceleration does not work in Windows systems). Notice that setting
@@ -56,7 +56,7 @@ load_data <- function(defs, cores = NULL){
                  correlation  = load_data_correlation(defs))
 
   if(is.null(defs)) stop("'", defs$type, "'",
-                         "is not a recognized type argument for KOMODO2.")
+                         "is not a recognized type argument for CALANGO.")
 
 
   # Load ontology dictionary if ontology is "other"
@@ -74,6 +74,6 @@ load_data <- function(defs, cores = NULL){
 
   }
 
-  class(defs) <- c("KOMODO2", "list")
+  class(defs) <- c("CALANGO", "list")
   return(defs)
 }

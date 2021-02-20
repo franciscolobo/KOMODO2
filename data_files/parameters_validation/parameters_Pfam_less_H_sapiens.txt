@@ -1,6 +1,6 @@
-# This is a sample parameter file for KOMODO2.
+# This is a sample parameter file for CALANGO.
 # NOTICE: It assumes that the relevant data files (including this one) were
-# retrieved using KOMODO2::retrieve_data_files("./data_folder").
+# retrieved using CALANGO::retrieve_data_files("./data_folder").
 # Change the target folder/file paths if needed
 
 annotation.files.dir = "./data_folder/Pfam/" #Directory where annotation files are located. If not provided file described in variable "dataset.info" should contain absolute paths to annotation files
@@ -33,7 +33,7 @@ MHT.method = "BH"
 
 cores = 7 #how many cores to use?
 
-# cutoffs are basically to tell KOMODO2 how much graphical output it should produce. If you want further results digging up, text files contain all results.
+# cutoffs are basically to tell CALANGO how much graphical output it should produce. If you want further results digging up, text files contain all results.
 
 #q-values cutoffs for correlation and phylogeny-aware linear models (only values smaller than cutoffs will be shown)
 

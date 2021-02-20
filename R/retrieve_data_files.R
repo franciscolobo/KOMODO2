@@ -1,6 +1,6 @@
 #' Retrieve data files from the Github repository
 #'
-#' This script retrieves relevant data files from the KOMODO2 project
+#' This script retrieves relevant data files from the CALANGO project
 #' repository. It will download the data into a folder containing
 #' directories related to dictionary files, Gene Ontology annotation
 #' files, tree files, etc.
@@ -29,7 +29,7 @@
 retrieve_data_files <- function(target.dir,
                                 method = "auto",
                                 unzip  = getOption("unzip"),
-                                url = "https://github.com/fcampelo/KOMODO2"){
+                                url = "https://github.com/fcampelo/CALANGO"){
 
   # ================== Sanity checks ==================
   assertthat::assert_that(is.character(target.dir),

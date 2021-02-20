@@ -1,8 +1,8 @@
-# KOMODO2
-[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/KOMODO2)](https://CRAN.R-project.org/package=KOMODO2)
-[![CRAN Downloads](https://cranlogs.r-pkg.org/badges/KOMODO2)](https://CRAN.R-project.org/package=KOMODO2)
+# CALANGO
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/CALANGO)](https://CRAN.R-project.org/package=CALANGO)
+[![CRAN Downloads](https://cranlogs.r-pkg.org/badges/CALANGO)](https://CRAN.R-project.org/package=CALANGO)
 
-<img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/KOMODO2_logo.png" alt="A two-headed Komodo dragon. Drawn by Francisco's father." height="200"/>
+<img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo.png" alt="A two-headed lizard dragon. Drawn by Francisco's dad." height="200"/>
 
 ## MAIN DEVELOPERS
 - Francisco Pereira Lobo (franciscolobo@gmail.com, francisco.lobo@ufmg.br)
@@ -16,39 +16,39 @@
  
 ## DESCRIPTION
 
-KOMODO2 is a first-principle, phylogeny-aware comparative genomics software to search for annotation terms (e.g Pfam IDs, GO terms or superfamilies), formally described in a dictionary-like structure and used to annotate genomic components, associated with a quantitative/rank variable (e.g. number of cell types, genome size or density of specific genomic elements).
+CALANGO is a first-principle, phylogeny-aware comparative genomics software to search for annotation terms (e.g Pfam IDs, GO terms or superfamilies), formally described in a dictionary-like structure and used to annotate genomic components, associated with a quantitative/rank variable (e.g. number of cell types, genome size or density of specific genomic elements).
 
 Our software has been freely inspired by (and explicitly modeled to take into account information from) ideas and tools as diverse as comparative phylogenetics, genome annotation, gene enrichment analysis, and data visualization and interactivity.
 
 ## HOW TO INSTALL
-The latest version of KOMODO2 can be installed directly from the repository using `devtools::install_github()`:
+The latest version of CALANGO can be installed directly from the repository using `devtools::install_github()`:
 
 ```
-devtools::install_github("fcampelo/KOMODO2")
+devtools::install_github("fcampelo/CALANGO")
 ```
 
 Alternatively, you should soon be able to install the last release version from CRAN by simply doing:
 
 ```
-install.packages("KOMODO2")
+install.packages("CALANGO")
 ```
 
 In either case, please make sure that you have the latest R version (at least 3.6.1) as well as updated versions of all installed packages.
 
 ## INSTALLING AND UPDATING DEPENDENCIES
-KOMODO2 depends on packages from both **CRAN** and **Bioconductor**. This requires an extra installation step before KOMODO2 can be used. simply run:
+CALANGO depends on packages from both **CRAN** and **Bioconductor**. This requires an extra installation step before CALANGO can be used. simply run:
 
 ```
-library(KOMODO2)
+library(CALANGO)
 install_and_update_packages(which = "all")
 ```
 
-to install / update all dependencies (packages listed as KOMODO2's `imports` and `suggests`) to their latest versions.
+to install / update all dependencies (packages listed as CALANGO's `imports` and `suggests`) to their latest versions.
 
 ---
 ## HOW TO USE - OVERVIEW
 
-To run KOMODO2 you need two things: 
+To run CALANGO you need two things: 
 
 1.  a set of data  
 2. an input list defining the path to that data and what is to be done. 
@@ -57,7 +57,7 @@ To run KOMODO2 you need two things:
 A set of example data folders and files can be downloaded directly from the project repository by using function `retrieve_data_files()`. For instance, a call:
 
 ```
-library(KOMODO2)
+library(CALANGO)
 
 retrieve_data_files("./data_files")
 ```
@@ -73,10 +73,10 @@ The downloaded data will also contain files that describe the input list mention
 
 *****
 
-Once these two pieces are in place, the KOMODO2 pipeline can be run by invoking the main function of the package. For instance:
+Once these two pieces are in place, the CALANGO pipeline can be run by invoking the main function of the package. For instance:
 
 ```
-output <- run_KOMODO2(defs = "./data_files/parameters_validation/parameters_gene2GO_Pan_proxy.txt")
+output <- run_CALANGO(defs = "./data_files/parameters_validation/parameters_gene2GO_Pan_proxy.txt")
 ```
 
 Or, alternatively:
@@ -96,15 +96,15 @@ Or, alternatively:
               type                 = "correlation",
               MHT.method           = "BH")
 
-output <- run_KOMODO2(defs, cores = 4)
+output <- run_CALANGO(defs, cores = 4)
 ```
 
-This call will generate an enriched `KOMODO2` list as the output, and generate a dynamic HTML5 output (plus several tab-separated value (tsv) files in the directory provided as `output.dir`.
+This call will generate an enriched `CALANGO` list as the output, and generate a dynamic HTML5 output (plus several tab-separated value (tsv) files in the directory provided as `output.dir`.
 
 
 ## PREPARING YOUR INPUT FILES 
 
-KOMODO2 requires the following files (please check the template in 
+CALANGO requires the following files (please check the template in 
 `./data_files/parameters.txt` or the examples in `./data_files/parameters_validation/` if in doubt about file specifications):
 
 ---
@@ -149,7 +149,7 @@ _newick_ or _PHYLIP_ format, containing at least:
 
 - branch lengths proportional to divergence times (a chronogram)
 
-- no polytomies (if there are such cases, KOMODO2 will resolve star branches using [multi2di] method as implemented in [ape] package.
+- no polytomies (if there are such cases, CALANGO will resolve star branches using [multi2di] method as implemented in [ape] package.
 
 
 A tree in _newick_ format (however, with no branch lengths), would be: 
@@ -170,7 +170,7 @@ containing species-specific information:
 - A normalizing factor (e.g. proteome size or length; number of annotation
      terms) to correct for potential biases in datasets (e.g. organisms with
      different annotation levels or with highly discrepant proteome sizes)
-     If users are using GO as annotation schema, KOMODO2 can compute a
+     If users are using GO as annotation schema, CALANGO can compute a
      normalizing factor that takes into account all GO counts, including
      internal nodes, and therefore may not provide any normalizing factor
      for this case.
@@ -199,7 +199,7 @@ Metadada files are specified as follows:
 tab delimited, linking annotation IDs to their biologically
 meaningful descriptions. Our software currently supports two dictionary types:
 
-* Gene Ontology (GO) - in this case, KOMODO2 will automatically recover 
+* Gene Ontology (GO) - in this case, CALANGO will automatically recover 
     annotation description and compute values for internal GOs not explicitly
     used to describe data annotation.
 
@@ -217,14 +217,14 @@ annotation_ID_4   Truncated hemoglobin
 annotation_ID_N   annotation_ID_description
 ```
 
-KOMODO2 can treat each identifier as its own description, saving the work from
+CALANGO can treat each identifier as its own description, saving the work from
 preparing an ontology that isn't natively supported. For that, specify no
 ontology file and set the ontology parameter as "other" ("ontology = other").
 
 
-## SETTING UP KOMODO2 PARAMETERS 
+## SETTING UP CALANGO PARAMETERS 
 
-KOMODO2's parameters are listed in the documentation of `run_KOMODO2()`, as well as
+CALANGO's parameters are listed in the documentation of `run_CALANGO()`, as well as
 in the template file provided (`./data_files/parameters.txt`). They are, for the current version:
 
 - annotation.files.dir (required, string) - Folder where annotation files are located.
@@ -233,12 +233,12 @@ in the template file provided (`./data_files/parameters.txt`). They are, for the
 
 - dataset.info  (required, string) - genome metadata file, it should contain at least:
     1. path for annotation data (if "annotation.files.dir" not provided OR file names (if "annotation.files.dir) is provided. Please notice this information should be the first column in metadata file;
-    2. phenotype data (numeric, this is the value KOMODO2 uses to rank species when searching for associations)
-    3. normalization data (numeric, this is the value KOMODO2 uses as a denominator to compute annotation term frequencies to remove potential biases caused by, for instance, over annotation of model organisms or large differences in the counts of genomic elements). Please notice KOMODO2 does not require normalization data for GO, as it computes the total number of GO terms per species and uses it as a normalizing factor.
+    2. phenotype data (numeric, this is the value CALANGO uses to rank species when searching for associations)
+    3. normalization data (numeric, this is the value CALANGO uses as a denominator to compute annotation term frequencies to remove potential biases caused by, for instance, over annotation of model organisms or large differences in the counts of genomic elements). Please notice CALANGO does not require normalization data for GO, as it computes the total number of GO terms per species and uses it as a normalizing factor.
 
 - x.column (required, numeric) - which column in "dataset.info" contains the phenotype data?
 
-- ontology (required, string)  - which dictionary data type to use? Possible values are "GO" and "other". For GO, KOMODO2 can compute normalization data.
+- ontology (required, string)  - which dictionary data type to use? Possible values are "GO" and "other". For GO, CALANGO can compute normalization data.
 
 - dict.path (required, string)  - file for dictionary file (two-column file containing annotation IDs and their descriptions, not needed for GO
 
@@ -259,17 +259,17 @@ in the template file provided (`./data_files/parameters.txt`). They are, for the
 - type = "correlation" (optional, string) type of analysis to perform. Currently only "correlation" is supported.
 
 
-## KOMODO2 OUTPUT 
+## CALANGO OUTPUT 
 
-Live examples of KOMODO2 output HTML5 pages can be found <a href="https://fcampelo.github.io/KOMODO2/articles/examples-page.html" target="_blank">here</a>.
+Live examples of CALANGO output HTML5 pages can be found <a href="https://fcampelo.github.io/CALANGO/articles/examples-page.html" target="_blank">here</a>.
 
-KOMODO2 produces as its main output a dynamic HMTL5 website containing:
+CALANGO produces as its main output a dynamic HMTL5 website containing:
 
 - A description of the input values and a button to download the input and results list. 
 - Interactive heatmaps and scatterplots
 - A dynamic table of results.
 
-Please check our <a href="https://fcampelo.github.io/KOMODO2/articles/examples-page.html" target="_blank">examples page</a> to explore the full output of KOMODO2 for a variety of examples. The required data to fully reproduce these examples is available in our Github repository, under <a href="https://github.com/fcampelo/KOMODO2/tree/master/data_files">data_files</a>.
+Please check our <a href="https://fcampelo.github.io/CALANGO/articles/examples-page.html" target="_blank">examples page</a> to explore the full output of CALANGO for a variety of examples. The required data to fully reproduce these examples is available in our Github repository, under <a href="https://github.com/fcampelo/CALANGO/tree/master/data_files">data_files</a>.
 
 *****
 

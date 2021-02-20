@@ -1,16 +1,16 @@
 ---
-title: "KOMODO2 Examples"
+title: "CALANGO Examples"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{KOMODO2 Examples}
+  %\VignetteIndexEntry{CALANGO Examples}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 <p align="left">
-<img src="https://raw.githubusercontent.com/fcampelo/KOMODO2/master/inst/images/KOMODO2_logo.png" alt="A two-headed Komodo dragon. Drawn by Francisco's father." height="100"/>
+<img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo.png" alt="A two-headed lizard. Drawn by Francisco's dad." height="100"/>
 </p>
 
-Some examples of KOMODO2 output are available under `docs/articles/results` in the [KOMODO2 Github repository](https://github.com/fcampelo/KOMODO2).  
+Some examples of CALANGO output are available under `docs/articles/results` in the [CALANGO Github repository](https://github.com/fcampelo/CALANGO).  
 Please navigate to one of the links below to check the example pages:
 
 ```{r, results="asis", echo=FALSE}
