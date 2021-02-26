@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comparative Analysis with Annotation Terms for General Omics • CALANGO</title>
+<title>Comparative Analysis with Annotation Terms for Genomics • CALANGO</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -17,7 +17,7 @@
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Comparative Analysis with Annotation Terms for General Omics">
+<script src="pkgdown.js"></script><meta property="og:title" content="Comparative Analysis with Annotation Terms for Genomics">
 <meta property="og:description" content="A first-principle, phylogeny-aware comparative genomics tool for 
              investigating associations between terms used to annotate genomic
              components (e.g., Pfam IDs, Gene Ontology terms,) with quantitative 
@@ -96,9 +96,9 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="calango-comparative-analysis-with-annotation-terms-for-general-omics" class="section level2">
-<h2 class="hasAnchor">
-<a href="#calango-comparative-analysis-with-annotation-terms-for-general-omics" class="anchor"></a>CALANGO: Comparative AnaLysis with ANnotation terms for General Omics</h2>
+<div id="calango-comparative-analysis-with-annotation-terms-for-genomics" class="section level1">
+<div class="page-header"><h1 class="hasAnchor">
+<a href="#calango-comparative-analysis-with-annotation-terms-for-genomics" class="anchor"></a>CALANGO<br>Comparative AnaLysis with ANnotation terms for GenOmics</h1></div>
 <!-- badges: start -->
 
 <p><img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo.png" alt="A two-headed lizard dragon. Drawn by Francisco's dad." height="200"></p>
@@ -150,7 +150,7 @@
 <h3 class="hasAnchor">
 <a href="#installing-and-updating-dependencies" class="anchor"></a>INSTALLING AND UPDATING DEPENDENCIES</h3>
 <p>CALANGO depends on packages from both <strong>CRAN</strong> and <strong>Bioconductor</strong>. This requires an extra installation step before CALANGO can be used. simply run:</p>
-<pre><code><a href="https://fcampelo.github.io/CALANGO">library(CALANGO)
+<pre><code><a href="https://rdrr.io/r/base/library.html">library(CALANGO)
 install_and_update_packages(which = "all")</a></code></pre>
 <p>to install / update all dependencies (packages listed as CALANGO’s <code>imports</code> and <code>suggests</code>) to their latest versions.</p>
 <hr>
@@ -166,7 +166,7 @@ install_and_update_packages(which = "all")</a></code></pre>
 </ol>
 <p><strong>Retrieving data</strong></p>
 <p>A set of example data folders and files can be downloaded directly from the project repository by using function <code><a href="reference/retrieve_data_files.html">retrieve_data_files()</a></code>. For instance, a call:</p>
-<pre><code><a href="https://fcampelo.github.io/CALANGO">library(CALANGO)
+<pre><code><a href="https://rdrr.io/r/base/library.html">library(CALANGO)
 
 retrieve_data_files("./data_files")</a></code></pre>
 <p>will create a folder called <code>data_files</code> in the current working directory path, and download the sample files into subfolders within it. These subfolders will contain:</p>

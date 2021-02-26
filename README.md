@@ -1,4 +1,4 @@
-## CALANGO: Comparative AnaLysis with ANnotation terms for General Omics
+# CALANGO<br/>Comparative AnaLysis with ANnotation terms for GenOmics
 <!-- badges: start -->
   [![R-CMD-check](https://github.com/fcampelo/CALANGO/workflows/R-CMD-check/badge.svg)](https://github.com/fcampelo/CALANGO/actions)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/CALANGO)](https://CRAN.R-project.org/package=CALANGO)
