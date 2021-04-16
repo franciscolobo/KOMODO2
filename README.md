@@ -1,4 +1,4 @@
-# CALANGO<br/><font size = +2>Comparative AnaLysis with ANnotation terms for GenOmics</font>
+# CALANGO<br/><font size = +2>Comparative AnaLysis with ANnotation-based Genomic cOmponentes</font>
 <!-- badges: start -->
   [![R-CMD-check](https://github.com/fcampelo/CALANGO/workflows/R-CMD-check/badge.svg)](https://github.com/fcampelo/CALANGO/actions)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/CALANGO)](https://CRAN.R-project.org/package=CALANGO)
@@ -7,9 +7,11 @@
 
 <img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo.png" alt="A two-headed lizard dragon. Drawn by Francisco's dad." height="200"/>
 
-### MAIN DEVELOPERS
+### CALANGO MASTERMIND
 - Francisco Pereira Lobo (franciscolobo@gmail.com, francisco.lobo@ufmg.br)
-    - Main developer: initial idea, scientific coordination, first implementation, main visualization concepts.   
+    - Main developer: initial idea, scientific coordination, first implementation, main visualization concepts.
+    
+### OTHER DEVELOPERS
 - Felipe Campelo (f.campelo@aston.ac.uk, fcampelo@gmail.com)
     - Code auditing and refactoring to R package, CRAN deployment, visualization support.  
 - Giovanni Marques de Castro (giomcastro@gmail.com)

@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comparative Analysis with Annotation Terms for Genomics • CALANGO</title>
+<title>Comparative Analysis with Annotation-based Genomic Componentes • CALANGO</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -17,7 +17,7 @@
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Comparative Analysis with Annotation Terms for Genomics">
+<script src="pkgdown.js"></script><meta property="og:title" content="Comparative Analysis with Annotation-based Genomic Componentes">
 <meta property="og:description" content="A first-principle, phylogeny-aware comparative genomics tool for 
              investigating associations between terms used to annotate genomic
              components (e.g., Pfam IDs, Gene Ontology terms,) with quantitative 
@@ -43,7 +43,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">CALANGO</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.10</span>
       </span>
     </div>
 
@@ -96,23 +96,28 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="calango-comparative-analysis-with-annotation-terms-for-genomics" class="section level1">
+<div id="calango-comparative-analysis-with-annotation-based-genomic-componentes" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#calango-comparative-analysis-with-annotation-terms-for-genomics" class="anchor"></a>CALANGO<br><font size="+2">Comparative AnaLysis with ANnotation terms for GenOmics</font>
+<a href="#calango-comparative-analysis-with-annotation-based-genomic-componentes" class="anchor"></a>CALANGO<br><font size="+2">Comparative AnaLysis with ANnotation-based Genomic cOmponentes</font>
 </h1></div>
 <!-- badges: start -->
 
 <p><img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo.png" alt="A two-headed lizard dragon. Drawn by Francisco's dad." height="200"></p>
-<div id="main-developers" class="section level3">
+<div id="calango-mastermind" class="section level3">
 <h3 class="hasAnchor">
-<a href="#main-developers" class="anchor"></a>MAIN DEVELOPERS</h3>
+<a href="#calango-mastermind" class="anchor"></a>CALANGO MASTERMIND</h3>
 <ul>
 <li>Francisco Pereira Lobo (<a href="mailto:franciscolobo@gmail.com" class="email">franciscolobo@gmail.com</a>, <a href="mailto:francisco.lobo@ufmg.br" class="email">francisco.lobo@ufmg.br</a>)
 <ul>
-<li>Main developer: initial idea, scientific coordination, first implementation, main visualization concepts.<br>
-</li>
+<li>Main developer: initial idea, scientific coordination, first implementation, main visualization concepts.</li>
 </ul>
 </li>
+</ul>
+</div>
+<div id="other-developers" class="section level3">
+<h3 class="hasAnchor">
+<a href="#other-developers" class="anchor"></a>OTHER DEVELOPERS</h3>
+<ul>
 <li>Felipe Campelo (<a href="mailto:f.campelo@aston.ac.uk" class="email">f.campelo@aston.ac.uk</a>, <a href="mailto:fcampelo@gmail.com" class="email">fcampelo@gmail.com</a>)
 <ul>
 <li>Code auditing and refactoring to R package, CRAN deployment, visualization support.<br>
@@ -151,7 +156,7 @@
 <h3 class="hasAnchor">
 <a href="#installing-and-updating-dependencies" class="anchor"></a>INSTALLING AND UPDATING DEPENDENCIES</h3>
 <p>CALANGO depends on packages from both <strong>CRAN</strong> and <strong>Bioconductor</strong>. This requires an extra installation step before CALANGO can be used. simply run:</p>
-<pre><code><a href="https://rdrr.io/r/base/library.html">library(CALANGO)
+<pre><code><a href="https://fcampelo.github.io/CALANGO">library(CALANGO)
 install_and_update_packages(which = "all")</a></code></pre>
 <p>to install / update all dependencies (packages listed as CALANGO’s <code>imports</code> and <code>suggests</code>) to their latest versions.</p>
 <hr>
@@ -167,7 +172,7 @@ install_and_update_packages(which = "all")</a></code></pre>
 </ol>
 <p><strong>Retrieving data</strong></p>
 <p>A set of example data folders and files can be downloaded directly from the project repository by using function <code><a href="reference/retrieve_data_files.html">retrieve_data_files()</a></code>. For instance, a call:</p>
-<pre><code><a href="https://rdrr.io/r/base/library.html">library(CALANGO)
+<pre><code><a href="https://fcampelo.github.io/CALANGO">library(CALANGO)
 
 retrieve_data_files("./data_files")</a></code></pre>
 <p>will create a folder called <code>data_files</code> in the current working directory path, and download the sample files into subfolders within it. These subfolders will contain:</p>
@@ -207,9 +212,9 @@ output &lt;- run_CALANGO(defs, cores = 4)</code></pre>
 <p><strong>genome annotation file</strong></p>
 <p>A text file for each species describing their set of biologically meaningful genomic elements and their respective annotation IDs (e.g. non redundant proteomes annotated to GO terms, or non-redundant protein domains annotated to protein domain IDs). An example of such file, where gene products are annotated using Gene Ontology (GO) terms and Kegg Orthology (KO) identifiers would be as follows:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Entry</span>   GO_IDs   KEGG_Orthology_ID</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Q7L8J4</span>  GO:0017124<span class="kw">;</span><span class="ex">GO</span>:0005737<span class="kw">;</span><span class="ex">GO</span>:0035556<span class="kw">;</span><span class="ex">GO</span>:1904030<span class="kw">;</span><span class="ex">GO</span>:0061099<span class="kw">;</span><span class="ex">GO</span>:0004860</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Q8WW27</span>  GO:0016814<span class="kw">;</span><span class="ex">GO</span>:0006397<span class="kw">;</span><span class="ex">GO</span>:0008270  K18773</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Q96P50</span>  GO:0005096<span class="kw">;</span><span class="ex">GO</span>:0046872   K12489</span></code></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Q7L8J4</span>  GO:0017124<span class="kw">;</span><span class="ex">GO:0005737</span><span class="kw">;</span><span class="ex">GO:0035556</span><span class="kw">;</span><span class="ex">GO:1904030</span><span class="kw">;</span><span class="ex">GO:0061099</span><span class="kw">;</span><span class="ex">GO:0004860</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Q8WW27</span>  GO:0016814<span class="kw">;</span><span class="ex">GO:0006397</span><span class="kw">;</span><span class="ex">GO:0008270</span>  K18773</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Q96P50</span>  GO:0005096<span class="kw">;</span><span class="ex">GO:0046872</span>   K12489</span></code></pre></div>
 <p>And is specified as:</p>
 <ul>
 <li><p>Fixed number of columns per file (minimum 2) separated by tabs, or “\t”.</p></li>
@@ -219,7 +224,7 @@ output &lt;- run_CALANGO(defs, cores = 4)</code></pre>
 <li><p>A column can have no terms in any given row.</p></li>
 </ul>
 <p>In a more abstract representation, files representing genome annotations for a single annotation schema would have two columns and the following general structure:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">genomic_element_name/ID_1</span>     annotation_ID_1<span class="kw">;(</span><span class="ex">...</span><span class="kw">)</span>;<span class="ex">annotation_ID_N</span></span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">genomic_element_name/ID_1</span>     annotation_ID_1<span class="kw">;(</span><span class="ex">...</span><span class="kw">);</span><span class="ex">annotation_ID_N</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">genomic_element_name/ID_2</span>     annotation_ID_12</span></code></pre></div>
 <hr>
 <p><strong>phylogenetic tree file</strong></p>
@@ -230,7 +235,7 @@ output &lt;- run_CALANGO(defs, cores = 4)</code></pre>
 <li><p>no polytomies (if there are such cases, CALANGO will resolve star branches using <a href="https://rdrr.io/cran/ape/man/multi2di.html">multi2di</a> method as implemented in <a href="http://ape-package.ird.fr/">ape</a> package.</p></li>
 </ul>
 <p>A tree in <em>newick</em> format (however, with no branch lengths), would be:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">genome_ID_1</span>,(genome_ID_2,genome_ID_3<span class="kw">)</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">genome_ID_1,</span><span class="er">(</span><span class="ex">genome_ID_2,genome_ID_3</span><span class="kw">))</span></span></code></pre></div>
 <hr>
 <p><strong>A metadata file</strong></p>
 <p>Containing species-specific information:</p>
