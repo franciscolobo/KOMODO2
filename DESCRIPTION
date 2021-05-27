@@ -1,6 +1,6 @@
 Package: CALANGO
 Type: Package
-Title: Comparative Analysis with Annotation-based Genomic Componentes
+Title: Comparative Analysis with Annotation-based Genomic Components
 Version: 1.0.0
 Date: 2021-05-26
 Language: en-US
@@ -24,7 +24,7 @@ Description: A first-principle, phylogeny-aware comparative genomics tool for
              investigating associations between terms used to annotate genomic
              components (e.g., Pfam IDs, Gene Ontology terms,) with quantitative 
              or rank variables such as number of cell types, genome size, or 
-             density of specific genomic elements. See the CALANGO website for 
+             density of specific genomic elements. See the project website for 
              more information, documentation and examples.
 License: GPL-2
 Depends: R (>= 3.6.0)
@@ -48,8 +48,7 @@ Suggests: AnnotationDbi,
           KEGGREST,
           GO.db
 Encoding: UTF-8
-LazyData: true
 RoxygenNote: 7.1.1
-URL: https://fcampelo.github.io/CALANGO
+URL: https://fcampelo.github.io/CALANGO/
 BugReports: https://github.com/fcampelo/CALANGO/issues
 VignetteBuilder: knitr
