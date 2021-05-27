@@ -227,9 +227,9 @@ annotation_ID_4   Truncated hemoglobin
 annotation_ID_N   annotation_ID_description
 ```
 
-CALANGO can treat each identifier as its own description, saving the work from
-preparing an ontology that isn't natively supported. For that, specify no
-ontology file and set the ontology parameter as "other" ("ontology = other").
+CALANGO can treat each identifier as its own description, preventing the need to
+prepare an ontology that isn't natively supported. For that, do not specify any
+ontology file and set the `ontology = "other"`.
 
 
 ### SETTING UP CALANGO PARAMETERS 
