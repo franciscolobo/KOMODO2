@@ -10,8 +10,9 @@ vignette: >
 <img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo.png" alt="A two-headed lizard. Drawn by Francisco's dad." height="100"/>
 </p>
 
-Some examples of CALANGO output are available under `docs/articles/results` in the [CALANGO Github repository](https://github.com/fcampelo/CALANGO).  
-Please navigate to one of the links below to check the example pages:
+Some examples of CALANGO output are available under `docs/articles/results` in the [CALANGO Github repository](https://github.com/fcampelo/CALANGO).  The examples below relate to the case study "*Homologous regions and biological roles associated with prophage density in pathogenic and free-living _Escherichia coli_*", which is presented as part of the manuscript _CALANGO: an annotation-based, phylogeny-aware comparative genomics framework for exploring and interpreting complex genotypes and phenotypes_.
+
+Please navigate to one of the links below to check the example output:
 
 ```{r, results="asis", echo=FALSE}
 dirs <- dir("../docs/articles/results/")
