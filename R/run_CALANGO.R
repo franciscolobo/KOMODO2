@@ -74,7 +74,8 @@
 #' \dontrun{
 #'
 #' # Install packages for report generation (only needs to be done once)
-#' install_and_update_packages()
+#' library(CALANGO)
+#' install_bioc_dependencies()
 #'
 #' # Download data files
 #' retrieve_data_files(target.dir = "./data_folder")

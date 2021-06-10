@@ -2,8 +2,8 @@
 # devtools::install_github("fcampelo/CALANGO")
 #
 # library(CALANGO)
-# # Install/update Bioconductor package dependencies for CALANGO
-# CALANGO::install_and_update_packages()
+# # Install Bioconductor package dependencies for CALANGO
+# CALANGO::install_bioc_dependencies()
 #
 # # Download required files
 # CALANGO::retrieve_data_files(target.dir = "./data_folder")

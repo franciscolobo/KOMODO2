@@ -41,11 +41,11 @@ install.packages("CALANGO")
 In either case, please make sure that you have the latest R version (at least 3.6.1) as well as updated versions of all installed packages.
 
 ### INSTALLING AND UPDATING DEPENDENCIES
-CALANGO depends on packages from both **CRAN** and **Bioconductor**. This requires an extra installation step before CALANGO can be used. simply run:
+CALANGO depends on some packages from **Bioconductor**. This requires an extra installation step before CALANGO can be used. Just run:
 
 ```
 library(CALANGO)
-install_and_update_packages(which = "all")
+install_bioc_dependencies(which = "all")
 ```
 
 to install / update all dependencies (packages listed as CALANGO's `imports` and `suggests`) to their latest versions.
