@@ -7,7 +7,8 @@
 #' @param render.report logical: should the HTML5 report be generated (for
 #' internal use only)
 #'
-#' @return A (possibly updated) `CALANGO`-type list.
+#' @return A (possibly updated) `CALANGO`-type list, with the 
+#' following structure:
 #'
 #' @export
 

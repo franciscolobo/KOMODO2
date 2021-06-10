@@ -13,7 +13,8 @@ make_report(defs, render.report = TRUE)
 internal use only)}
 }
 \value{
-A (possibly updated) `CALANGO`-type list.
+A (possibly updated) `CALANGO`-type list, with the 
+following structure:
 }
 \description{
 This script generates the HTML5 report based on an enriched

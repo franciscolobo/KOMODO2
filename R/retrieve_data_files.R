@@ -12,7 +12,7 @@
 #' accepts relative and absolute paths)
 #' @param method Method to be used for downloading files. Current download
 #' methods are "internal", "wininet" (Windows only) "libcurl", "wget" and
-#' "curl", and there is a value "auto": see _Details_ and _Note_ in the
+#' "curl", and there is a value "auto". Please see _Details_ and _Note_ in the
 #' documentation of \code{utils::download.file()}.
 #' @param unzip The unzip method to be used. See the documentation of
 #' \code{utils::unzip()} for details.
@@ -25,6 +25,8 @@
 #' \dontrun{
 #'   retrieve_data_files(target.dir = "./data_folder")
 #' }
+#' 
+#' @return No return value, called for side effects.
 
 retrieve_data_files <- function(target.dir,
                                 method = "auto",
