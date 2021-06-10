@@ -4,34 +4,21 @@
 \alias{retrieve_data_files}
 \title{Retrieve data files from the Github repository}
 \usage{
-retrieve_data_files(
-  target.dir,
-  method = "auto",
-  unzip = getOption("unzip"),
-  url = "https://github.com/fcampelo/CALANGO"
-)
+retrieve_data_files(target.dir, unzip = getOption("unzip"))
 }
 \arguments{
 \item{target.dir}{path to the folder where the files will be saved (
 accepts relative and absolute paths)}
 
-\item{method}{Method to be used for downloading files. Current download
-methods are "internal", "wininet" (Windows only) "libcurl", "wget" and
-"curl", and there is a value "auto". Please see _Details_ and _Note_ in the
-documentation of \code{utils::download.file()}.}
-
 \item{unzip}{The unzip method to be used. See the documentation of
 \code{utils::unzip()} for details.}
-
-\item{url}{repository URL. Do not change it unless you really know what
-you're doing.}
 }
 \value{
 No return value, called for side effects.
 }
 \description{
 This script retrieves relevant data files from the CALANGO project
-repository. It will download the data into a folder containing
+folder. It will copy the data into a folder containing
 directories related to dictionary files, Gene Ontology annotation
 files, tree files, etc.
 }
@@ -41,7 +28,7 @@ If the `target.dir` provided does not exist it is created
 }
 \examples{
 \dontrun{
-  retrieve_data_files(target.dir = "./data_folder")
+  CALANGO::retrieve_data_files(target.dir = "./data_folder")
 }
 
 }

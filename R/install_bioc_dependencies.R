@@ -22,26 +22,12 @@ install_bioc_dependencies <- function(bioc.args = list()){
   # ================== Sanity checks ==================
   assertthat::assert_that(is.list(bioc.args))
   
-  # IMPORTANT: any new CRAN package dependency that's used only in the .Rmd
-  # files must be called once below, to prevent CRAN warnings (CRAN will
-  # check if all packages in `Depends` are used at least once within the
-  # functions in the `R` folder.)
-  if (FALSE){ # <---------------- code in here is never to be called, of course.
-    dendextend::fac2num(factor(3:5))
-    heatmaply::BrBG(5)                # for heatmaply
-    ggplot2::aes()                    # for ggplot2
-    plotly::api()                     # for plotly
-    DT::JS()                          # for DT
-    htmltools::a()                    # for htmltools
-    htmlwidgets::JS()                 # for htmlwidgets
-    pkgdown::as_pkgdown()             # for pkgdown
-    knitr::all_labels()               # for knitr
-  }
-  
-  # Now to install the required Bioconductor packages
+  # Install the required Bioconductor packages
+  message("\nInstalling AnnotationDbi, KEGGREST and GO.db from BioConductor ", 
+          BiocManager::version(), " (if needed)")
   bioc.args$pkgs <- c("AnnotationDbi",
                       "KEGGREST",
                       "GO.db")
   
-  do.call(BiocManager::install, bioc.args)
+  do.call(BiocManager::install, bioc.args, ask = TRUE)
 }
