@@ -1,6 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^.*\.yml$
+.yml$
 ^cran-comments.md$
 docs$
 ^doc$
@@ -13,8 +13,8 @@ zz_original_scripts$
 tests$
 ^LICENSE$
 vignettes/examples-page.Rmd
-logo.png
-pkgdown/
+^logo.png$
+^pkgdown/$
 ^tmp$
 inst/zz_original_scripts.zip
 ^\.github$
