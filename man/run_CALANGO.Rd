@@ -4,7 +4,7 @@
 \alias{run_CALANGO}
 \title{Run the CALANGO pipeline}
 \usage{
-run_CALANGO(defs, type = "correlation", cores = NULL, render.report = TRUE)
+run_CALANGO(defs, type = "correlation", cores = NULL, render.report = TRUEE)
 }
 \arguments{
 \item{defs}{either a CALANGO-type list object or
@@ -20,6 +20,20 @@ currently implemented using the `parallel` package, which uses forking
 (which means that multicore support is not available under Windows)}
 
 \item{render.report}{logical: should a HTML5 report be generated?}
+}
+\value{
+Updated `defs` list, containing:
+\itemize{
+   \item All input parameters originally passed or read from a `defs` file 
+   (see **Details**).
+   \item Derived fields loaded and preprocessed from the files indicated in 
+   `defs`.
+   \item Several statistical summaries of the data (used to render the 
+   report), including correlations, contrasts, covariances, p-values and 
+   other summary statistics.
+}
+
+Results are also saved under `defs$output.dir`.
 }
 \description{
 This function runs the complete workflow of CALANGO and generates the
@@ -91,4 +105,5 @@ defs <- "./data_folder/parameters/parameters_domain2GO_count_less_phages.txt"
 # Run CALANGO
 res <- run_CALANGO(defs, cores = parallel::detectCores() - 1)
 }
+
 }

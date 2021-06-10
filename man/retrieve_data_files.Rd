@@ -20,7 +20,8 @@ No return value, called for side effects.
 This script retrieves relevant data files from the CALANGO project
 folder. It will copy the data into a folder containing
 directories related to dictionary files, Gene Ontology annotation
-files, tree files, etc.
+files, tree files, etc. Note: you may need to edit the file paths in the 
+example scripts contained under the `parameters` subfolder of `target.dir`.
 }
 \details{
 If the `target.dir` provided does not exist it is created

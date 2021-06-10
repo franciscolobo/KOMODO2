@@ -53,6 +53,7 @@
 #'    `stats::p.adjust.methods()`. If not provided the function defaults to
 #'    "BH".
 #' }
+#' 
 #'
 #' @param defs either a CALANGO-type list object or
 #' a path to a text file containing the required definitions (see Details).
@@ -67,6 +68,19 @@
 #'
 #' @importFrom assertthat assert_that is.count has_name
 #' @importFrom ggplot2 "%+%"
+#'
+#' @return Updated `defs` list, containing:
+#' \itemize{
+#'    \item All input parameters originally passed or read from a `defs` file 
+#'    (see **Details**).
+#'    \item Derived fields loaded and preprocessed from the files indicated in 
+#'    `defs`.
+#'    \item Several statistical summaries of the data (used to render the 
+#'    report), including correlations, contrasts, covariances, p-values and 
+#'    other summary statistics.
+#' }
+#' 
+#' Results are also saved under `defs$output.dir`.
 #'
 #' @export
 #'
@@ -84,17 +98,17 @@
 #' # Run CALANGO
 #' res <- run_CALANGO(defs, cores = parallel::detectCores() - 1)
 #' }
+#' 
 
 run_CALANGO <- function(defs, type = "correlation",
-                        cores = NULL, render.report = TRUE){
+                        cores = NULL, render.report = TRUEE){
 
   # ================== Sanity checks ==================
   assert_that(is.list(defs) || file.exists(defs),
               is.null(cores) || is.count(cores),
               is.null(type) || is.character(type),
               is.null(type) || length(type) == 1,
-              is.logical(render.report),
-              length(render.report) == 1,
+              is.logical(render.report), length(render.report) == 1,
               msg = "input error(s) in CALANGO::run_CALANGO()")
 
   # If defs is a file path, read it into list
@@ -113,10 +127,11 @@ run_CALANGO <- function(defs, type = "correlation",
 
   available.cores <- parallel::detectCores()
   if (defs$cores >= available.cores){
-    cat("\nAttention: cores too large, we only have ", available.cores,
-        " cores.\nUsing ", available.cores - 1,
-        " cores for load_data().")
-    defs$cores <- available.cores - 1
+    defs$cores <- max(1, available.cores - 1)
+    warning("Input argument 'cores' too large, we only have ", available.cores,
+            " cores.\nUsing ", defs$cores,
+            " cores for run_CALANGO().")
+    
   }
   if (.Platform$OS.type == "windows"){
     defs$cl <- parallel::makeCluster(defs$cores, setup_strategy = "sequential")

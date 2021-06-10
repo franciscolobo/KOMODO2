@@ -66,15 +66,13 @@ AddGenomeVectors <- function(defs, anno, genome.names,
 
 
   # Add the genome vectors and fit them into a data.frame format.
-  cat("\n Generating Genome Vectors:\n")
+  message("Generating Genome Vectors")
   if (.Platform$OS.type == "windows"){
-    cat("...")
     genomeVectors <- parallel::parLapply(cl           = defs$cl,
                                          X            = someAnno,
                                          fun          = GenerateGenomeVector,
                                          ontologyInfo = ontologyInfo,
                                          column       = defs$column)
-    cat(" done!")
   } else {
     genomeVectors <- pbmcapply::pbmclapply(X              = someAnno,
                                            FUN            = GenerateGenomeVector,

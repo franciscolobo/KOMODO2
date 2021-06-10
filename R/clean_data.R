@@ -21,7 +21,7 @@
 clean_data <- function(defs){
 
   # Perform data preprocessing
-  cat("\nPreliminary data cleaning:\n")
+  message("Preliminary data cleaning:")
   defs <- switch(tolower(defs$type),
                  significance = clean_data_significance(defs),
                  correlation  = clean_data_correlation(defs))

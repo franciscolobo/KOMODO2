@@ -69,9 +69,8 @@ do_analysis_correlation <- function(defs){
 
   # Compute sample mode and sample heterogenity
   # (defined as: proportion of samples distinct from the sample mode)
-  cat("\nComputing sample mode and sample heterogenity:\n")
+  message("Computing sample mode and sample heterogenity")
   if (.Platform$OS.type == "windows"){
-    cat("...")
     tmp <- parallel::parLapply(cl  = defs$cl,
                                X   = defs$y,
                                fun = function(v){
@@ -79,7 +78,6 @@ do_analysis_correlation <- function(defs){
                                  return(list(m = as.numeric(names(tmp)[1]),
                                              h = sum(tmp[-1]) / length(v)))
                                })
-    cat(" done!")
   } else {
     tmp <- pbmcapply::pbmclapply(defs$y,
                                  function(v){
@@ -88,7 +86,6 @@ do_analysis_correlation <- function(defs){
                                                h = sum(tmp[-1]) / length(v)))
                                  },
                                  mc.cores = defs$cores)
-  cat(" done!")
   }
 
   defs$heterogeneity <- sapply(tmp, function(x) x$h)

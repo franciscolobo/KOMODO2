@@ -148,7 +148,7 @@ load_data_correlation <- function(defs){
   defs$y.name <- gsub(pattern = "//", replacement = "/", x = defs$y.name,
                       fixed = TRUE)
 
-  cat("\nLoading data:\n")
+  message("Loading data:")
   if (.Platform$OS.type == "windows"){
     cat("...")
     defs$y <- parallel::parLapply(cl             = defs$cl,

@@ -1,6 +1,6 @@
 save_tsv_files <- function(defs){
 
-  cat("\nSaving results to files: ")
+  message("Saving results to files (this may take a while)")
   tsvdir <- gsub("//", "/", paste0(defs$output.dir, "/tsv_files"), fixed = TRUE)
   if (!dir.exists(tsvdir)) dir.create(tsvdir,
                                       recursive = TRUE,
@@ -52,8 +52,6 @@ save_tsv_files <- function(defs){
                                outputName   = filenames[[i]],
                                type         = types[i])
   }
-
-  cat(" done!\n")
 
   invisible(defs)
 }

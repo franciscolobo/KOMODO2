@@ -42,9 +42,8 @@ FindContrasts <- function(x, y, tree, method = "gls", denominator = 1,
     if (!is.null(denominator)) y <- sweep(y, MARGIN = 1, denominator, `/`) # y <- y / denominator
 
 
-    cat("\nComputing contrasts:\n")
+    message("Computing contrasts")
     if (.Platform$OS.type == "windows"){
-      cat("...")
       models <- parallel::parLapply(cl   = cl,
                                     X    = y,
                                     fun  = function(tmpy, tree, cx, nx){
@@ -55,7 +54,6 @@ FindContrasts <- function(x, y, tree, method = "gls", denominator = 1,
                                     tree = tree,
                                     cx   = contrast_x,
                                     nx   = rownames(x))
-      cat(" done!")
     } else {
       models <- pbmcapply::pbmclapply(y,
                                       function(tmpy, tree, cx, nx){
@@ -96,14 +94,12 @@ FindContrasts <- function(x, y, tree, method = "gls", denominator = 1,
       }}
 
     if (.Platform$OS.type == "windows"){
-      cat("...")
       models <- parallel::parLapply(cl   = cl,
                                     X    = y,
                                     fun  = tmpfun,
                                     tmpx = tmp_x,
                                     nx   = rownames(x),
                                     tree = tree)
-      cat(" done!")
     } else {
       models <- pbmcapply::pbmclapply(X    = y,
                                       FUN  = tmpfun,
