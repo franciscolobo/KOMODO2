@@ -42,9 +42,10 @@ vignettes/*.pdf
 # data_folder/
 # results/
 validation/
-/zz_original_scripts/results
+zz_original_scripts/
 .Rproj.user
-doc
-Meta
-tmp
-data_folder
+doc/
+Meta/
+tmp/
+data_folder/
+data/

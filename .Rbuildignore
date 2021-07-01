@@ -6,6 +6,7 @@ docs$
 ^Meta$
 ^CRAN-RELEASE$
 ^results$
+^data$
 ^data_folder$
 ^zz_original_scripts$
 ^tests$

@@ -1,4 +1,4 @@
-inputfiles <- dir("./data_files/parameters/", full.names = TRUE)
+inputfiles <- dir("./inst/data_files/parameters/", full.names = TRUE)
 
 # run for all specs files
 for (i in seq_along(inputfiles)){
