@@ -28,6 +28,7 @@ install_bioc_dependencies <- function(bioc.args = list()){
   bioc.args$pkgs <- c("AnnotationDbi",
                       "KEGGREST",
                       "GO.db")
+  bioc.args$ask = TRUE
   
-  do.call(BiocManager::install, bioc.args, ask = TRUE)
+  do.call(BiocManager::install, bioc.args)
 }

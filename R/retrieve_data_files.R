@@ -18,7 +18,7 @@
 #'
 #' @examples
 #' \dontrun{
-#'   CALANGO::retrieve_data_files(target.dir = "./data_folder")
+#'   CALANGO::retrieve_data_files(target.dir = "./data")
 #' }
 #' 
 #' @return No return value, called for side effects.
