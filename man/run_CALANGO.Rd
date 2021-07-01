@@ -4,7 +4,7 @@
 \alias{run_CALANGO}
 \title{Run the CALANGO pipeline}
 \usage{
-run_CALANGO(defs, type = "correlation", cores = NULL, render.report = TRUEE)
+run_CALANGO(defs, type = "correlation", cores = NULL, render.report = TRUE)
 }
 \arguments{
 \item{defs}{either a CALANGO-type list object or
@@ -99,11 +99,11 @@ library(CALANGO)
 install_bioc_dependencies()
 
 # Download data files
-retrieve_data_files(target.dir = "./data_folder")
-defs <- "./data_folder/parameters/parameters_domain2GO_count_less_phages.txt"
+retrieve_data_files(target.dir = "./data")
+defs <- "./data/parameters/parameters_domain2GO_count_less_phages.txt"
 
 # Run CALANGO
-res <- run_CALANGO(defs, cores = parallel::detectCores() - 1)
+res <- run_CALANGO(defs, cores = 2)
 }
 
 }

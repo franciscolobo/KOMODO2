@@ -6,9 +6,9 @@ make_correlation_report <- function(defs){
   # Ignore these, they're only here to initialize certain packages
   # NOTE: these are *important*, for some weird reason the report generation
   # breaks if you don't initialise (at least) the dendextend package.
-  tmp <- dendextend::fac2num(factor(3:5))
-  tmp <- plotly::hobbs
-  tmp <- heatmaply::BrBG(5)
+  # tmp <- dendextend::fac2num(factor(3:5))
+  # tmp <- plotly::hobbs
+  # tmp <- heatmaply::BrBG(5)
   
   # filter out those with no observations (sum equals zero)
   idx  <- (sumY != 0)

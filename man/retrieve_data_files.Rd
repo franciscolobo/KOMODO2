@@ -29,7 +29,7 @@ If the `target.dir` provided does not exist it is created
 }
 \examples{
 \dontrun{
-  CALANGO::retrieve_data_files(target.dir = "./data_folder")
+  CALANGO::retrieve_data_files(target.dir = "./data")
 }
 
 }
