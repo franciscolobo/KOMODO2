@@ -7,6 +7,12 @@ set_absolute_paths <- function(defs){
               "dict.path",
               "tree.path")
   
+  if(defs$basedir == c("")){
+    defs$basedir <- "./"
+  }
+  
+  defs$basedir <- normalizePath(defs$basedir)
+  
   defs$paths <- data.frame(field = character(), 
                            rel   = character(),
                            abs   = character())
