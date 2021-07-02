@@ -37,7 +37,7 @@ retrieve_data_files <- function(target.dir,
     unlink(filelist, recursive = TRUE, force = TRUE)
   }
 
-  utils::unzip(system.file("data_files/Examples.zip", package = "CALANGO"),
+  utils::unzip(system.file("extdata/Examples.zip", package = "CALANGO"),
                unzip = unzip,
                exdir = target.dir)
   unlink(paste0(target.dir, "/__MACOSX"), recursive = TRUE, force = TRUE)

@@ -9,7 +9,7 @@ run_CALANGO(
   type = "correlation",
   cores = NULL,
   render.report = TRUE,
-  basedir = "./"
+  basedir = ""
 )
 }
 \arguments{

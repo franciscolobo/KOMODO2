@@ -18,6 +18,9 @@
     - Initial development and implementation support.  
 - Jorge Augusto Hongo (jorgeahongo@gmail.com)
     - Initial development and implementation support.  
+    
+### NON-CODING COLLABORATORS
+- Gabriel Magno F. Almeida - scientific advisor (analysis of phage data)
  
 ### DESCRIPTION
 
@@ -60,49 +63,28 @@ To run CALANGO you need two things:
 
 **Retrieving data**  
 
-A set of example data folders and files can be downloaded directly from the project repository by using function `retrieve_data_files()`. For instance, a call:
+A set of example data folders and files can accessed directly from the package 
+using function `retrieve_data_files()`. For instance, a call:
 
+```r
+CALANGO::retrieve_data_files("./data")
 ```
-library(CALANGO)
 
-retrieve_data_files("./data_files")
-```
+will create a folder called `data` in the current working directory path, and download the sample files into subfolders within it. These subfolders will contain:
 
-will create a folder called `data_files` in the current working directory path, and download the sample files into subfolders within it. These subfolders will contain:
+- genome annotation data files (under `./data/Pfam/` or `./data/gene2GO/`)
+- metadata files (under `./data/metadata/`)
+- phylogenetic tree files (under `./data/trees/`)
+- dictionary files (under `./data/dics/`)
 
-- genome annotation data files (under `./data_files/Pfam/` or `./data_files/gene2GO/`)
-- metadata files (under `./data_files/metadata/`)
-- phylogenetic tree files (under `./data_files/trees/`)
-- dictionary files (under `./data_files/dics/`)
-
-The downloaded data will also contain files that describe the input list mentioned above. A commented template will available at `./data_files/parameters.txt`, and several full examples under `./data_files/parameters_validation/`. These full examples represent all input files required to locally reproduce several example analyses. 
+The downloaded data will also contain files that describe the input list mentioned above, under `./data/parameters/`. These full examples represent all input files required to locally reproduce several types of analyses. 
 
 *****
 
 Once these two pieces are in place, the CALANGO pipeline can be run by invoking the main function of the package. For instance:
 
 ```
-output <- run_CALANGO(defs = "./data_files/parameters_validation/parameters_gene2GO_Pan_proxy.txt")
-```
-
-Or, alternatively:
-
-```
- defs <- list(annotation.files.dir = "./data_files/gene2GO",
-              output.dir           = "./results/GO_Pan_proxy/",
-              dataset.info         = "./data_files/metadata/GO_metadata_Pan_proxy.txt",
-              x.column             = 2,
-              ontology             = "GO",
-              dict.path            = "",
-              column               = "GO",
-              denominator.column   = "",
-              tree.path            = "./data_files/trees/tree_genome_IDs.nwk",
-              tree.type            = "newick",
-              linear.model.cutoff  = 0.5,
-              type                 = "correlation",
-              MHT.method           = "BH")
-
-output <- run_CALANGO(defs, cores = 4)
+output <- run_CALANGO(defs = "./data/parameters/parameters_domain2GO_freq.txt", cores = 2)
 ```
 
 This call will generate an enriched `CALANGO` list as the output, and generate a dynamic HTML5 output (plus several tab-separated value (tsv) files in the directory provided as `output.dir`.
@@ -110,8 +92,8 @@ This call will generate an enriched `CALANGO` list as the output, and generate a
 
 ### PREPARING YOUR INPUT FILES 
 
-CALANGO requires the following files (please check the template in 
-`./data_files/parameters.txt` or the examples in `./data_files/parameters_validation/` if in doubt about file specifications):
+CALANGO requires the following files (please check the examples in 
+in `./data/parameters/` if in doubt about file specifications):
 
 ---
 **genome annotation file**  
@@ -235,7 +217,7 @@ ontology file and set the `ontology = "other"`.
 ### SETTING UP CALANGO PARAMETERS 
 
 CALANGO's parameters are listed in the documentation of `run_CALANGO()`, as well as
-in the template file provided (`./data_files/parameters.txt`). They are, for the current version:
+in the examples file provided (`./data/parameters/`). They are, for the current version:
 
 - annotation.files.dir (required, string) - Folder where annotation files are located.
 
@@ -279,7 +261,7 @@ CALANGO produces as its main output a dynamic HMTL5 website containing:
 - Interactive heatmaps and scatterplots
 - A dynamic table of results.
 
-Please check our <a href="https://fcampelo.github.io/CALANGO/articles/examples-page.html" target="_blank">examples page</a> to explore the full output of CALANGO for a variety of examples. The required data to fully reproduce these examples is available in our Github repository, under <a href="https://github.com/fcampelo/CALANGO/tree/master/data_files">data_files</a>, and can be easily downloaded using `CALANGO::retrieve_data_files()`.
+Please check our examples page at <https://fcampelo.github.io/CALANGO> to explore the full output of CALANGO for a variety of examples. The required data to fully reproduce these examples can be obtained by using `CALANGO::retrieve_data_files()`.
 
 *****
 

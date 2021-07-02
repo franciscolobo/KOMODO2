@@ -154,13 +154,13 @@ make_correlation_report <- function(defs){
   if(!dir.exists(cpd)) dir.create(cpd, recursive = TRUE)
   
   # Copy report template into output dir
-  files_to_copy <- dir(system.file("extdata", package = "CALANGO"))
+  files_to_copy <- dir(system.file("extdata/report_files", package = "CALANGO"))
   fp <- files_to_copy
   
   for (i in seq_along(files_to_copy)){
     fp[i] <- gsub("//", "/", paste0(defs$output.dir, "/", files_to_copy[i]),
                   fixed = TRUE)
-    file.copy(system.file("extdata", files_to_copy[i], package = "CALANGO"),
+    file.copy(system.file("extdata/report_files", files_to_copy[i], package = "CALANGO"),
               to = fp[i], overwrite = TRUE)
   }
   
