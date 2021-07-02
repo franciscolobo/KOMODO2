@@ -22,6 +22,8 @@
 ### NON-CODING COLLABORATORS
 - Gabriel Magno F. Almeida - scientific advisor (analysis of phage data)
  
+*****
+ 
 ### DESCRIPTION
 
 CALANGO is a first-principles, phylogeny-aware comparative genomics package to search for annotation terms (e.g Pfam IDs, GO terms or superfamilies), formally described in a dictionary-like structure and used to annotate genomic components, associated with a quantitative/rank variable (e.g. number of cell types, genome size or density of specific genomic elements).
