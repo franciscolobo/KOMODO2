@@ -4,7 +4,13 @@
 \alias{run_CALANGO}
 \title{Run the CALANGO pipeline}
 \usage{
-run_CALANGO(defs, type = "correlation", cores = NULL, render.report = TRUE)
+run_CALANGO(
+  defs,
+  type = "correlation",
+  cores = NULL,
+  render.report = TRUE,
+  basedir = "./"
+)
 }
 \arguments{
 \item{defs}{either a CALANGO-type list object or
@@ -20,6 +26,9 @@ currently implemented using the `parallel` package, which uses forking
 (which means that multicore support is not available under Windows)}
 
 \item{render.report}{logical: should a HTML5 report be generated?}
+
+\item{basedir}{path to base folder to which all relative paths in `defs` 
+refer to.}
 }
 \value{
 Updated `defs` list, containing:
@@ -33,7 +42,7 @@ Updated `defs` list, containing:
    other summary statistics.
 }
 
-Results are also saved under `defs$output.dir`.
+Results are also saved to files under `defs$output.dir`.
 }
 \description{
 This function runs the complete workflow of CALANGO and generates the
@@ -95,12 +104,12 @@ Blank likes and lines starting with `#` are ignored. The function expects the
 \dontrun{
 
 # Install packages for report generation (only needs to be done once)
-library(CALANGO)
-install_bioc_dependencies()
+# CALANGO::install_bioc_dependencies()
 
 # Download data files
-retrieve_data_files(target.dir = "./data")
-defs <- "./data/parameters/parameters_domain2GO_count_less_phages.txt"
+basedir <- tempdir()
+retrieve_data_files(target.dir = paste0(basedir, "/data"))
+defs <- paste0(basedir, "/data/parameters/parameters_domain2GO_count_less_phages.txt")
 
 # Run CALANGO
 res <- run_CALANGO(defs, cores = 2)

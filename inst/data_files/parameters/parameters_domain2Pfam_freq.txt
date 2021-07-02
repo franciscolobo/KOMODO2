@@ -1,6 +1,4 @@
 # This is a sample parameter file for KOMODO2.
-# NOTICE: It assumes that the relevant data files (including this one) were
-# retrieved using KOMODO2::retrieve_data_files("./data_folder").
 # Change the target folder/file paths below if needed
 
 annotation.files.dir = "data/annotation/domain2Pfam/" #Directory where annotation files are located. If not provided file described in variable "dataset.info" should contain absolute paths to annotation files

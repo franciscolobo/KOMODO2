@@ -65,6 +65,8 @@
 #' currently implemented using the `parallel` package, which uses forking
 #' (which means that multicore support is not available under Windows)
 #' @param render.report logical: should a HTML5 report be generated?
+#' @param basedir path to base folder to which all relative paths in `defs` 
+#'                refer to.
 #'
 #' @importFrom assertthat assert_that is.count has_name
 #' @importFrom ggplot2 "%+%"
@@ -80,7 +82,7 @@
 #'    other summary statistics.
 #' }
 #' 
-#' Results are also saved under `defs$output.dir`.
+#' Results are also saved to files under `defs$output.dir`.
 #'
 #' @export
 #'
@@ -88,12 +90,12 @@
 #' \dontrun{
 #'
 #' # Install packages for report generation (only needs to be done once)
-#' library(CALANGO)
-#' install_bioc_dependencies()
+#' # CALANGO::install_bioc_dependencies()
 #'
 #' # Download data files
-#' retrieve_data_files(target.dir = "./data")
-#' defs <- "./data/parameters/parameters_domain2GO_count_less_phages.txt"
+#' basedir <- tempdir()
+#' retrieve_data_files(target.dir = paste0(basedir, "/data"))
+#' defs <- paste0(basedir, "/data/parameters/parameters_domain2GO_count_less_phages.txt")
 #'
 #' # Run CALANGO
 #' res <- run_CALANGO(defs, cores = 2)
@@ -101,7 +103,8 @@
 #' 
 
 run_CALANGO <- function(defs, type = "correlation",
-                        cores = NULL, render.report = TRUE){
+                        cores = NULL, render.report = TRUE, 
+                        basedir = "./"){
 
   # ================== Sanity checks ==================
   assert_that(is.list(defs) || file.exists(defs),
@@ -115,6 +118,9 @@ run_CALANGO <- function(defs, type = "correlation",
   if(!is.list(defs)) {
     defs <- read_calango_file(defs)
   }
+  
+  defs$basedir <- basedir
+  defs <- set_absolute_paths(defs)
 
   if(is.null(defs$type)) defs$type <- type
 
@@ -151,6 +157,8 @@ run_CALANGO <- function(defs, type = "correlation",
   if(is.null(defs$output.dir)) saveRDS(defs,
                                        file = paste0(defs$output.dir,
                                                      "/results.rds"))
+  
+  defs <- restore_relative_paths(defs)
 
   invisible(defs)
 }

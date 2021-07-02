@@ -22,7 +22,7 @@ do_analysis_correlation <- function(defs){
 
 
   # Create fully dicotomic tree as required by pic() function
-  defs$tree <- ape::multi2di(defs$tree)
+  defs$tree <- ape::multi2di(defs$tree, equiprob = FALSE)
 
   # Create data structure for dictionary
   if (defs$ontology %in% c("go", "gene ontology")) {

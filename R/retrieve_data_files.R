@@ -21,7 +21,7 @@
 #'   CALANGO::retrieve_data_files(target.dir = "./data")
 #' }
 #' 
-#' @return No return value, called for side effects.
+#' @return No return value, called for side effects (see Description).
 
 retrieve_data_files <- function(target.dir,
                                 unzip  = getOption("unzip")){

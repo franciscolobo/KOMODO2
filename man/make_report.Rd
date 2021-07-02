@@ -13,8 +13,18 @@ make_report(defs, render.report = TRUE)
 internal use only)}
 }
 \value{
-A (possibly updated) `CALANGO`-type list, with the 
-following structure:
+Updated `defs` list, containing:
+\itemize{
+   \item All input parameters originally passed (see [run_CALANGO()] for 
+   details).
+   \item Derived fields calculated for displaying the results, including 
+   several statistical summaries of the data (including correlations, 
+   contrasts, covariances, p-values).
+}
+
+This function is mainly called for its side effect, namely the generation of 
+an HTML5 report of the analysis, which is saved to the folder indicated in 
+`defs$output.dir`.
 }
 \description{
 This script generates the HTML5 report based on an enriched

@@ -14,7 +14,7 @@ accepts relative and absolute paths)}
 \code{utils::unzip()} for details.}
 }
 \value{
-No return value, called for side effects.
+No return value, called for side effects (see Description).
 }
 \description{
 This script retrieves relevant data files from the CALANGO project
