@@ -1,5 +1,6 @@
 ## Changes and notes
 * Initial release.
+* Some systems generate a NOTE: **sub-directories of 1Mb or more: extdata  18.5Mb**. This is due to a single compressed folder (.ZIP) containing several ASCII files, which provide templates and example data for working with the package. The user can extract and access these examples and templates using function `retrieve_data_files()`.
 * Solved points raised by Gregor Seyer in first submission:
     * _If there are references describing the methods in your package, please add these in the description field of your DESCRIPTION file_: Done
     * _Please add \value to .Rd files regarding exported methods and explain the functions results in the documentation_: Done
