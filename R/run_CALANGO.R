@@ -104,7 +104,7 @@
 
 run_CALANGO <- function(defs, type = "correlation",
                         cores = NULL, render.report = TRUE, 
-                        basedir = "./"){
+                        basedir = ""){
 
   # ================== Sanity checks ==================
   assert_that(is.list(defs) || file.exists(defs),
