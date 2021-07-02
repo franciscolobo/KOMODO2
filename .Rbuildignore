@@ -13,7 +13,7 @@ docs$
 ^LICENSE$
 ^vignettes/examples-page.Rmd
 ^logo.png$
-^pkgdown/$
+^pkgdown
 ^tmp$
 ^inst/zz_original_scripts.zip
 ^\.github$
