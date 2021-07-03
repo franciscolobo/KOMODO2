@@ -1,7 +1,7 @@
 check_bioc_dependencies <- function(...) {
   # Check if bioconductor dependencies are installed
   toCheck <- c("AnnotationDbi", "KEGGREST", "GO.db")
-  x <- rownames(installed.packages())
+  x <- rownames(utils::installed.packages())
   idx  <- which(!toCheck %in% x)
   
   if (length(idx) > 0){

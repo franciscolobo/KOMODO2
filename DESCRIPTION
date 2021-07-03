@@ -44,6 +44,9 @@ Imports: assertthat (>= 0.2.1),
          htmlwidgets (>= 1.5.1),
          pkgdown (>= 1.5.1),
          knitr (>= 1.28)
+Suggests: AnnotationDbi,
+          KEGGREST,
+          GO.db
 Encoding: UTF-8
 RoxygenNote: 7.1.1
 URL: https://fcampelo.github.io/CALANGO/
