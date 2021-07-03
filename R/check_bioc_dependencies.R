@@ -1,4 +1,4 @@
-.onAttach <- function(...) {
+check_bioc_dependencies <- function(...) {
   # Check if bioconductor dependencies are installed
   toCheck <- c("AnnotationDbi", "KEGGREST", "GO.db")
   x <- rownames(installed.packages())
@@ -12,6 +12,9 @@
     }
     msg <- paste0(msg, 
                   "\nPlease run install_bioc_dependencies() before using run_CALANGO()")
-    packageStartupMessage(msg)
+    message(msg)
+    return(FALSE)
+  } else {
+    return(TRUE)
   }
 }

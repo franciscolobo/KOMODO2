@@ -89,10 +89,11 @@
 #' @examples
 #' \dontrun{
 #'
-#' # Install packages for report generation (only needs to be done once)
+#' ## Install any missing BioConductor packages for report generation 
+#' ## (only needs to be done once)
 #' # CALANGO::install_bioc_dependencies()
 #'
-#' # Download data files
+#' # Retrieve example files
 #' basedir <- tempdir()
 #' retrieve_data_files(target.dir = paste0(basedir, "/data"))
 #' defs <- paste0(basedir, "/data/parameters/parameters_domain2GO_count_less_phages.txt")
@@ -105,8 +106,14 @@
 run_CALANGO <- function(defs, type = "correlation",
                         cores = NULL, render.report = TRUE, 
                         basedir = ""){
-
+  
   # ================== Sanity checks ==================
+  isOK <- check_bioc_dependencies()
+  if (!isOK) {
+    warning("run_CALANGO() stopped prematurely.")
+    return(NULL)
+  }
+  
   assert_that(is.list(defs) || file.exists(defs),
               is.null(cores) || is.count(cores),
               is.null(type) || is.character(type),
