@@ -263,7 +263,7 @@ CALANGO produces as its main output a dynamic HMTL5 website containing:
 - Interactive heatmaps and scatterplots
 - A dynamic table of results.
 
-Please check our examples page at <https://fcampelo.github.io/CALANGO> to explore the full output of CALANGO for a variety of examples. The required data to fully reproduce these examples can be obtained by using `CALANGO::retrieve_data_files()`.
+Please check our examples page at <https://fcampelo.github.io/CALANGO/> to explore the full output of CALANGO for a variety of examples. The required data to fully reproduce these examples can be obtained by using `CALANGO::retrieve_data_files()`.
 
 *****
 

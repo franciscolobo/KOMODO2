@@ -1,8 +1,15 @@
 #' Install Bioconductor dependencies
 #'
 #' This function installs the latest versions of all Bioconductor packages
-#' (listed in the `Suggests` fields of DESCRIPTION). It is **essential** that 
-#' the Bioconductor dependencies be installed for CALANGO to work properly.
+#' required for the report generation, namely:
+#' \itemize{
+#'    \item AnnotationDbi
+#'    \item KEGGREST
+#'    \item GO.db
+#' }
+#' 
+#' It is essential that 
+#' these Bioconductor packages be installed for CALANGO to work properly.
 #' It uses `BiocManager::install()` for installing Bioconductor
 #' packages. Further arguments to this function are passed as a list.
 #'
