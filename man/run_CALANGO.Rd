@@ -103,10 +103,11 @@ Blank likes and lines starting with `#` are ignored. The function expects the
 \examples{
 \dontrun{
 
-# Install packages for report generation (only needs to be done once)
+## Install any missing BioConductor packages for report generation 
+## (only needs to be done once)
 # CALANGO::install_bioc_dependencies()
 
-# Download data files
+# Retrieve example files
 basedir <- tempdir()
 retrieve_data_files(target.dir = paste0(basedir, "/data"))
 defs <- paste0(basedir, "/data/parameters/parameters_domain2GO_count_less_phages.txt")

@@ -4,11 +4,13 @@
 \alias{install_bioc_dependencies}
 \title{Install Bioconductor dependencies}
 \usage{
-install_bioc_dependencies(bioc.args = list())
+install_bioc_dependencies(bioc.args = list(), force = FALSE)
 }
 \arguments{
 \item{bioc.args}{list containing further arguments to be passed
 down to `BiocManager::install()`.}
+
+\item{force}{logical: reinstall already-installed packages?}
 }
 \value{
 No return value, called for side effects.
