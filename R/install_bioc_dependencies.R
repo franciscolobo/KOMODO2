@@ -40,7 +40,7 @@ install_bioc_dependencies <- function(bioc.args = list(),
     bioc.args$force <- TRUE
   } else {
     x <- rownames(utils::installed.packages())
-    idx  <- which(!toCheck %in% x)
+    idx  <- which(!pkgs %in% x)
     if (length(idx) > 0){
       pkgs <- pkgs[idx]
       makeInst <- TRUE
