@@ -1,4 +1,4 @@
-# CALANGO 1.0.0
+# CALANGO 1.0.2
 
 - Initial CRAN release.
 
