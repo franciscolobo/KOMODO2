@@ -81,7 +81,7 @@ HTML5 output pages and export files." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">CALANGO</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
       </span>
     </div>
 
@@ -145,7 +145,13 @@ HTML5 output pages and export files." />
 HTML5 output pages and export files.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>run_CALANGO</span><span class='op'>(</span><span class='va'>defs</span>, type <span class='op'>=</span> <span class='st'>"correlation"</span>, cores <span class='op'>=</span> <span class='cn'>NULL</span>, render.report <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>run_CALANGO</span><span class='op'>(</span>
+  <span class='va'>defs</span>,
+  type <span class='op'>=</span> <span class='st'>"correlation"</span>,
+  cores <span class='op'>=</span> <span class='cn'>NULL</span>,
+  render.report <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  basedir <span class='op'>=</span> <span class='st'>""</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -172,8 +178,26 @@ currently implemented using the `parallel` package, which uses forking
       <th>render.report</th>
       <td><p>logical: should a HTML5 report be generated?</p></td>
     </tr>
+    <tr>
+      <th>basedir</th>
+      <td><p>path to base folder to which all relative paths in `defs` 
+refer to.</p></td>
+    </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Updated `defs` list, containing:</p><ul>
+<li><p>All input parameters originally passed or read from a `defs` file 
+   (see **Details**).</p></li>
+<li><p>Derived fields loaded and preprocessed from the files indicated in 
+   `defs`.</p></li>
+<li><p>Several statistical summaries of the data (used to render the 
+   report), including correlations, contrasts, covariances, p-values and 
+   other summary statistics.</p></li>
+</ul>
+
+<p>Results are also saved to files under `defs$output.dir`.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The script expects a `CALANGO`-type list, passed either as an actual list
@@ -229,16 +253,19 @@ Blank likes and lines starting with `#` are ignored. The function expects the
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 
-<span class='co'># Install packages for report generation (only needs to be done once)</span>
-<span class='fu'><a href='install_and_update_packages.html'>install_and_update_packages</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='co'>## Install any missing BioConductor packages for report generation </span>
+<span class='co'>## (only needs to be done once)</span>
+<span class='co'># CALANGO::install_bioc_dependencies()</span>
 
-<span class='co'># Download data files</span>
-<span class='fu'><a href='retrieve_data_files.html'>retrieve_data_files</a></span><span class='op'>(</span>target.dir <span class='op'>=</span> <span class='st'>"./data_folder"</span><span class='op'>)</span>
-<span class='va'>defs</span> <span class='op'>&lt;-</span> <span class='st'>"./data_folder/parameters_validation/parameters_gene2GO_Pan_proxy.txt"</span>
+<span class='co'># Retrieve example files</span>
+<span class='va'>basedir</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='fu'><a href='retrieve_data_files.html'>retrieve_data_files</a></span><span class='op'>(</span>target.dir <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='va'>basedir</span>, <span class='st'>"/data"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>defs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='va'>basedir</span>, <span class='st'>"/data/parameters/parameters_domain2GO_count_less_phages.txt"</span><span class='op'>)</span>
 
 <span class='co'># Run CALANGO</span>
-<span class='va'>res</span> <span class='op'>&lt;-</span> <span class='fu'>run_CALANGO</span><span class='op'>(</span><span class='va'>defs</span>, cores <span class='op'>=</span> <span class='fu'>parallel</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/parallel/detectCores.html'>detectCores</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>-</span> <span class='fl'>1</span><span class='op'>)</span>
+<span class='va'>res</span> <span class='op'>&lt;-</span> <span class='fu'>run_CALANGO</span><span class='op'>(</span><span class='va'>defs</span>, cores <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
 <span class='op'>}</span>
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
