@@ -6,8 +6,7 @@
     * _Please ensure that your functions do not write by default or in your examples/vignettes/tests in the user's home filespace (including the package directory and getwd()). This is not allowed by CRAN policies. In your examples/vignettes/tests you can write to tempdir()._: Done (changed all examples to use `tempdir()`)
 
 ## R CMD check results  
-* 0 errors | 0 warnings | 1 notes ; R CMD check succeeded
-* About the NOTE (**sub-directories of 1Mb or more: extdata  18.5Mb**): This is due to a 18Mb compressed folder (.ZIP) containing several ASCII files, which are provided as templates and example data for working with the package. The user can extract and access these examples and templates using function `retrieve_data_files()`.
+* 0 errors | 0 warnings | 0 notes ; R CMD check succeeded
 
 ## Test environments
 * macOS:
