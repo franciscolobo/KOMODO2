@@ -2,7 +2,7 @@ Package: CALANGO
 Type: Package
 Title: Comparative Analysis with Annotation-Based Genomic Components
 Version: 1.0.2
-Date: 2021-07-03
+Date: 2021-07-05
 Language: en-US
 Authors@R: c(person("Francisco", "Lobo",
     email   = "franciscolobo@gmail.com",
