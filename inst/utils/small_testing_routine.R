@@ -9,7 +9,7 @@
 # CALANGO::retrieve_data_files(target.dir = "./data_folder")
 #
 # defs <- "./data_folder/parameters_validation/parameters_gene2GO_Pan_proxy.txt"
-# res  <- CALANGO::run_CALANGO(defs, cores = parallel::detectCores() - 1,
+# res  <- CALANGO::run_CALANGO(defs, cores = 2,
 #                              render.report = FALSE)
 #
 # # Un-comment to remove the non-CRAN packages that were installed (if you want)

@@ -2,8 +2,10 @@ retrieve_data_files(target.dir = "data")
 
 inputfiles <- dir("data/parameters/", full.names = TRUE)
 
+ncores = 2
+
 # run for all specs files
 for (i in seq_along(inputfiles)){
   cat("\nProcessing example", i, "of", length(inputfiles), "\n")
-  defs <- run_CALANGO(inputfiles[i], cores = parallel::detectCores() - 1)
+  defs <- run_CALANGO(inputfiles[i], cores = ncores)
 }

@@ -18,3 +18,4 @@ docs$
 ^inst/zz_original_scripts.zip
 ^\.github$
 ^inst/extdata/Examples.zip
+^inst/utils
