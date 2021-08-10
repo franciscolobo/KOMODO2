@@ -1,3 +1,7 @@
+# CALANGO 1.0.X
+- Tested compatibility with taxize v1.0: OK
+
+
 # CALANGO 1.0.2
 
 - Initial CRAN release.
