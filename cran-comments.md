@@ -1,7 +1,9 @@
 ## Changes and notes
-* Maintenance update. Added a single convenience function to help users retrieve 
+* Maintenance update. 
+* Added a single convenience function to help users retrieve 
 an associated *Perl* script for data preparation directly from the R prompt, 
 without having to download it from the Github repository.
+* Minor changes in README and documentation updates.
 
 ## R CMD check results  
 * 0 errors | 0 warnings | 0 notes ; R CMD check succeeded
