@@ -5,6 +5,7 @@
 [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/CALANGO)](https://CRAN.R-project.org/package=CALANGO)
 <!-- badges: end -->
 
+
 ### CALANGO MASTERMIND
 - Francisco Pereira Lobo (franciscolobo@gmail.com, francisco.lobo@ufmg.br)
     - Main developer: initial idea, scientific coordination, first implementation, main visualization concepts.
