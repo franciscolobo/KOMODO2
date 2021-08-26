@@ -1,7 +1,7 @@
 ---
 title: "CALANGO report"
 ---
-<img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo.png" alt="A two-headed lizard. Drawn by Francisco's dad." height="100"/>
+<img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_LOGO.png" alt="CALANGO logo. Drawn by Brazilian artist Berze - https://www.facebook.com/berzearte" height="300"/>
 
 *****
 

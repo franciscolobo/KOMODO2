@@ -12,7 +12,7 @@ docs$
 ^tests$
 ^LICENSE$
 ^vignettes/examples-page.Rmd
-^logo.png$
+^logo.svg$
 ^pkgdown
 ^tmp$
 ^inst/zz_original_scripts.zip
