@@ -19,3 +19,4 @@ docs$
 ^\.github$
 ^inst/extdata/Examples.zip
 ^inst/utils
+^CALANGO_LOGO
