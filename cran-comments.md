@@ -12,7 +12,7 @@ without having to download it from the Github repository.
     * MacOS-latest (release): <https://github.com/fcampelo/CALANGO/actions>
     
 * Linux:
-    * Ubuntu 20.04 release and devel:  <https://github.com/fcampelo/CALANGO/actions>
+    * Ubuntu 20.04 (release and devel):  <https://github.com/fcampelo/CALANGO/actions>
     
 * Windows:
     * R version 4.1.0 (2021-05-18) using platform: x86_64-w64-mingw32 (64-bit) (`devtools::check_win_release()`)
