@@ -19,4 +19,10 @@ docs$
 ^\.github$
 ^inst/extdata/Examples.zip
 ^inst/utils
-^CALANGO_LOGO
+^inst/images/CALANGO_LOGO.svg
+^inst/images/CALANGO_LOGO-lighter.svg
+^inst/images/CALANGO_LOGO.png
+^inst/images/CALANGO_LOGO-lighter.png
+^inst/images/CALANGO_LOGO.svg
+^inst/images/CALANGO_LOGO.pdf
+^inst/images/CALANGO_LOGO2.pdf
