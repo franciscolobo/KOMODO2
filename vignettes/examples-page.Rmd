@@ -6,9 +6,8 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-<center>
-  <img src="https://github.com/fcampelo/CALANGO/raw/master/inst/images/CALANGO_LOGO-lighter.svg" height="300" alt="CALANGO logo. Drawn by Brazilian artist Berze - https://www.facebook.com/berzearte">
-</center>
+
+  <img src="https://github.com/fcampelo/CALANGO/raw/master/inst/images/CALANGO_LOGO.svg" height="150" alt="CALANGO logo. Drawn by Brazilian artist Berze - https://www.facebook.com/berzearte">
 
 Some examples of CALANGO output are available under `docs/articles/results` in the [CALANGO Github repository](https://github.com/fcampelo/CALANGO).  The examples below relate to the case study "*Homologous regions and biological roles associated with prophage density in pathogenic and free-living _Escherichia coli_*", which is presented as part of the manuscript _CALANGO: an annotation-based, phylogeny-aware comparative genomics framework for exploring and interpreting complex genotypes and phenotypes_.
 
