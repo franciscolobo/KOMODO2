@@ -5,7 +5,12 @@
 [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/CALANGO)](https://CRAN.R-project.org/package=CALANGO)
 <!-- badges: end -->
 
-<img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo.png" height="300" alt="">
+<center>
+<picture>
+  <source srcset="https://github.com/fcampelo/CALANGO/blob/master/inst/images/CALANGO_LOGO-darkmode.png" media="(prefers-color-scheme: dark)" height="300" alt="CALANGO logo. Drawn by Brazilian artist Berze - https://www.facebook.com/berzearte.">
+  <img src="https://github.com/fcampelo/CALANGO/blob/master/inst/images/CALANGO_LOGO.png" height="300" alt="CALANGO logo. Drawn by Brazilian artist Berze - https://www.facebook.com/berzearte.">
+</picture>
+</center>
 
 ### CALANGO MASTERMIND
 - Francisco Pereira Lobo (franciscolobo@gmail.com, francisco.lobo@ufmg.br)
