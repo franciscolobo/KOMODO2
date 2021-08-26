@@ -6,21 +6,6 @@
 <!-- badges: end -->
 
   <img src="https://github.com/fcampelo/CALANGO/raw/master/inst/images/CALANGO_LOGO-lighter.svg" height="300" alt="CALANGO logo. Drawn by Brazilian artist Berze - https://www.facebook.com/berzearte">
-
-### CALANGO MASTERMIND
-- Francisco Pereira Lobo (franciscolobo@gmail.com, francisco.lobo@ufmg.br)
-    - Main developer: initial idea, scientific coordination, first implementation, main visualization concepts.
-    
-### OTHER DEVELOPERS
-- Felipe Campelo (f.campelo@aston.ac.uk, fcampelo@gmail.com)
-    - Code auditing and refactoring to R package, CRAN deployment, visualization support.  
-- Giovanni Marques de Castro (giomcastro@gmail.com)
-    - Initial development and implementation support.  
-- Jorge Augusto Hongo (jorgeahongo@gmail.com)
-    - Initial development and implementation support.  
-    
-### NON-CODING COLLABORATORS
-- Gabriel Magno F. Almeida - scientific advisor (analysis of phage data)
  
 *****
  
@@ -264,6 +249,22 @@ CALANGO produces as its main output a dynamic HMTL5 website containing:
 - A dynamic table of results.
 
 Please check our examples page at <https://fcampelo.github.io/CALANGO/> to explore the full output of CALANGO for a variety of examples. The required data to fully reproduce these examples can be obtained by using `CALANGO::retrieve_data_files()`.
+
+*****
+### CALANGO MASTERMIND
+- Francisco P. Lobo (franciscolobo@gmail.com, francisco.lobo@ufmg.br)
+    - Main developer: initial idea, scientific coordination, first implementation, main visualization concepts.
+    
+### OTHER DEVELOPERS
+- Felipe Campelo (f.campelo@aston.ac.uk, fcampelo@gmail.com)
+    - Code auditing and refactoring to R package, CRAN deployment, visualization support.  
+- Giovanni M. de Castro (giomcastro@gmail.com)
+    - Initial development and implementation support.  
+- Jorge A. Hongo (jorgeahongo@gmail.com)
+    - Initial development and implementation support.  
+    
+### NON-CODING COLLABORATORS
+- Gabriel M. F. Almeida - scientific adviser (analysis of phage data)
 
 *****
 
