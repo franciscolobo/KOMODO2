@@ -1,7 +1,7 @@
 ---
-title: "CALANGO report"
+title: ""
 ---
-<img src="https://github.com/fcampelo/CALANGO/raw/master/inst/images/CALANGO_LOGO.svg" alt="CALANGO logo. Drawn by Brazilian artist Berze - https://www.facebook.com/berzearte" height="300"/>
+<img src="https://raw.githubusercontent.com/fcampelo/CALANGO/8e2c9efd7abb739f91a2ff36ffbce2b30f98f87b/inst/images/CALANGO_LOGO.svg" alt="CALANGO logo. Drawn by Brazilian artist Berze - https://www.facebook.com/berzearte" height="300"/>
 
 *****
 
