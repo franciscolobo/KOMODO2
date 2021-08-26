@@ -2,7 +2,7 @@ retrieve_data_files(target.dir = "data")
 
 inputfiles <- dir("data/parameters/", full.names = TRUE)
 
-ncores = 2
+ncores = 7
 
 # run for all specs files
 for (i in seq_along(inputfiles)){

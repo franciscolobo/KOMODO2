@@ -8,6 +8,7 @@
     data to be used with CALANGO
     - Removed input attribute `url` from function *retrieve_data_files()*. This 
     does not break existing code - if `url` is passed it will just be ignored.
+    - Updated package logo in all documentation.
 
 
 # CALANGO 1.0.2

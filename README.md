@@ -6,7 +6,10 @@
 <!-- badges: end -->
 
 <center>
-<img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo.png" alt="CALANGO logo. Drawn by Brazilian artist Berze - https://www.facebook.com/berzearte." height="300"/>
+<picture>
+  <source srcset="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo-darkmode.png" media="(prefers-color-scheme: dark)" height="300" alt="CALANGO logo. Drawn by Brazilian artist Berze - https://www.facebook.com/berzearte.">
+  <img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo.png" height="300" alt="CALANGO logo. Drawn by Brazilian artist Berze - https://www.facebook.com/berzearte.">
+</picture>
 </center>
 
 ### CALANGO MASTERMIND
