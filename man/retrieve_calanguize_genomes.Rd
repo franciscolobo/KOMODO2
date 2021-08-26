@@ -38,7 +38,7 @@ If the `target.dir` provided does not exist it is created
 }
 \examples{
 \dontrun{
-  CALANGO::retrieve_data_files(target.dir = "./data")
+  CALANGO::retrieve_calanguize_genomes(target.dir = "./data")
 }
 
 }

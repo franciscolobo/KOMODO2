@@ -22,7 +22,7 @@
 #'
 #' @examples
 #' \dontrun{
-#'   CALANGO::retrieve_data_files(target.dir = "./data")
+#'   CALANGO::retrieve_calanguize_genomes(target.dir = "./data")
 #' }
 #' 
 #' @return No return value, called for side effects (see Description).

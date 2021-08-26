@@ -15,6 +15,5 @@ without having to download it from the Github repository.
     * Ubuntu 20.04 (release and devel):  <https://github.com/fcampelo/CALANGO/actions>
     
 * Windows:
-    * R version 4.1.0 (2021-05-18) using platform: x86_64-w64-mingw32 (64-bit) (`devtools::check_win_release()`)
-    * R Under development (unstable) (2021-02-13 r80000); Platform: x86_64-w64-mingw32 (64-bit) (`devtools::check_win_release()`)
+    * R version 4.1.1 (2021-08-10) using platform: x86_64-w64-mingw32 (64-bit) (`devtools::check_win_release()`)
     * R version 4.0.5 (2021-03-31) using platform: x86_64-w64-mingw32 (64-bit)) (`devtools::check_win_oldrelease()`)
