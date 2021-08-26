@@ -5,7 +5,9 @@
 [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/CALANGO)](https://CRAN.R-project.org/package=CALANGO)
 <!-- badges: end -->
 
-<img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo.png" alt="A two-headed lizard dragon. Drawn by Francisco's dad." height="200"/>
+<center>
+<img src="https://raw.githubusercontent.com/fcampelo/CALANGO/master/inst/images/CALANGO_logo.png" alt="CALANGO logo. Drawn by Brazilian artist Berze - https://www.facebook.com/berzearte." height="300"/>
+</center>
 
 ### CALANGO MASTERMIND
 - Francisco Pereira Lobo (franciscolobo@gmail.com, francisco.lobo@ufmg.br)
