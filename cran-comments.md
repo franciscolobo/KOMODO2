@@ -17,12 +17,10 @@ without having to download it from the Github repository.
 ## Test environments
 * macOS:
     * `devtools::check()`: R version 4.1.0 (2021-05-18), Platform: x86_64-apple-darwin17.0 (64-bit), Running under: macOS 11.4 Big Sur (local)
-    * MacOS-latest (release): <https://github.com/fcampelo/CALANGO/actions>
+    * MacOS 11.6.1 (release): <https://github.com/fcampelo/CALANGO/actions>
     
 * Linux:
-    * Ubuntu 20.04 (release and devel):  <https://github.com/fcampelo/CALANGO/actions>
+    * Ubuntu 20.04.3 (release and devel):  <https://github.com/fcampelo/CALANGO/actions>
     
 * Windows:
-    * Windows-latest (release): <https://github.com/fcampelo/CALANGO/actions>
-    * R version 4.1.1 (2021-08-10) using platform: x86_64-w64-mingw32 (64-bit) (`devtools::check_win_release()`)
-    * R version 4.0.5 (2021-03-31) using platform: x86_64-w64-mingw32 (64-bit)) (`devtools::check_win_oldrelease()`)
+    * Microsoft Windows Server 2019 (release): <https://github.com/fcampelo/CALANGO/actions>
