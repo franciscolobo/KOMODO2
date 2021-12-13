@@ -1,3 +1,11 @@
+# CALANGO 1.0.8
+
+- Regular maintenance update:
+
+    - Minor internal changes to ensure compatibility with dendextend v1.15.2.
+    - Changed naming standard of report plots to increase Windows compatibility: 
+      file names of correlation plots and boxplots now use "_" rather than ":".
+
 # CALANGO 1.0.5
 
 - Regular maintenance update:
