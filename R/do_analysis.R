@@ -1,14 +1,14 @@
-# Perform analysis for the KOMODO2 workflow
+# Perform analysis for the CALANGO workflow
 #
-# This script implements the third step of the LCFD workflow of KOMODO2.
+# This script implements the third step of the LCFD workflow of CALANGO.
 # It is responsible for performing the actual analysis and generating
 # all the processed data and tables.
 #
-# The script expects enriched `KOMODO2`-type lists generated after running
+# The script expects enriched `CALANGO`-type lists generated after running
 # [load_data()] -> [clean_data()].
 #
 #
-# @param defs an enriched KOMODO2-type list object (see Details).
+# @param defs an enriched CALANGO-type list object (see Details).
 #
 
 

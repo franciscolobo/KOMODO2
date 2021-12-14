@@ -38,7 +38,6 @@ print_results_correlations <- function(correlations, annotation,
   utils::write.table(df.output, file = outputName, quote = FALSE,
                      row.names = FALSE, col.names = output.columns,
                      sep = "\t")
-  cat(".")
 
   return(NULL)
 

@@ -1,8 +1,8 @@
 # Adds the field "Term" of each GO/KO ID to the results.
 #
 # Args:
-#   defs: (list) a KOMODO2-type list object (generated internally by the
-#   KOMODO2 functions)
+#   defs: (list) a CALANGO-type list object (generated internally by the
+#   CALANGO functions)
 #   results: (list)  MHT-corrected p-values of all GO/KO IDs
 #   ontology: (char) which ontology is used: GO, KO, other.
 # Returns:

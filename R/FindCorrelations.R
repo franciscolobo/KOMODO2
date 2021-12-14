@@ -32,7 +32,7 @@ FindCorrelations <- function(x, y, method = "pearson", denominator = 1,
   # counterintuitive manner. A possibly better way is suggested below.
   if (!is.null(denominator)) y <- sweep(y, MARGIN = 1, denominator, `/`) # y <- y / denominator
 
-  cat("\nCalculating correlations:", method, "\n")
+  message("Calculating correlations:", method)
   tmpfun <- function(tmpy, tmpx, method, ny){
     mycor <- stats::cor(tmpx[ny, 1], tmpy,
                         method = method)
@@ -41,14 +41,12 @@ FindCorrelations <- function(x, y, method = "pearson", denominator = 1,
     return(list(mycor = mycor, mypv = mypv))}
 
   if (.Platform$OS.type == "windows"){
-    cat("...")
     tmp <- parallel::parLapply(cl     = cl,
                                X      = y,
                                fun    = tmpfun,
                                tmpx   = x,
                                method = method,
                                ny     = rownames(y))
-    cat(" done!")
   } else {
     tmp <- pbmcapply::pbmclapply(X      = y,
                                  FUN    = tmpfun,

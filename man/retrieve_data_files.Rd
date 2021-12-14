@@ -8,7 +8,7 @@ retrieve_data_files(
   target.dir,
   method = "auto",
   unzip = getOption("unzip"),
-  url = "https://github.com/fcampelo/KOMODO2"
+  ...
 )
 }
 \arguments{
@@ -17,20 +17,24 @@ accepts relative and absolute paths)}
 
 \item{method}{Method to be used for downloading files. Current download
 methods are "internal", "wininet" (Windows only) "libcurl", "wget" and
-"curl", and there is a value "auto": see ‘Details’ and ‘Note’ in the
+"curl", and there is a value "auto": see _Details_ and _Note_ in the
 documentation of \code{utils::download.file()}.}
 
 \item{unzip}{The unzip method to be used. See the documentation of
 \code{utils::unzip()} for details.}
 
-\item{url}{repository URL. Do not change it unless you really know what
-you're doing.}
+\item{...}{additional attributes (currently ignored)}
+}
+\value{
+No return value, called for side effects (see Description).
 }
 \description{
-This script retrieves relevant data files from the KOMODO2 project
-repository. It will download the data into a folder containing
+This script downloads relevant data files from the CALANGO project
+repository. It will extract the data into a folder containing
 directories related to dictionary files, Gene Ontology annotation
-files, tree files, etc.
+files, tree files, etc. Note: you may need to edit the file paths in the 
+example scripts contained under the `parameters` subfolder of `target.dir`, 
+or pass an appropriate base path using parameter `basedir` in [run_CALANGO()].
 }
 \details{
 If the `target.dir` provided does not exist it is created
@@ -38,6 +42,7 @@ If the `target.dir` provided does not exist it is created
 }
 \examples{
 \dontrun{
-  retrieve_data_files(target.dir = "./data_folder")
+  CALANGO::retrieve_data_files(target.dir = "./data")
 }
+
 }

@@ -6,7 +6,7 @@
 #   genome.names: char vector of names of the genomes to count elements.
 #                   May be used to restrict which genomes to count in this
 #                   function.
-#   mode: char, defines whether KOMODO2 must consider all elements in all
+#   mode: char, defines whether CALANGO must consider all elements in all
 #           genomes (default), or treat each element independently of
 #           others (experiment). The latter is an experiment for
 #           alignments.
@@ -28,7 +28,7 @@ GroupElementCount <- function(someAnno, genome.names = NULL, mode = "default") {
     names(elementCount) <- names(someAnno[genome.names])
 
   } else {
-    stop("'", mode, "' is not a recognized mode in KOMODO2::GroupElementCount()")
+    stop("'", mode, "' is not a recognized mode in CALANGO::GroupElementCount()")
   }
 
   return(elementCount)

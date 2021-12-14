@@ -1,0 +1,25 @@
+---
+title: "CALANGO Examples"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{CALANGO Examples}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+  <img src="https://github.com/fcampelo/CALANGO/raw/master/inst/images/CALANGO_LOGO.svg" height="150" alt="CALANGO logo. Drawn by Brazilian artist Berze - https://www.facebook.com/berzearte">
+
+Some examples of CALANGO output are available under `docs/articles/results` in the [CALANGO Github repository](https://github.com/fcampelo/CALANGO).  The examples below relate to the case study "*Homologous regions and biological roles associated with prophage density in pathogenic and free-living _Escherichia coli_*", which is presented as part of the manuscript _CALANGO: an annotation-based, phylogeny-aware comparative genomics framework for exploring and interpreting complex genotypes and phenotypes_.
+
+Please navigate to one of the links below to check the example output:
+
+```{r, results="asis", echo=FALSE}
+dirs <- dir("../docs/articles/results/")
+cat("\n<br/><ul><br/>")
+for (i in seq_along(dirs)){
+  url <- paste0("results/", dirs[i], "/index.html")
+  txt <- gsub("_", "-", dirs[i], fixed = TRUE)
+  cat(paste0('\n<li> <a href="', url, '" target="_blank">', txt, "</a></li><br/>"))
+}
+cat("</ul><br/>")
+```
