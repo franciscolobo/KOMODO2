@@ -2,10 +2,12 @@
 
 inputfiles <- dir("data/parameters/", full.names = TRUE)
 
-ncores <- 2 # parallel::detectCores() - 1
+ncores <- 1# parallel::detectCores() - 1
 
 # run for all specs files
 for (i in seq_along(inputfiles)){
   cat("\nProcessing example", i, "of", length(inputfiles), "\n")
   defs <- run_CALANGO(inputfiles[i], cores = ncores)
 }
+
+# REMINDER: don't forget to ZIP the data folder!
