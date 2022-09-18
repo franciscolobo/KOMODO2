@@ -1,3 +1,17 @@
+# CALANGO 1.0.12
+
+- Regular maintenance update:
+    
+    - Added a second set of examples under Vignette "Usage Examples".
+    - Updated project home page, minor updates to documentation.
+    - Minor changes to Rmd files to prevent pandoc errors.
+
+# CALANGO 1.0.10
+
+- Regular maintenance update:
+    
+    - Updated project home page, minor updates to documentation.
+
 # CALANGO 1.0.8
 
 - Regular maintenance update:

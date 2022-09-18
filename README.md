@@ -19,7 +19,7 @@ Our software has been freely inspired by (and explicitly modeled to take into ac
 The latest version of CALANGO can be installed directly from the repository using `devtools::install_github()`:
 
 ```
-devtools::install_github("fcampelo/CALANGO")
+devtools::install_github("LABpackages/CALANGO")
 ```
 
 Alternatively, you should soon be able to install the last release version from CRAN by simply doing:
@@ -40,7 +40,7 @@ install_bioc_dependencies(which = "all")
 
 to install / update all dependencies (packages listed as CALANGO's `imports` and `suggests`) to their latest versions.
 
----
+*****
 ### HOW TO USE - OVERVIEW
 
 To run CALANGO you need two things: 
@@ -82,7 +82,7 @@ This call will generate an enriched `CALANGO` list as the output, and generate a
 CALANGO requires the following files (please check the examples in 
 in `./data/parameters/` if in doubt about file specifications):
 
----
+*****
 **genome annotation file**  
 
 A text file for each species describing their set of biologically meaningful genomic elements and their respective annotation IDs (e.g. non redundant proteomes annotated to GO terms, or non-redundant protein domains annotated to protein domain IDs). An example of such file, where gene products are annotated using Gene Ontology (GO) terms and Kegg Orthology (KO) identifiers would be as follows:
@@ -117,7 +117,7 @@ genomic_element_name/ID_1     annotation_ID_1;(...);annotation_ID_N
 genomic_element_name/ID_2     annotation_ID_12
 ```
 
----
+*****
 **phylogenetic tree file**  
 
 _newick_ or _PHYLIP_ format, containing at least:
@@ -135,7 +135,7 @@ A tree in _newick_ format (however, with no branch lengths), would be:
 (genome_ID_1,(genome_ID_2,genome_ID_3))
 ```
 
----
+*****
 **A metadata file**  
 
 Containing species-specific information:
@@ -172,7 +172,7 @@ Metadada files are specified as follows:
 - One mandatory numeric value in every other column, referred as "variable
     columns".
 
----
+*****
 **A dictionary**  
 
 Tab delimited, linking annotation IDs to their biologically
@@ -240,7 +240,7 @@ in the examples file provided (`./data/parameters/`). They are, for the current 
 
 ### CALANGO OUTPUT 
 
-Live examples of CALANGO output HTML5 pages can be found <a href="https://fcampelo.github.io/CALANGO/articles/examples-page.html" target="_blank">here</a>.
+Live examples of CALANGO output HTML5 pages can be found <a href="https://labpackages.github.io/CALANGO/articles/examples-page.html" target="_blank">here</a>.
 
 CALANGO produces as its main output a dynamic HMTL5 website containing:
 
@@ -248,7 +248,7 @@ CALANGO produces as its main output a dynamic HMTL5 website containing:
 - Interactive heatmaps and scatterplots
 - A dynamic table of results.
 
-Please check our examples page at <https://fcampelo.github.io/CALANGO/> to explore the full output of CALANGO for a variety of examples. The required data to fully reproduce these examples can be obtained by using `CALANGO::retrieve_data_files()`.
+Please check our examples page at <https://labpackages.github.io/CALANGO/> to explore the full output of CALANGO for a variety of examples. The required data to fully reproduce these examples can be obtained by using `CALANGO::retrieve_data_files()`.
 
 *****
 ### CALANGO MASTERMIND
