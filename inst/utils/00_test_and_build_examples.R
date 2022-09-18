@@ -9,5 +9,3 @@ for (i in seq_along(inputfiles)){
   cat("\nProcessing example", i, "of", length(inputfiles), "\n")
   defs <- run_CALANGO(inputfiles[i], cores = ncores)
 }
-
-# REMINDER: don't forget to ZIP the data folder!
