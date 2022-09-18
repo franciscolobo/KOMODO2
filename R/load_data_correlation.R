@@ -131,7 +131,7 @@ load_data_correlation <- function(defs){
                                   strip.white    = TRUE,
                                   comment.char   = "",
                                   check.names    = FALSE)
-    cat(" done!")
+    cat(" done!\n")
   } else {
     defs$y <- pbmcapply::pbmclapply(X              = defs$y.name,
                                     FUN            = utils::read.csv,
