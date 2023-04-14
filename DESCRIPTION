@@ -49,7 +49,7 @@ Suggests: AnnotationDbi,
           KEGGREST,
           GO.db
 Encoding: UTF-8
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.2
 URL: https://labpackages.github.io/CALANGO/
 BugReports: https://github.com/fcampelo/CALANGO/issues/
 VignetteBuilder: knitr
