@@ -26,3 +26,4 @@ docs$
 ^inst/images/CALANGO_LOGO.svg
 ^inst/images/CALANGO_LOGO.pdf
 ^inst/images/CALANGO_LOGO2.pdf
+^CRAN-SUBMISSION$
