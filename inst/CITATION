@@ -1,6 +1,3 @@
-## R package reference generated from DESCRIPTION metadata
-citation(auto = meta)
-
 ## CALANGO manuscript
 bibentry(bibtype = "article",
          title = "CALANGO: A phylogeny-aware comparative genomics tool for discovering quantitative genotype-phenotype associations across species",
