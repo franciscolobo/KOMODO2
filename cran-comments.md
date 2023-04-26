@@ -2,6 +2,7 @@
 * Regular maintenance update: 
     * Updated documentation.
     * Added links to published paper and updated citation()
+    * Fixed broken URI problems detected in first submission
 
 ## R CMD check results  
 * Duration: 39.2s
