@@ -1,3 +1,33 @@
+# CALANGO 1.0.20
+
+- Regular maintenance update:  
+    - Minor bug fix that resulted in occasional errors on Windows machines  
+    - Minor updates to documentation
+
+# CALANGO 1.0.14
+
+- Regular maintenance update:
+    - Updated documentation, added links to published paper.
+
+# CALANGO 1.0.13
+
+- Regular maintenance update:
+    - Fixed Vignette listing. Added examples page as a full vignette.
+
+# CALANGO 1.0.12
+
+- Regular maintenance update:
+    
+    - Added a second set of examples under Vignette "Usage Examples".
+    - Updated project home page, minor updates to documentation.
+    - Minor changes to Rmd files to prevent pandoc errors.
+
+# CALANGO 1.0.10
+
+- Regular maintenance update:
+    
+    - Updated project home page, minor updates to documentation.
+
 # CALANGO 1.0.8
 
 - Regular maintenance update:
